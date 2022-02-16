@@ -1,0 +1,114 @@
+.side-bar-c {
+  display: flex;
+  width: 100%;
+  padding: var(--pad);
+  background-color: var(--bg-prim);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: var(--shoadow-1);
+  z-index: 10;
+}
+
+.project-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-brand {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+.project-brand img {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+}
+
+.project-brand div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-brand div h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 90%;
+  margin: none;
+}
+
+.project-version {
+  font-weight: 400;
+  color: var(--text-tre);
+  font-size: 10px;
+}
+
+.projects-extra {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 17px;
+}
+
+.projects-extra a,
+.projects-extra button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-bg);
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.projects-extra a:hover,
+.projects-extra button:hover {
+  border: 2px solid var(--text-prim);
+  background-color: var(--blue);
+}
+
+.projects-extra button {
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+}
+
+.projects-extra svg {
+  stroke: var(--text-prim);
+  stroke-width: 2.2;
+}
+
+.projects-extra a {
+  padding: 6px 25px;
+  text-decoration: none;
+  color: var(--text-prim);
+}
+
+.sidebar-hr {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 120px;
+  border: none;
+  border-top: 2px solid var(--text-prim);
+}
+
+.gradient-seperator {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, var(--bg-prim), rgba(0, 0, 0, 0));
+}

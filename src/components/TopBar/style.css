@@ -1,0 +1,74 @@
+.top-bar-c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--pad);
+  z-index: 10;
+}
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  z-index: 10;
+}
+
+.top-bar-left {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.top-nav-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  gap: 7px;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  padding: 8px 30px;
+  border: 2px solid var(--text-prim);
+  background-color: var(--bg-prim);
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: var(--shoadow-1);
+}
+
+.top-nav-button:hover {
+  background-color: var(--blue);
+}
+
+.top-nav-button:hover svg {
+  fill: var(--text-prim);
+}
+
+.top-nav-button svg {
+  width: 20px;
+  height: auto;
+
+  stroke-width: 3px;
+  stroke: var(--text-prim);
+}
+
+#start {
+  background-color: var(--green);
+}
+
+.css-yvszuv-Slider {
+  width: 150px !important;
+  background-color: var(--slider-bg) !important;
+}
+
+.css-1ldz52l-Slider {
+  background-color: var(--blue) !important;
+  border: 2px solid var(--text-prim);
+  opacity: 1;
+}
+
+.css-3g5hux-Slider {
+  background-color: var(--pink) !important;
+}

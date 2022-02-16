@@ -1,0 +1,7 @@
+{
+  "sorting": [
+    ["Bubble Sort", "BubbleSort.js"],
+    ["Selection Sort", "SelectionSort.js"]
+  ],
+  "searching": [["Binary Search", "BinarySearch.js"]]
+}
