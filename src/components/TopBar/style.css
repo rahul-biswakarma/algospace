@@ -17,7 +17,9 @@
 .top-bar-left {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 .top-nav-button {
@@ -60,15 +62,10 @@
 
 .css-yvszuv-Slider {
   width: 150px !important;
-  background-color: var(--slider-bg) !important;
 }
 
 .css-1ldz52l-Slider {
-  background-color: var(--blue) !important;
   border: 2px solid var(--text-prim);
   opacity: 1;
-}
-
-.css-3g5hux-Slider {
-  background-color: var(--pink) !important;
+  box-shadow: none;
 }
