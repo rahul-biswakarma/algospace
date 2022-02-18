@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-input-slider";
-import { Play, Zap } from "react-feather";
+import { Play, Zap, Copy, Square } from "react-feather";
 import * as algoFunctions from "../../util/algorithm";
 import "./style.css";
 
@@ -11,38 +11,63 @@ const TopBar = () => {
   const [speedMeter, setSpeedMeter] = useState({ x: 300 });
   const [sizeMeter, setsizeMeter] = useState({ x: 14 });
 
-  function callAlgoFunction() {
-    if (arrayConatiner.length === 0) {
-      let h2 = document.createElement("h2");
-      h2.classList.add("no-array-found");
-      h2.innerHTML +=
-        "Opps! Operation can't be performed in empty array 😅 <br /><b>Kindly click on Generate Array to get started</b>";
+  async function callAlgoFunction() {
+    let stopFunc = false;
 
-      document.getElementById("sorting-array-c").appendChild(h2);
-    } else {
-      algoFunctions.bubbleSort(
+    if (document.getElementById("start").classList.contains("toggleStop"))
+      stopFunc = true;
+
+    document.getElementById("start").classList.remove("toggleStart");
+    document.getElementById("start").classList.add("toggleStop");
+    document.getElementById("startSvg").style.display = "none";
+    document.getElementById("startText").style.display = "none";
+    document.getElementById("stopSvg").style.display = "block";
+    document.getElementById("stopText").style.display = "block";
+
+    console.log(stopFunc);
+
+    if (arrayConatiner.length === 0 && !stopFunc) {
+      await generateSortingArray();
+
+      await algoFunctions.bubbleSort(
         arrayConatiner,
         speedMeter.x,
         animationDelayIncrement
       );
+    } else {
+      await algoFunctions.bubbleSort(
+        arrayConatiner,
+        speedMeter.x,
+        animationDelayIncrement,
+        stopFunc
+      );
     }
+    document.getElementById("startSvg").style.display = "block";
+    document.getElementById("startText").style.display = "block";
+    document.getElementById("stopSvg").style.display = "none";
+    document.getElementById("stopText").style.display = "none";
+    document.getElementById("start").classList.remove("toggleStop");
+    document.getElementById("start").classList.add("toggleStart");
+
+    console.log("call Algo function over");
   }
 
-  function generateSortingArray() {
-    arrayConatiner = [];
+  async function generateSortingArray() {
+    return new Promise((resolve, reject) => {
+      arrayConatiner = [];
 
-    // Selecting Sorting Array Div Conatiner
-    let sortingArrayContainer = document.getElementById("sorting-array-c");
+      // Selecting Sorting Array Div Conatiner
+      let sortingArrayContainer = document.getElementById("sorting-array-c");
 
-    let height = sortingArrayContainer.clientHeight;
-    let width = sortingArrayContainer.clientWidth;
+      let height = sortingArrayContainer.clientHeight;
+      let width = sortingArrayContainer.clientWidth;
 
-    //Inverting Size Meter
-    let sizeMeterLocal = 22 - sizeMeter.x;
+      //Inverting Size Meter
+      let sizeMeterLocal = 22 - sizeMeter.x;
 
-    // Animation Delay Increment Value
-    animationDelayIncrement = Math.floor((speedMeter.x / 1000) * 100);
-    /*
+      // Animation Delay Increment Value
+      animationDelayIncrement = Math.floor((speedMeter.x / 1000) * 100);
+      /*
     LOGIC FOR ANIMATION DELAY INCREMENT VALUE:
 
         1. Calculating the precentage of speedMeter from Speed Input Slider
@@ -51,37 +76,39 @@ const TopBar = () => {
         MAX DELAY == 20
     */
 
-    // Default Animation Delay
-    let animationDelay = animationDelayIncrement;
+      // Default Animation Delay
+      let animationDelay = animationDelayIncrement;
 
-    // Setting Max height for Sorting Array Div
-    let maxHeight = Math.floor((height * 80) / 100);
+      // Setting Max height for Sorting Array Div
+      let maxHeight = Math.floor((height * 80) / 100);
 
-    // Emptying the Sorting Array Div Container
-    sortingArrayContainer.innerHTML = "";
+      // Emptying the Sorting Array Div Container
+      sortingArrayContainer.innerHTML = "";
 
-    // Counting no. of array element can be generated
-    let arrayCount = Math.floor(width / sizeMeterLocal);
+      // Counting no. of array element can be generated
+      let arrayCount = Math.floor(width / sizeMeterLocal);
 
-    // Generating Array Element as Divs in Sorting Array Container
-    for (let i = 0; i < arrayCount; i++) {
-      let sortingArrayElement = document.createElement("div");
-      let randomHeight = Math.floor(Math.random() * maxHeight + 10); // Generating random Array values for sorting
+      // Generating Array Element as Divs in Sorting Array Container
+      for (let i = 0; i < arrayCount; i++) {
+        let sortingArrayElement = document.createElement("div");
+        let randomHeight = Math.floor(Math.random() * maxHeight + 10); // Generating random Array values for sorting
 
-      sortingArrayElement.style.height = randomHeight + "px";
-      sortingArrayElement.style.width = sizeMeterLocal + "px";
+        sortingArrayElement.style.height = randomHeight + "px";
+        sortingArrayElement.style.width = sizeMeterLocal + "px";
 
-      sortingArrayElement.style.animationDuration = speedMeter.x + "ms";
-      sortingArrayElement.style.animationDelay = animationDelay + "ms";
+        sortingArrayElement.style.animationDuration = speedMeter.x + "ms";
+        sortingArrayElement.style.animationDelay = animationDelay + "ms";
 
-      sortingArrayElement.classList.add("sorting-array-element");
+        sortingArrayElement.classList.add("sorting-array-element");
 
-      arrayConatiner.push(randomHeight);
-      sortingArrayContainer.appendChild(sortingArrayElement);
+        arrayConatiner.push(randomHeight);
+        sortingArrayContainer.appendChild(sortingArrayElement);
 
-      // Incrementing Animation Delay for next element
-      animationDelay += animationDelayIncrement;
-    }
+        // Incrementing Animation Delay for next element
+        animationDelay += animationDelayIncrement;
+      }
+      resolve(true);
+    });
   }
 
   return (
@@ -129,7 +156,7 @@ const TopBar = () => {
             id="create-sorting-array"
             className="top-nav-button no-select"
           >
-            <Zap />
+            <Copy />
             Count
             <Slider
               styles={{
@@ -154,11 +181,13 @@ const TopBar = () => {
           {/* Start button -> start Algo vizualizer */}
           <button
             id="start"
-            className="top-nav-button no-select"
+            className="top-nav-button no-select toggleStart"
             onClick={callAlgoFunction}
           >
-            <Play />
-            Start
+            <Play id="startSvg" />
+            <Square id="stopSvg" />
+            <span id="startText">Start</span>
+            <span id="stopText">Stop</span>
           </button>
         </div>
       </div>

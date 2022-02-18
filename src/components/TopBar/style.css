@@ -56,8 +56,32 @@
   stroke: var(--text-prim);
 }
 
-#start {
+.toggleStart {
   background-color: var(--green);
+}
+
+.toggleStop {
+  background-color: var(--red);
+}
+
+.toggleStart #stopSvg,
+.toggleStart #stopText {
+  display: none;
+}
+
+.toggleStart #startSvg,
+.toggleStart #startText {
+  display: block;
+}
+
+.toggleStop #startSvg,
+.toggleStop #startText {
+  display: none;
+}
+
+.toggleStop #stopSvg,
+.toggleStop #stopText {
+  display: block;
 }
 
 .css-yvszuv-Slider {

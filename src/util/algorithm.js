@@ -1,47 +1,49 @@
-function bubbleSort(valueArrayOriginal, speedMeterOriginal, animationDelay) {
-  var valueArray = valueArrayOriginal;
-  // let speedPer = Math.floor((speedMeterOriginal / 1000) * 100);
-  var speedMeter = 0;
-  let size = valueArray.length;
-  let sortingArrayContainer = document.getElementById("sorting-array-c");
+async function bubbleSort(
+  valueArrayOriginal,
+  speedMeterOriginal,
+  animationDelay,
+  stopFunc = false
+) {
+  if (stopFunc) {
+    return;
+  }
+  return new Promise(async (resolve, reject) => {
+    var valueArray = valueArrayOriginal;
+    let size = valueArray.length;
+    let sortingArrayContainer = document.getElementById("sorting-array-c");
 
-  for (let i = 0; i < size - 1; i++) {
-    setTimeout(() => {
+    let speedPer = Math.floor((speedMeterOriginal / 1000) * 100);
+    var speedMeter = 0;
+
+    for (let i = 0; i < size - 1; i++) {
       for (let j = 0; j < size - i - 1; j++) {
-        setTimeout(() => {
+        console.log(speedMeter);
+        if (valueArray[j] > valueArray[j + 1]) {
+          sortingArrayContainer.childNodes.item(j).style.height =
+            valueArray[j + 1] + "px";
+          sortingArrayContainer.childNodes.item(j + 1).style.height =
+            valueArray[j] + "px";
           sortingArrayContainer.childNodes.item(j).style.background =
             "var(--red)";
           sortingArrayContainer.childNodes.item(j + 1).style.background =
-            "var(--text-prim)";
-        }, speedMeter);
+            "var(--red)";
 
-        if (speedMeter > 0) speedMeter += Math.floor(animationDelay / 15);
-
-        setTimeout(() => {
-          console.log("Inside timeout");
-          if (valueArray[j] > valueArray[j + 1]) {
-            sortingArrayContainer.childNodes.item(j).style.height =
-              valueArray[j + 1] + "px";
-            sortingArrayContainer.childNodes.item(j + 1).style.height =
-              valueArray[j] + "px";
-
-            let temp = valueArray[j];
-            valueArray[j] = valueArray[j + 1];
-            valueArray[j + 1] = temp;
-          }
-        }, speedMeter);
-
-        speedMeter += Math.floor(animationDelay / 15);
-
-        setTimeout(() => {
-          sortingArrayContainer.childNodes.item(j).style.background =
-            "var(--blue2)";
-          sortingArrayContainer.childNodes.item(j + 1).style.background =
-            "var(--blue2)";
-        }, speedMeter);
+          let temp = valueArray[j];
+          valueArray[j] = valueArray[j + 1];
+          valueArray[j + 1] = temp;
+        }
+        await new Promise((resolve) => setTimeout(resolve, speedMeter));
+        sortingArrayContainer.childNodes.item(j).style.background =
+          "var(--blue2)";
+        sortingArrayContainer.childNodes.item(j + 1).style.background =
+          "var(--blue2)";
+        if (speedMeter === 0) speedMeter = animationDelay;
       }
-    }, speedMeter);
-  }
+    }
+    console.log("bubble over");
+
+    resolve(true);
+  });
 }
 
 export { bubbleSort };
