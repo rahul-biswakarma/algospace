@@ -1,50 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap");
-
-:root {
-  --pad: 2.5rem 1.5rem;
-}
-
-.LightUI {
-  --red: #ec1e6d;
-  --green: #5ef9a5;
-  --yellow: #a7c92e;
-  --purple: #8800d6;
-  --blue: #4dbeff;
-  --blue2: #0391e4;
-  --pink: #ff4a8b;
-  --bg-prim: #fff;
-  --bg-scnd: #f6f8fa;
-  --text-prim: #000;
-  --text-scnd: #7d7e7f;
-  --text-tre: #cbcbcb;
-  --button-bg: #e9e9e9;
-  --bg-line-color: #edeff3;
-  --slider-bg: #e2e1e1;
-  --shoadow-1: 0 4px 50px rgba(0, 5, 29, 0.1);
-}
-
-.DarkUI {
-  --bg-prim: rgb(26, 26, 27);
-  --bg-scnd: #333335;
-  --text-prim: #f7f7f7;
-  --text-scnd: #acacac;
-  --text-tre: #cbcbcb;
-  --button-bg: #232324;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+:root {
+  --nav-h: 50px;
+  --pad-lr: 2rem;
+  --pad-tb: 0.8rem;
+}
+
+.LightUI {
+  --red: #da2f2d;
+  --red-faded: #fde7e9;
+  --green: #0fa523;
+  --green-faded: #e7f6f3;
+  --purple: #580597;
+  --blue: #1e3df1;
+  --blue-faded: #e3e8fe;
+  --pink: #ff4a8b;
+  --yellow: #fcc00b;
+  --brand-text-color: #252535;
+  --nav-svg-color: #d0d8dc;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #e8e8e8;
+  --text-primary: #0f0f0f;
+  --text-secondary: #333333;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --trans-100: all 100ms ease-in;
+  --shadow-black: 0px 3px 15px rgba(0, 0, 0, 0.06);
+  --shadow-green: 0px 3px 10px rgba(0, 255, 0, 0.1);
 }

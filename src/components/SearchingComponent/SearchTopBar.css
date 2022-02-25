@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: var(--pad);
-  z-index: 10;
+  padding: var(--pad-tb) var(--pad-tb);
+  z-index: 3;
 }
 .top-bar {
   display: flex;
@@ -23,7 +23,6 @@
 }
 
 .top-nav-button {
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
@@ -33,31 +32,39 @@
   align-items: center;
   text-align: center;
   padding: 8px 30px;
-  border: 2px solid var(--text-prim);
-  background-color: var(--bg-prim);
-  border-radius: 100px;
+  background-color: var(--bg-primary);
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: var(--shoadow-1);
-}
-
-.top-nav-button:hover {
-  background-color: var(--blue);
-}
-
-.top-nav-button:hover svg {
-  fill: var(--text-prim);
+  border: 1px solid var(--text-primary);
+  transition: all 100ms ease-out;
 }
 
 .top-nav-button svg {
   width: 20px;
   height: auto;
-
+  transition: all 100ms ease-out;
   stroke-width: 3px;
-  stroke: var(--text-prim);
+  stroke: var(--text-primary);
 }
 
 .toggleStart {
+  background-color: var(--green-faded);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.toggleStart svg {
+  stroke: var(--green);
+}
+
+.toggleStart:hover {
   background-color: var(--green);
+  color: var(--text-primary);
+}
+
+.toggleStart:hover svg {
+  stroke: var(--text-primary);
 }
 
 .toggleStop {
@@ -84,12 +91,7 @@
   display: block;
 }
 
-.css-yvszuv-Slider {
-  width: 150px !important;
-}
-
-.css-1ldz52l-Slider {
-  border: 2px solid var(--text-prim);
-  opacity: 1;
-  box-shadow: none;
+.search-count-slider,
+.search-speed-slider {
+  width: 120px !important;
 }

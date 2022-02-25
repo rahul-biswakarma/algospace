@@ -1,16 +1,18 @@
-import SideBar from "./components/SideBar/SideBar";
-import TopBar from "./components/TopBar/TopBar";
-import Main from "./components/Main/Main";
+import React, { useState } from "react";
+import TopBar from "./Components/TopBar/TopBar";
+import SearchingBase from "./Components/SearchingComponent/SearchingBase";
 import "./App.css";
-import "./assets/css/Theme.css";
+import "./Assets/css/Theme.css";
 
 function App() {
+  const [algo, setAlgo] = useState("bubblesort");
+  const [array, setArray] = useState([]);
+
   return (
     <div className="App">
-      <SideBar />
-      <div className="AppRight">
-        <Main />
-        <TopBar />
+      <TopBar />
+      <div className="main-c">
+        <SearchingBase algoState={algo} array={array} setArray={setArray} />
       </div>
     </div>
   );
