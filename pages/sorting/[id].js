@@ -1,11 +1,10 @@
 import React from "react";
-import Head from "next/head";
-import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import Styles from "../../styles/sorting/Sorting.module.css";
 import Sorting from "../../components/SortingContainer/Sorting";
 
-export async function GetServerSideProps(context) {
+export async function getServerSideProps(context) {
   var fileName = context.params.id;
   var data = require(`/data/sorting/${fileName}.json`);
 
