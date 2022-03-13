@@ -1,55 +1,27 @@
 {
-  "name": "algo-visualizer",
-  "homepage": "https://id39r.github.io/algo-visualizer/",
-  "author": {
-    "name": "Rahul Biswakarma",
-    "email": "rahul.id39@gmail.com"
+  "name": "algo-vizualizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "version": "0.1.5",
-  "private": false,
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.4.3",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^3.2.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@mui/material": "^5.4.4",
+    "next": "12.1.0",
+    "node-sass": "^7.0.1",
+    "react": "17.0.2",
+    "react-collapsible": "^2.8.4",
+    "react-dom": "17.0.2",
     "react-feather": "^2.0.9",
-    "react-input-slider": "^6.0.1",
-    "react-scripts": "5.0.0",
-    "react-transition-group": "^4.4.2",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "react-select-search": "^3.0.9"
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0"
   }
 }

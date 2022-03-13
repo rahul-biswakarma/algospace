@@ -1,0 +1,32 @@
+.Container {
+  border-top: var(--border-1);
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.IconContainer {
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: var(--border-1);
+  transition: all 200ms ease-out;
+}
+
+.IconContainer:hover {
+  background-color: var(--bg-blue);
+  cursor: pointer;
+}
+
+.IconContainer:hover .Icons {
+  stroke: var(--blue);
+}
+
+.Icons {
+  stroke: white;
+  width: 1.4rem;
+}
+
+.LastIconContainer {
+  border: none;
+}

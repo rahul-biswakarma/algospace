@@ -1,0 +1,8 @@
+{
+  "id": "bubble-sort",
+  "title": "Bubble Sort",
+  "funcName": "BubbleSort",
+  "html": [
+    "<h1>Bubble Sort</h1><p><strong>Bubble sort</strong> is a sorting algorithm that compares two adjacent elements and swaps them until they are not in the intended order.</p><p>Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.</p><h2>Working of Bubble Sort</h2>Suppose we are trying to sort the elements in ascending order."
+  ]
+}

@@ -1,0 +1,49 @@
+.Container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: var(--border-1);
+  min-height: var(--brand-nav-height);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.textLogo {
+  font-family: "Bungee Shade", cursive;
+}
+
+.sideNavBrandTitle {
+  font-size: 1.7rem;
+  font-family: "Bungee Shade", cursive;
+  /* font-family: "Libre Barcode 39 Text", cursive; */
+  /* font-family: "Saira Stencil One", cursive; */
+  z-index: 10;
+}
+
+.version {
+  font-size: 13px;
+  color: var(--secndry-text);
+  z-index: 10;
+  font-weight: 600;
+}
+
+.blueText {
+  font-size: 2.4rem;
+  color: var(--blue) !important;
+  font-family: "Libre Barcode 39 Text", cursive !important;
+  /* font-family: "Bungee Shade", cursive; */
+}
+
+.Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
