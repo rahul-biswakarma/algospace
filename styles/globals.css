@@ -24,12 +24,12 @@
   --red: #fd777d;
   --purple: #c645fd;
 
-  --bg-blue: rgba(40, 206, 243, 0.07);
-  --bg-green: rgba(36, 241, 118, 0.07);
-  --bg-orange: rgba(253, 147, 48, 0.07);
-  --bg-pink: rgba(198, 68, 253, 0.07);
-  --bg-red: rgba(250, 96, 104, 0.07);
-  --bg-purple: rgba(204, 108, 245, 0.07);
+  --bg-blue: rgba(40, 206, 243, 0.15);
+  --bg-green: rgba(36, 241, 118, 0.15);
+  --bg-orange: rgba(253, 147, 48, 0.15);
+  --bg-pink: rgba(198, 68, 253, 0.15);
+  --bg-red: rgba(250, 96, 104, 0.15);
+  --bg-purple: rgba(204, 108, 245, 0.15);
 
   --bg-blue-2: #274f5b;
   --bg-green-2: #294d39;
