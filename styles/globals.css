@@ -10,7 +10,7 @@
 :root {
   --pad-tb: 2rem;
   --pad-lr: 2rem;
-  --visualizer-container-height: 70vh;
+  --visualizer-container-height: 75vh;
   --sidenav-width: 280px;
   --top-nav-height: 100px;
   --brand-nav-height: 150px;
@@ -108,4 +108,12 @@ body {
 
 .MuiSlider-thumb {
   background-color: var(--purple) !important;
+}
+
+.MuiTooltip-tooltip {
+  border-radius: 3px;
+  border: 1px solid var(--blue);
+  background: var(--bg-blue-2);
+  color: #fff;
+  transition: all 150ms ease-out;
 }
