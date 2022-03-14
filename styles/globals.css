@@ -101,9 +101,9 @@ body {
 }
 
 .MuiSlider-track {
-  background-color: var(--purple);
+  background-color: var(--purple) !important;
 }
 
 .MuiSlider-thumb {
-  background-color: var(--purple);
+  background-color: var(--purple) !important;
 }
