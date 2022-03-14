@@ -38,9 +38,11 @@
   --bg-purple-2: rgba(204, 108, 245, 0.3);
   --bg-red-2: rgba(250, 96, 104, 0.3);
 
-  --bg: #1a191b;
-  --visualizer-bg: #131314;
-  --border-color: #434346;
+  --slider-rail: rgba(204, 108, 245, 0.6);
+
+  --bg: #000;
+  --visualizer-bg: #111;
+  --border-color: #333333;
   --border-1: 1px solid var(--border-color);
 
   --text: #ffffff;
@@ -97,7 +99,7 @@ body {
 }
 
 .MuiSlider-rail {
-  background-color: var(--bg-purple-2) !important;
+  background-color: var(--slider-rail) !important;
 }
 
 .MuiSlider-track {
