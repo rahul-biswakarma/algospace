@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
 import Head from "next/head";
-import SideNav from "../components/SideNav/SideNav";
+import React, { useEffect } from "react";
 import Styles from "../styles/Home.module.css";
 
 const Home = () => {
-  useEffect(() => {
-    document.querySelector("body").classList.add("DarkUI");
-  });
 
   return (
     <>
@@ -14,7 +10,14 @@ const Home = () => {
         <title>AlgoSpace</title>
       </Head>
       <div className={Styles.Container}>
-        <div className={Styles.RightContainer}></div>
+        <div className={Styles.RightContainer}>
+          <div className={Styles.Header}>
+            <h1 className={Styles.BrandTitle}>
+              <span className={Styles.blueText}>Algo</span> Space
+            </h1>
+            <div className={Styles.version}>version 0.32</div>
+          </div>
+        </div>
       </div>
     </>
   );

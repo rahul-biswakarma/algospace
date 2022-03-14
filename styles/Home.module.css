@@ -1,1 +1,41 @@
+.RightContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: var(--bg-blue);
+}
 
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.BrandTitle {
+  font-size: 6rem;
+  font-family: "Bungee Shade", cursive;
+  z-index: 10;
+  margin-top: -4rem;
+}
+
+.version {
+  font-size: 13px;
+  color: var(--secndry-text);
+  z-index: 10;
+  font-weight: 600;
+  margin-top: -2rem;
+}
+
+.blueText {
+  font-size: 6rem;
+  color: var(--blue) !important;
+  font-family: "Libre Barcode 39 Text", cursive !important;
+  /* font-family: "Bungee Shade", cursive; */
+}

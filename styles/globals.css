@@ -23,6 +23,7 @@
   --pink: #fc57a1;
   --red: #fd777d;
   --purple: #c645fd;
+  --grey: #444444;
 
   --bg-blue: rgba(40, 206, 243, 0.15);
   --bg-green: rgba(36, 241, 118, 0.15);
@@ -116,4 +117,24 @@ body {
   background: var(--bg-blue-2);
   color: #fff;
   transition: all 150ms ease-out;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--visualizer-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
 }

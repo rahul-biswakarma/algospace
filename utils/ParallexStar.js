@@ -1,12 +1,12 @@
-export default function ParallexStar() {
-  var canvas = document.getElementById("canvas"),
+export default function ParallexStar(maxStarCount = 700, id = "canvas") {
+  var canvas = document.getElementById(id),
     ctx = canvas.getContext("2d"),
     w = (canvas.width = window.innerWidth),
     h = (canvas.height = window.innerHeight),
     hue = 205,
     stars = [],
     count = 0,
-    maxStars = 700;
+    maxStars = maxStarCount;
 
   // Thanks @jackrugile for the performance tip! https://codepen.io/jackrugile/pen/BjBGoM
   // Cache gradient

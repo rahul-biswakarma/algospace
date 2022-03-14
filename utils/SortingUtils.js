@@ -19,7 +19,7 @@ const GenerateArray = (elementWidth) => {
   let height = sortingArrayContainer.clientHeight;
   let width = sortingArrayContainer.offsetWidth - 100;
 
-  let maxHeight = Math.floor((height * 90) / 100);
+  let maxHeight = Math.floor((height * 80) / 100);
 
   let arrayCount = Math.floor(
     width / (visualArrayElementWidth + visualArrayElementGap)
@@ -27,7 +27,7 @@ const GenerateArray = (elementWidth) => {
 
   for (let i = 0; i < arrayCount; i++) {
     let sortingArrayElement = document.createElement("div");
-    let randomHeight = Math.floor(Math.random() * maxHeight + 5); // Generating random Array values for sorting
+    let randomHeight = Math.floor(Math.random() * maxHeight + 20); // Generating random Array values for sorting
 
     sortingArrayElement.style.height = randomHeight + "px";
     sortingArrayElement.style.width = visualArrayElementWidth + "px";

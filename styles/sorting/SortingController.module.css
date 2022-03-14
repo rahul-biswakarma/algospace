@@ -42,8 +42,7 @@
 .Container button:hover {
   background-color: var(--bg-pink);
   color: var(--pink);
-  cursor: pointer;
-  font-size: 17px;
+  cursor: pointer;  
 }
 
 .Container button:nth-child(1) {
@@ -52,10 +51,6 @@
 
 .Container button:hover .buttonIcons {
   transition: all 150ms ease-out;
-}
-
-.Container button:hover .buttonIcons {
-  transform: scale(1.05);
 }
 
 .startSortingAlgo {
