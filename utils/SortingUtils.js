@@ -1,3 +1,5 @@
+import { ArrayHTMLUpdater } from "./SortingTerminal";
+
 const SWAP_COLOR_BORDER = "var(--pink)";
 const SELECTED_COLOR_BORDER = "var(--orange)";
 const FINAL_POS_COLOR_BORDER = "var(--green)";
@@ -9,7 +11,11 @@ const DEFAULT_COLOR = "var(--bg-blue-2)";
 
 const GenerateArray = (elementWidth) => {
   let sortingArrayContainer = document.getElementById("sorting-array-c");
+  var sortingTerminal = document.getElementById("sortingTerminal");
+  sortingTerminal.innerHTML += "";
   sortingArrayContainer.innerHTML = "";
+
+  var arr = [];
 
   const visualArrayElementGap = 40 - elementWidth;
   const visualArrayElementWidth = 40 - elementWidth;
@@ -28,7 +34,7 @@ const GenerateArray = (elementWidth) => {
   for (let i = 0; i < arrayCount; i++) {
     let sortingArrayElement = document.createElement("div");
     let randomHeight = Math.floor(Math.random() * maxHeight + 20); // Generating random Array values for sorting
-
+    arr.push(randomHeight);
     sortingArrayElement.style.height = randomHeight + "px";
     sortingArrayElement.style.width = visualArrayElementWidth + "px";
 
@@ -38,6 +44,7 @@ const GenerateArray = (elementWidth) => {
 
     sortingArrayContainer.appendChild(sortingArrayElement);
   }
+  ArrayHTMLUpdater(arr);
 };
 
 const CompareHeigth = (a, b) => {

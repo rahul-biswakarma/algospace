@@ -34,9 +34,55 @@
   justify-content: space-evenly;
   padding: 0 40px;
   background: var(--visualizer-bg);
+  color: var(--text);
 }
 
 .HeightMarker {
   width: 100%;
   border-bottom: 1px dashed var(--border-color);
+}
+
+.SortingTerminalC {
+  padding: 3rem 50px;
+  background-color: var(--bg-blue);
+  border-top: 1px solid var(--bg-blue-2);
+  border-bottom: 1px solid var(--bg-blue-2);
+}
+
+.TerminalHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 2rem;
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.SortingTerminal {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+.ColorPurple {
+  color: var(--purple);
+}
+
+.ColorText {
+  color: var(--text);
+}
+
+.ColorOrange {
+  color: var(--orange);
+}
+
+.ColorBlue {
+  color: var(--blue);
+}
+
+.FlexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }

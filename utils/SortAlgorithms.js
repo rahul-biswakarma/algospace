@@ -1,3 +1,5 @@
+import { SwapHTMLUpdater, ComparisonsHTMLUpdater } from "./SortingTerminal";
+
 import {
   Swap,
   ChangeSingleElementColor,
@@ -23,6 +25,7 @@ const BubbleSort = async (delay) => {
 
   for (i = 0; i < arrLen - 1; i++) {
     for (j = 0; j < arrLen - i - 1; j++) {
+      ComparisonsHTMLUpdater();
       ChangePairElementColor(
         arr[j],
         arr[j + 1],
@@ -30,6 +33,7 @@ const BubbleSort = async (delay) => {
         SELECTED_COLOR_BORDER
       );
       await MakeDelay(Math.floor(delay / 2));
+
       if (CompareHeigth(arr[j], arr[j + 1])) {
         ChangePairElementColor(
           arr[j],
@@ -39,6 +43,7 @@ const BubbleSort = async (delay) => {
         );
         await MakeDelay(Math.floor(delay / 2));
         Swap(arr[j], arr[j + 1]);
+        SwapHTMLUpdater();
       }
       ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
     }

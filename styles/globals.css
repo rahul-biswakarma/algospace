@@ -63,6 +63,7 @@ body {
 .SortingArrayElement {
   background: var(--bg-blue-2);
   border: 1px solid var(--blue);
+  transition: height 50ms ease-out;
 }
 
 .main-container-algospace {

@@ -19,6 +19,7 @@
     "react-dom": "17.0.2",
     "react-feather": "^2.0.9",
     "react-github-btn": "^1.2.1",
+    "typeit-react": "^2.3.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
