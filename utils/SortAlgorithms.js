@@ -4,8 +4,10 @@ import {
   Swap,
   ChangeSingleElementColor,
   ChangePairElementColor,
+  ChangeCodeLineBg,
   MakeDelay,
   CompareHeigth,
+  UpdateStatsArray,
   SWAP_COLOR,
   SELECTED_COLOR,
   FINAL_POS_COLOR,
@@ -24,7 +26,9 @@ const BubbleSort = async (delay) => {
   arrLen = arr.length;
 
   for (i = 0; i < arrLen - 1; i++) {
+    ChangeCodeLineBg(-1, 0);
     for (j = 0; j < arrLen - i - 1; j++) {
+      ChangeCodeLineBg(0, 1);
       ComparisonsHTMLUpdater();
       ChangePairElementColor(
         arr[j],
@@ -35,23 +39,35 @@ const BubbleSort = async (delay) => {
       await MakeDelay(Math.floor(delay / 2));
 
       if (CompareHeigth(arr[j], arr[j + 1])) {
+        ChangeCodeLineBg(1,2);
         ChangePairElementColor(
           arr[j],
           arr[j + 1],
           SWAP_COLOR,
           SWAP_COLOR_BORDER
         );
-        await MakeDelay(Math.floor(delay / 2));
+
         Swap(arr[j], arr[j + 1]);
-        SwapHTMLUpdater();
+        ChangeCodeLineBg(2,3);
+        SwapHTMLUpdater(i, j);
+        await MakeDelay(Math.floor(delay / 2));
       }
+      ChangeCodeLineBg(3, -1);
       ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
+      UpdateStatsArray(
+        j,
+        j + 1,
+        parseInt(arr[j].style.height),
+        parseInt(arr[j + 1].style.height)
+      );
     }
     ChangeSingleElementColor(
       arr[arrLen - 1 - i],
       FINAL_POS_COLOR,
       FINAL_POS_COLOR_BORDER
     );
+    ChangeCodeLineBg(1, -1);
+    ChangeCodeLineBg(2, -1);
   }
   ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
 };

@@ -13,6 +13,9 @@
   border-right: var(--border-1);
   transition: all 200ms ease-out;
 }
+.IconContainer:nth-child(3) {
+  border: none;
+}
 
 .IconContainer:hover {
   background-color: var(--bg-blue);

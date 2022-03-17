@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SortingController from "./SortingController";
-import SortingVisualizer from "./SortingVisualizer";
+import SortingVisualizer from "./SortingVisualizer/Visualizer";
 
 const Sorting = (props) => {
   const [elementWidth, setElementWidth] = useState(20);
@@ -18,6 +18,7 @@ const Sorting = (props) => {
       <SortingVisualizer
         sortingDelay={sortingDelay}
         htmlContent={props.htmlContent}
+        code={props.code}
       />
     </div>
   );

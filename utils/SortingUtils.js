@@ -14,37 +14,33 @@ const GenerateArray = (elementWidth) => {
   var sortingTerminal = document.getElementById("sortingTerminal");
   sortingTerminal.innerHTML += "";
   sortingArrayContainer.innerHTML = "";
-
   var arr = [];
-
   const visualArrayElementGap = 40 - elementWidth;
   const visualArrayElementWidth = 40 - elementWidth;
-
   sortingArrayContainer.style.gap = visualArrayElementGap + "px";
-
   let height = sortingArrayContainer.clientHeight;
   let width = sortingArrayContainer.offsetWidth - 100;
-
   let maxHeight = Math.floor((height * 80) / 100);
-
   let arrayCount = Math.floor(
     width / (visualArrayElementWidth + visualArrayElementGap)
   );
-
   for (let i = 0; i < arrayCount; i++) {
     let sortingArrayElement = document.createElement("div");
     let randomHeight = Math.floor(Math.random() * maxHeight + 20); // Generating random Array values for sorting
     arr.push(randomHeight);
     sortingArrayElement.style.height = randomHeight + "px";
     sortingArrayElement.style.width = visualArrayElementWidth + "px";
-
-    sortingArrayElement.setAttribute("data-index", i);
-
     sortingArrayElement.classList.add("SortingArrayElement");
-
     sortingArrayContainer.appendChild(sortingArrayElement);
   }
   ArrayHTMLUpdater(arr);
+};
+
+const UpdateStatsArray = async (i, j, iValue, jValue) => {
+  var iArr = "sortingStatsArray" + i;
+  var jArr = "sortingStatsArray" + j;
+  document.getElementById(iArr).innerHTML = iValue;
+  document.getElementById(jArr).innerHTML = jValue;
 };
 
 const CompareHeigth = (a, b) => {
@@ -59,6 +55,13 @@ const ChangePairElementColor = (a, b, c, d) => {
   b.style.background = c;
   a.style.borderColor = d;
   b.style.borderColor = d;
+
+  try {
+    var iArr = "sortingStatsArray" + i;
+    var jArr = "sortingStatsArray" + j;
+    document.getElementById(iArr).innerHTML = iValue;
+    document.getElementById(jArr).innerHTML = jValue;
+  } catch {}
   return Promise.resolve("Success");
 };
 
@@ -78,11 +81,25 @@ const Swap = (x, y) => {
   y.style.height = temp;
 };
 
+const ChangeCodeLineBg = async (prevLine, currentLine) => {
+  await new Promise(() => {
+    var codeLines = document.querySelectorAll(".token-line");
+    if (prevLine != -1) {
+      codeLines[prevLine].style.background = "transparent";
+    }
+    if (currentLine != -1) {
+      codeLines[currentLine].style.background = "var(--bg-blue-2)";
+    }
+  });
+};
+
 export {
   GenerateArray,
   CompareHeigth,
+  UpdateStatsArray,
   ChangeSingleElementColor,
   ChangePairElementColor,
+  ChangeCodeLineBg,
   MakeDelay,
   Swap,
   SELECTED_COLOR,

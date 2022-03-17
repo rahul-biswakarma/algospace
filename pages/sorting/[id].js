@@ -27,6 +27,7 @@ function SortingMain({ data }) {
         className={Styles.RightContainer}
         funcName={data.funcName}
         htmlContent={data.html}
+        code={data.code}
       />
     </>
   );

@@ -7,17 +7,17 @@ const ArrayHTMLUpdater = async (arr) => {
   await new Promise(() => {
     for (let i = 0; i < arr.length; i++) {
       if (i == arr.length - 1) {
-        ArraySpan.innerHTML +=
-          arr[i] + "<span style='color:var(--text);'> </span>";
+        ArraySpan.innerHTML += "<span id='sortingStatsArray" + i + "'>"+
+        arr[i] + "</span><span style='color:var(--text);'> </span>";
       } else {
-        ArraySpan.innerHTML +=
-          arr[i] + "<span style='color:var(--text);'>,</span>";
+        ArraySpan.innerHTML += "<span id='sortingStatsArray" + i + "'>"+
+        arr[i] + "</span><span style='color:var(--text);'>,</span>";
       }
     }
 
     document.getElementById("totalElementsInArray").innerHTML = arr.length;
-    document.getElementById("swapValueC").innerHTML = "_";
-    document.getElementById("comparisonValueC").innerHTML = "_";
+    document.getElementById("swapValueC").innerHTML = "0";
+    document.getElementById("comparisonValueC").innerHTML = "0";
   });
 };
 
