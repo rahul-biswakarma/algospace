@@ -1,6 +1,6 @@
 import { Tooltip, Grow } from "@mui/material";
 import React from "react";
-import ChangeAlgoOptions from "../../../utils/ChangeALgoOptions";
+import ChangeAlgoOptions from "../../../utils/ChangeAlgoOptions";
 import { BarChart2, Code, FileText } from "react-feather";
 
 const AlgoOptionsHeader = (props) => {
