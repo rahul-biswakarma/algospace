@@ -16,9 +16,9 @@ const AlgoCodeVisualizer = (props) => {
           className={`${props.Styles.CodePreTag} hideOptionDivs`}
         >
           {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
+            <div key="codeDiv" {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span {...getTokenProps({ token, key: "codeSpan" + i })} />
+                <span key="codeSpan" {...getTokenProps({ token, key })} />
               ))}
             </div>
           ))}
