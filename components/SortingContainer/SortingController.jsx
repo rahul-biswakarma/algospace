@@ -10,13 +10,15 @@ const SortingController = (props) => {
   var sortingFunc;
 
   useEffect(() => {
-    document.getElementById("sorting-array-c");
-    generateArray();
+    // document.getElementById("sorting-array-c");
+    try {
+      GenerateArray(props.elementWidth);
+    } catch {}
   }, []);
 
-  const generateArray = () => {
-    GenerateArray(props.elementWidth);
-  };
+  // const generateArray = () => {
+  //   GenerateArray(props.elementWidth);
+  // };
 
   const startAlgo = () => {
     // Need to modified when new alogs are added
@@ -27,7 +29,12 @@ const SortingController = (props) => {
 
   return (
     <div className={Styles.Container}>
-      <button id="generatArrayButton" onClick={generateArray}>
+      <button
+        id="generatArrayButton"
+        onClick={() => {
+          GenerateArray(props.elementWidth);
+        }}
+      >
         <Grid className={Styles.buttonIcons} />
         Generate Array
       </button>

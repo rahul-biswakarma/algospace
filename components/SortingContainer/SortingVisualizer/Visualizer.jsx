@@ -7,7 +7,9 @@ import Styles from "../../../styles/sorting/SortingVisualizer.module.css";
 
 const SortingVisualizer = (props) => {
   useEffect(() => {
-    document.getElementById("sorting-text").innerHTML = props.htmlContent;
+    try {
+      document.getElementById("sorting-text").innerHTML = props.htmlContent;
+    } catch {}
   }, []);
 
   return (
