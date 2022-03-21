@@ -1,54 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Slider } from "@mui/material";
 import { Grid, Play } from "react-feather";
-import { GenerateArray } from "../../utils/Sorting/SortingUtils";
-import * as SortingAlgo from "../../utils/Sorting/SortAlgorithms";
+import { GenerateDisc } from "../../utils/TowerOfHanoi/TohUtils";
 import Styles from "../../styles/sorting/SortingController.module.css";
 
-const SortingController = (props) => {
-  var sortingFunc;
-
-  useEffect(() => {
-    // document.getElementById("sorting-array-c");
-    try {
-      GenerateArray(props.elementWidth);
-    } catch {}
-  }, []);
-
-  // const generateArray = () => {
-  //   GenerateArray(props.elementWidth);
-  // };
-
-  const startAlgo = () => {
-    // *** Need to modified when new alogs are added ***
-    if (props.funcName == "BubbleSort") {
-      sortingFunc = SortingAlgo.BubbleSort(props.sortingDelay);
-    }
-  };
-
+const TowerOfHanoiController = (props) => {
   return (
     <div className={Styles.Container}>
       <button
         id="generatArrayButton"
         onClick={() => {
-          GenerateArray(props.elementWidth);
+          GenerateDisc(props.discCount);
         }}
       >
         <Grid className={Styles.buttonIcons} />
-        Generate Array
+        Generate Disc
       </button>
       <div className={Styles.SliderC}>
-        Array Count
+        Disc Count
         <Slider
           className={Styles.Slider}
           key={uuidv4()}
-          defaultValue={props.elementWidth}
+          defaultValue={props.discCount}
           aria-label="Array Element Count Slider"
-          min={0}
-          max={35}
+          min={2}
+          max={15}
           valueLabelDisplay="off"
-          onChange={(e, val) => props.setElementWidth(val)}
+          onChange={(e, val) => props.setDiscCount(val)}
         />
       </div>
       <div className={Styles.SliderC}>
@@ -64,11 +43,7 @@ const SortingController = (props) => {
           onChange={(e, val) => props.setSortingDelay(val)}
         />
       </div>
-      <button
-        className={Styles.startSortingAlgo}
-        id="startSortingAlgo"
-        onClick={startAlgo}
-      >
+      <button className={Styles.startSortingAlgo} id="startSortingAlgo">
         <Play className={Styles.buttonIcons} />
         Start
       </button>
@@ -76,4 +51,4 @@ const SortingController = (props) => {
   );
 };
 
-export default SortingController;
+export default TowerOfHanoiController;

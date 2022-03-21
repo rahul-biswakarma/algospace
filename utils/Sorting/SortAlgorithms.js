@@ -39,7 +39,7 @@ const BubbleSort = async (delay) => {
       await MakeDelay(Math.floor(delay / 2));
 
       if (CompareHeigth(arr[j], arr[j + 1])) {
-        ChangeCodeLineBg(1,2);
+        ChangeCodeLineBg(1, 2);
         ChangePairElementColor(
           arr[j],
           arr[j + 1],
@@ -48,7 +48,7 @@ const BubbleSort = async (delay) => {
         );
 
         Swap(arr[j], arr[j + 1]);
-        ChangeCodeLineBg(2,3);
+        ChangeCodeLineBg(2, 3);
         SwapHTMLUpdater(i, j);
         await MakeDelay(Math.floor(delay / 2));
       }

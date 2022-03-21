@@ -3,6 +3,7 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import Collapsible from "react-collapsible";
 import algorithms from "../../data/algorithms.json";
+import singleAlgorithms from "../../data/singleAlgorithms.json";
 import Styles from "../../styles/side-nav/SideNavLinks.module.css";
 
 const SideNavLinks = () => {
@@ -30,6 +31,13 @@ const SideNavLinks = () => {
               );
             })}
           </Collapsible>
+        );
+      })}
+      {singleAlgorithms.map((algorithm) => {
+        return (
+          <Link key={algorithm.id} href={"/" + algorithm.id}>
+            <a className={Styles.singleAlgoLinks}>{algorithm.name}</a>
+          </Link>
         );
       })}
     </div>

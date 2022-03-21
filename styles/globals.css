@@ -15,6 +15,10 @@
   --brand-nav-height: 150px;
   --option-header-height: 70px;
   --visualizer-container-height: 75vh;
+
+  /* Tower Of Hanoi */
+  --tower-base-height: 10px;
+  --toh-visualizer-height: 50vh;
 }
 
 .DarkUI {
@@ -37,7 +41,7 @@
   --bg-green-2: #294d39;
   --bg-orange-2: #5a3c22;
   --bg-pink-2: #5f3649;
-  --bg-purple-2: rgba(204, 108, 245, 0.3);
+  --bg-purple-2: #3e214a;
   --bg-red-2: rgba(250, 96, 104, 0.3);
 
   --slider-rail: rgba(204, 108, 245, 0.6);
@@ -69,6 +73,15 @@ body {
   background: var(--bg-blue-2);
   border: 1px solid var(--blue);
   transition: height 50ms ease-out;
+}
+
+.TowerDisc {
+  background: var(--bg-blue-2);
+  border: 1px solid var(--blue);
+  margin-bottom: 1rem;
+  max-height: 50px;
+  z-index: 3;
+  transition: width 50ms ease-out;
 }
 
 .main-container-algospace {
