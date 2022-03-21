@@ -1,0 +1,9 @@
+{
+  "id": "selection-sort",
+  "title": "Selection Sort",
+  "funcName": "SelectionSort",
+  "html": [
+    "<h1>Selection Sort</h1>"
+  ],
+  "code": "for (let i = 0; i < arrLen - 1; i++){\n  for (let j = i; j < arrLen - 1; j++){\n let minIndex = 0;\n  if (CompareHeigth(arr[j], arr[minIndex])){\n   minIndex=j;\n   }\n }\n}"
+}
