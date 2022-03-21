@@ -72,4 +72,56 @@ const BubbleSort = async (delay) => {
   ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
 };
 
-export { BubbleSort };
+
+const SelectionSort = async (delay) => {
+  var i, j;
+  var arrLen;
+  var arr = document.querySelectorAll(".SortingArrayElement");
+
+  arrLen = arr.length;
+
+  for (i = 0; i < arrLen - 1; i++) {
+    ChangeCodeLineBg(-1, 0);
+    let minIndex = 0;
+    for (j = i; j < arrLen; j++) {
+      ChangeCodeLineBg(0, 1);
+      ComparisonsHTMLUpdater();
+      ChangePairElementColor(
+        arr[j],
+        arr[j + 1],
+        SELECTED_COLOR,
+        SELECTED_COLOR_BORDER
+      );
+      await MakeDelay(Math.floor(delay / 2));
+
+      if (CompareHeigth(arr[j], arr[minIndex])) {
+        ChangeCodeLineBg(1, 2);
+        minIndex = j;
+        ChangeCodeLineBg(2, 3);
+      }
+      ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
+      UpdateStatsArray(
+        j,
+        j + 1,
+        parseInt(arr[j].style.height),
+        parseInt(arr[j + 1].style.height)
+      );
+    }
+    Swap(arr[j], arr[minIndex]);
+    SwapHTMLUpdater(minIndex, j);
+    ChangeCodeLineBg(3, 4);
+    await MakeDelay(Math.floor(delay / 2));
+    
+    
+    ChangeSingleElementColor(
+      arr[arrLen - 1 - i],
+      FINAL_POS_COLOR,
+      FINAL_POS_COLOR_BORDER
+    );
+    ChangeCodeLineBg(1, -1);
+    ChangeCodeLineBg(2, -1);
+  }
+  ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
+};
+
+export { BubbleSort, SelectionSort };
