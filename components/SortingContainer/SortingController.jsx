@@ -24,6 +24,8 @@ const SortingController = (props) => {
     // *** Need to modified when new alogs are added ***
     if (props.funcName == "BubbleSort") {
       sortingFunc = SortingAlgo.BubbleSort(props.sortingDelay);
+    }else if (props.funcName == "SelectionSort") {
+      sortingFunc = SortingAlgo.SelectionSort(props.sortingDelay);
     }
   };
 
