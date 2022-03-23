@@ -72,56 +72,60 @@ const BubbleSort = async (delay) => {
   ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
 };
 
-
 const SelectionSort = async (delay) => {
-  var i, j;
-  var arrLen;
+  var i, j, arrLen;
+  var minIndex = 0;
   var arr = document.querySelectorAll(".SortingArrayElement");
 
   arrLen = arr.length;
 
   for (i = 0; i < arrLen - 1; i++) {
     ChangeCodeLineBg(-1, 0);
-    let minIndex = 0;
-    for (j = i; j < arrLen; j++) {
+
+    minIndex = i;
+
+    for (j = i + 1; j < arrLen; j++) {
       ChangeCodeLineBg(0, 1);
       ComparisonsHTMLUpdater();
-      ChangePairElementColor(
-        arr[j],
-        arr[j + 1],
-        SELECTED_COLOR,
-        SELECTED_COLOR_BORDER
-      );
+      ChangeSingleElementColor(arr[j], SELECTED_COLOR, SELECTED_COLOR_BORDER);
+
       await MakeDelay(Math.floor(delay / 2));
 
-      if (CompareHeigth(arr[j], arr[minIndex])) {
+      if (CompareHeigth(arr[minIndex], arr[j])) {
         ChangeCodeLineBg(1, 2);
+        ChangeSingleElementColor(
+          arr[minIndex],
+          DEFAULT_COLOR,
+          DEFAULT_COLOR_BORDER
+        );
         minIndex = j;
         ChangeCodeLineBg(2, 3);
       }
       ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
       UpdateStatsArray(
         j,
-        j + 1,
+        minIndex,
         parseInt(arr[j].style.height),
-        parseInt(arr[j + 1].style.height)
+        parseInt(arr[minIndex].style.height)
       );
+      ChangeSingleElementColor(arr[minIndex], SWAP_COLOR, SWAP_COLOR_BORDER);
     }
-    Swap(arr[j], arr[minIndex]);
+    Swap(arr[i], arr[minIndex]);
     SwapHTMLUpdater(minIndex, j);
-    ChangeCodeLineBg(3, 4);
+    ChangeSingleElementColor(arr[i], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
+
     await MakeDelay(Math.floor(delay / 2));
-    
-    
-    ChangeSingleElementColor(
-      arr[arrLen - 1 - i],
-      FINAL_POS_COLOR,
-      FINAL_POS_COLOR_BORDER
-    );
+
+    ChangeCodeLineBg(3, 4);
     ChangeCodeLineBg(1, -1);
     ChangeCodeLineBg(2, -1);
   }
-  ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
+
+  ChangeSingleElementColor(
+    arr[arrLen - 1],
+    FINAL_POS_COLOR,
+    FINAL_POS_COLOR_BORDER
+  );
 };
 
 export { BubbleSort, SelectionSort };
