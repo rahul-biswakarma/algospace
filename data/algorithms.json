@@ -11,21 +11,5 @@
       },
       { "id": "quick-sort", "name": "Quick Sort", "funcname": "QuickSort" }
     ]
-  },
-  {
-    "name": "Searching",
-    "id": "searching",
-    "algorithms": [
-      {
-        "id": "binary-search",
-        "name": "Binary Search",
-        "funcname": "BinarySearch"
-      },
-      {
-        "id": "linear-search",
-        "name": "Linear Search",
-        "funcname": "LinearSearch"
-      }
-    ]
   }
 ]

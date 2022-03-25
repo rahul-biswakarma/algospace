@@ -1,5 +1,3 @@
-import { width } from "@mui/system";
-
 const GenerateDisc = (discCount) => {
   var tower = document.getElementById("tohTower1");
   document.getElementById("tohTower2").innerHTML = "";
@@ -18,7 +16,7 @@ const GenerateDisc = (discCount) => {
     console.log("Width: ", discWidth);
     arr.push(discWidth);
     var disc = document.createElement("div");
-    disc.setAttribute("id", "tohD" + (i + 1));
+    disc.setAttribute("id", "tohD" + (noOfDics - i));
     disc.style.height = discHeight + "px";
     disc.style.width = discWidth + "px";
     disc.classList.add("TowerDisc");

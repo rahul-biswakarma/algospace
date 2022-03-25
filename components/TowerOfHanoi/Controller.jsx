@@ -3,9 +3,14 @@ import { v4 as uuidv4 } from "uuid";
 import { Slider } from "@mui/material";
 import { Grid, Play } from "react-feather";
 import { GenerateDisc } from "../../utils/TowerOfHanoi/TohUtils";
+import TowerOfHanoi from "../../utils/TowerOfHanoi/TowerOfHanoi";
 import Styles from "../../styles/sorting/SortingController.module.css";
 
 const TowerOfHanoiController = (props) => {
+  const startToh = () => {
+    TowerOfHanoi(props.discCount, props.sortingDelay);
+  };
+
   return (
     <div className={Styles.Container}>
       <button
@@ -43,7 +48,11 @@ const TowerOfHanoiController = (props) => {
           onChange={(e, val) => props.setSortingDelay(val)}
         />
       </div>
-      <button className={Styles.startSortingAlgo} id="startSortingAlgo">
+      <button
+        onClick={startToh}
+        className={Styles.startSortingAlgo}
+        id="startSortingAlgo"
+      >
         <Play className={Styles.buttonIcons} />
         Start
       </button>
