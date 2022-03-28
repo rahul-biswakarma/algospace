@@ -9,7 +9,7 @@
         "name": "Selection Sort",
         "funcname": "SelectionSort"
       },
-      { "id": "quick-sort", "name": "Quick Sort", "funcname": "QuickSort" }
+      { "id": "merge-sort", "name": "Merge Sort", "funcname": "MergeSort" }
     ]
   }
 ]

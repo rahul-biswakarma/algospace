@@ -1,0 +1,7 @@
+{
+  "id": "merge-sort",
+  "title": "Merge Sort",
+  "funcName": "MergeSort",
+  "html": ["<h1>Merge Sort</h1>"],
+  "code": "for (let i = 0; i < arrLen - 1; i++){\n  for (let j = 0; j < arrLen - i - 1; j++){\n   if (CompareHeigth(arr[j], arr[j + 1])){\n     Swap(arr[j], arr[j + 1]);\n   }\n }\n}"
+}

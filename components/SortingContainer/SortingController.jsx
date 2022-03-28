@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Slider } from "@mui/material";
 import { Grid, Play } from "react-feather";
 import { GenerateArray } from "../../utils/Sorting/SortingUtils";
-import * as SortingAlgo from "../../utils/Sorting/SortAlgorithms";
+import * as SortingAlgo from "../../utils/Sorting/SortingAlgorithms";
 import Styles from "../../styles/sorting/SortingController.module.css";
 
 const SortingController = (props) => {
@@ -24,8 +24,10 @@ const SortingController = (props) => {
     // *** Need to modified when new alogs are added ***
     if (props.funcName == "BubbleSort") {
       sortingFunc = SortingAlgo.BubbleSort(props.sortingDelay);
-    }else if (props.funcName == "SelectionSort") {
+    } else if (props.funcName == "SelectionSort") {
       sortingFunc = SortingAlgo.SelectionSort(props.sortingDelay);
+    } else if (props.funcName == "MergeSort") {
+      sortingFunc = SortingAlgo.MergeSort(props.sortingDelay);
     }
   };
 
