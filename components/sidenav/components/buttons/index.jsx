@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import { Tooltip, Grow } from "@mui/material";
-import { Star, GitHub, Settings, Sun, User } from "react-feather";
-import Styles from "../../styles/side-nav/SideNavButtons.module.css";
+import { Star, GitHub, User } from "react-feather";
+import Styles from "./Styles.module.css";
 
 function SideNavButtons() {
   return (
@@ -32,12 +31,6 @@ function SideNavButtons() {
           <User className={Styles.Icons} />
         </div>
       </Tooltip>
-      {/* <div className={Styles.IconContainer}>
-        <Settings className={Styles.Icons} />
-      </div>
-      <div className={Styles.IconContainer + " " + Styles.LastIconContainer}>
-        <Sun className={Styles.Icons} />
-      </div> */}
     </div>
   );
 }
