@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Collapsible from "react-collapsible";
 import algorithms from "/data/Algorithms.json";
 import singleAlgorithms from "/data/SingleAlgorithms.json";
-import Styles from "./Styles.module.css";
+import Styles from "./style.module.css";
 
 const SideNavLinks = () => {
   return (

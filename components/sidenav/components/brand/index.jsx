@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ParallexStar from "/utils/ParallexStar";
-import Styles from "./Styles.module.css";
+import Styles from "./style.module.css";
 
 const SideNavBrand = () => {
   useEffect(() => {

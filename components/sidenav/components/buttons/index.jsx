@@ -1,7 +1,7 @@
 import React from "react";
 import { Tooltip, Grow } from "@mui/material";
 import { Star, GitHub, User } from "react-feather";
-import Styles from "./Styles.module.css";
+import Styles from "./style.module.css";
 
 function SideNavButtons() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import SideNavBrand from "./components/brand";
 import SideNavButtons from "./components/buttons";
 import SideNavLinks from "./components/links";
-import Styles from "../../styles/side-nav/SideNav.module.css";
+import Styles from "./style.module.css";
 
 const SideNav = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SortingController from "./SortingController";
-import SortingVisualizer from "./SortingVisualizer/Visualizer";
+import SortingController from "./controller";
+import SortingVisualizer from "./visualizer";
 
 const Sorting = (props) => {
   const [elementWidth, setElementWidth] = useState(20);

@@ -1,13 +1,11 @@
-import React from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import Styles from "../../styles/sorting/Sorting.module.css";
-import Sorting from "../../components/SortingContainer/Sorting";
+import { useRouter } from "next/router";
+import Sorting from "/components/sorting";
+import Styles from "/styles/Sorting.module.css";
 
 export async function getServerSideProps(context) {
-  var fileName = context.params.id;
+  var fileName = context.params.algo;
   var data = require(`/data/sorting/${fileName}.json`);
-
   return {
     props: { data },
   };
@@ -15,8 +13,6 @@ export async function getServerSideProps(context) {
 
 function SortingMain({ data }) {
   var title = data.title;
-  const router = useRouter();
-  var { id } = router.query;
 
   return (
     <>

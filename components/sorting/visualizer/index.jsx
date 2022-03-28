@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import SortingAlgoStats from "./AlgoStats";
-import HeightLevelMarker from "./HeightLevelMarker";
-import AlgoOptionsHeader from "./AlgoOptionsHeader";
-import AlgoCodeVisualizer from "./AlgoCodeVisualizer";
-import Styles from "../../../styles/sorting/SortingVisualizer.module.css";
+import SortingAlgoStats from "./components/AlgoStats";
+import HeightLevelMarker from "./components/HeightLevelMarker";
+import AlgoOptionsHeader from "./components/AlgoOptionsHeader";
+import AlgoCodeVisualizer from "./components/AlgoCodeVisualizer";
+import Styles from "./styles.module.css";
 
 const SortingVisualizer = (props) => {
   useEffect(() => {
@@ -21,7 +21,6 @@ const SortingVisualizer = (props) => {
         className="algoOptionDivs showOptionDivs"
         Styles={Styles}
       />
-      <AlgoCodeVisualizer Styles={Styles} algoCode={props.code} />
       <div className={Styles.BlogContainer} id="sorting-text"></div>
     </div>
   );
