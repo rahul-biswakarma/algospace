@@ -81,25 +81,12 @@ const Swap = (x, y) => {
   y.style.height = temp;
 };
 
-const ChangeCodeLineBg = async (prevLine, currentLine) => {
-  await new Promise(() => {
-    var codeLines = document.querySelectorAll(".token-line");
-    if (prevLine != -1) {
-      codeLines[prevLine].style.background = "transparent";
-    }
-    if (currentLine != -1) {
-      codeLines[currentLine].style.background = "var(--bg-blue-2)";
-    }
-  });
-};
-
 export {
   GenerateArray,
   CompareHeigth,
   UpdateStatsArray,
   ChangeSingleElementColor,
   ChangePairElementColor,
-  ChangeCodeLineBg,
   MakeDelay,
   Swap,
   SELECTED_COLOR,

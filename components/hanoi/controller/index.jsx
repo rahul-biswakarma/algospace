@@ -3,7 +3,7 @@ import StartButton from "./component/start";
 import CountSlider from "./component/count";
 import DelaySlider from "./component/delay";
 import GenerateDiscButton from "./component/generate";
-import TowerOfHanoi from "/utils/TowerOfHanoi/TowerOfHanoi";
+import TowerOfHanoi from "../../../utils/TowerOfHanoi/TowerOfHanoi";
 
 const TowerOfHanoiController = (props) => {
   const startToh = () => {

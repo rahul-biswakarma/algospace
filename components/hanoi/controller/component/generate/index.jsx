@@ -1,5 +1,5 @@
 import { Grid } from "react-feather";
-import { GenerateDisc } from "/utils/TowerOfHanoi/TohUtils";
+import { GenerateDisc } from "../../../../../utils/TowerOfHanoi/TohUtils";
 
 const GenerateDiscButton = (props) => {
   return (

@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import Sorting from "/components/sorting";
-import Styles from "/styles/Sorting.module.css";
+import Sorting from "../../components/sorting";
+import Styles from "../../styles/Sorting.module.css";
 
 export async function getServerSideProps(context) {
   var fileName = context.params.algo;

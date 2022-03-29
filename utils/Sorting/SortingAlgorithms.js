@@ -4,7 +4,6 @@ import {
   Swap,
   ChangeSingleElementColor,
   ChangePairElementColor,
-  ChangeCodeLineBg,
   MakeDelay,
   CompareHeigth,
   UpdateStatsArray,
@@ -26,9 +25,7 @@ const BubbleSort = async (delay) => {
   arrLen = arr.length;
 
   for (i = 0; i < arrLen - 1; i++) {
-    ChangeCodeLineBg(-1, 0);
     for (j = 0; j < arrLen - i - 1; j++) {
-      ChangeCodeLineBg(0, 1);
       ComparisonsHTMLUpdater();
       ChangePairElementColor(
         arr[j],
@@ -39,7 +36,6 @@ const BubbleSort = async (delay) => {
       await MakeDelay(Math.floor(delay / 2));
 
       if (CompareHeigth(arr[j], arr[j + 1])) {
-        ChangeCodeLineBg(1, 2);
         ChangePairElementColor(
           arr[j],
           arr[j + 1],
@@ -48,11 +44,9 @@ const BubbleSort = async (delay) => {
         );
 
         Swap(arr[j], arr[j + 1]);
-        ChangeCodeLineBg(2, 3);
         SwapHTMLUpdater(i, j);
         await MakeDelay(Math.floor(delay / 2));
       }
-      ChangeCodeLineBg(3, -1);
       ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
       UpdateStatsArray(
         j,
@@ -66,8 +60,6 @@ const BubbleSort = async (delay) => {
       FINAL_POS_COLOR,
       FINAL_POS_COLOR_BORDER
     );
-    ChangeCodeLineBg(1, -1);
-    ChangeCodeLineBg(2, -1);
   }
   ChangeSingleElementColor(arr[0], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
 };
@@ -80,26 +72,21 @@ const SelectionSort = async (delay) => {
   arrLen = arr.length;
 
   for (i = 0; i < arrLen - 1; i++) {
-    ChangeCodeLineBg(-1, 0);
-
     minIndex = i;
 
     for (j = i + 1; j < arrLen; j++) {
-      ChangeCodeLineBg(0, 1);
       ComparisonsHTMLUpdater();
       ChangeSingleElementColor(arr[j], SELECTED_COLOR, SELECTED_COLOR_BORDER);
 
       await MakeDelay(Math.floor(delay / 2));
 
       if (CompareHeigth(arr[minIndex], arr[j])) {
-        ChangeCodeLineBg(1, 2);
         ChangeSingleElementColor(
           arr[minIndex],
           DEFAULT_COLOR,
           DEFAULT_COLOR_BORDER
         );
         minIndex = j;
-        ChangeCodeLineBg(2, 3);
       }
       ChangeSingleElementColor(arr[j], DEFAULT_COLOR, DEFAULT_COLOR_BORDER);
       UpdateStatsArray(
@@ -115,10 +102,6 @@ const SelectionSort = async (delay) => {
     ChangeSingleElementColor(arr[i], FINAL_POS_COLOR, FINAL_POS_COLOR_BORDER);
 
     await MakeDelay(Math.floor(delay / 2));
-
-    ChangeCodeLineBg(3, 4);
-    ChangeCodeLineBg(1, -1);
-    ChangeCodeLineBg(2, -1);
   }
 
   ChangeSingleElementColor(

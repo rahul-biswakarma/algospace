@@ -4,8 +4,8 @@ import StartButon from "./components/start";
 import CountSlider from "./components/count";
 import DelaySlider from "./components/delay";
 import GenerateButton from "./components/generate";
-import { GenerateArray } from "/utils/Sorting/SortingUtils";
-import * as SortingAlgo from "/utils/Sorting/SortingAlgorithms";
+import { GenerateArray } from "../../../utils/Sorting/SortingUtils";
+import * as SortingAlgo from "../../../utils/Sorting/SortingAlgorithms";
 
 const SortingController = (props) => {
   useEffect(() => {
