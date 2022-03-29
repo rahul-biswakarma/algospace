@@ -13,7 +13,6 @@ const GenerateDisc = (discCount) => {
   var discWidth = Math.floor(towerWidth / noOfDics + 1);
   const tempDiscWidth = discWidth;
   for (let i = 0; i < noOfDics; i++) {
-    console.log("Width: ", discWidth);
     arr.push(discWidth);
     var disc = document.createElement("div");
     disc.setAttribute("id", "tohD" + (noOfDics - i));

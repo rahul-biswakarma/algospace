@@ -1,29 +1,27 @@
 import { MakeDelay } from "./TohUtils";
 
-const transferDisc = (source, destination) => {
-  let dn = document.getElementById(source).childNodes[0];
-  let dnClone = dn.cloneNode(true);
-  dn.remove();
-  document.getElementById(destination).appendChild(dnClone);
+const transferDisc = async (source, destination) => {
+  try {
+    let dn = document.getElementById(source).childNodes[0];
+    let dnClone = dn.cloneNode(true);
+    dn.remove();
+    document
+      .getElementById(destination)
+      .insertBefore(
+        dnClone,
+        document.getElementById(destination).childNodes[0]
+      );
+  } catch {}
 };
 
 const TowerOfHanoiFunction = async (n, from, to, aux, delay) => {
-  if (n == 1) {
-    transferDisc(from, to);
+  if (n == 0) {
     return;
   }
-
-  TowerOfHanoiFunction(n - 1, from, to, aux, delay);
-
-  transferDisc(from, to);
-
+  await TowerOfHanoiFunction(n - 1, from, aux, to, delay);
+  await transferDisc(from, to);
   await MakeDelay(delay);
-
-  TowerOfHanoiFunction(n - 1, aux, from, to, delay);
-
-  transferDisc(aux, from);
-
-  await MakeDelay(delay);
+  await TowerOfHanoiFunction(n - 1, aux, to, from, delay);
 };
 
 const TowerOfHanoi = async (discCount, delay) => {

@@ -1,8 +1,7 @@
 import { Tooltip, Grow } from "@mui/material";
-import ChangeAlgoOptions from "/utils/ChangeAlgoOptions";
 import { BarChart2, Code, FileText } from "react-feather";
 
-const AlgoOptionsHeader = (props) => {
+const StatsNav = (props) => {
   return (
     <div className={props.Styles.OptionsHeaderC}>
       <div className={props.Styles.OptionHeaderTitle} id="optionHeaderTitle">
@@ -27,4 +26,4 @@ const AlgoOptionsHeader = (props) => {
   );
 };
 
-export default AlgoOptionsHeader;
+export default StatsNav;

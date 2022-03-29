@@ -1,0 +1,77 @@
+.Container {
+  min-height: var(--top-nav-height);
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  border-bottom: var(--border-1);
+  transition: all 150ms ease-out;
+}
+
+.Container div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--text);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-right: var(--border-1);
+  transition: all 150ms ease-out;
+}
+
+.Container button {
+  background: none;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--text);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 150ms ease-out;
+  color: var(--pink);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 150ms ease-out;
+}
+
+.Container button:hover {
+  background-color: var(--bg-pink);
+  color: var(--pink);
+  cursor: pointer;  
+}
+
+.Container button:nth-child(1) {
+  border-right: var(--border-1);
+}
+
+.Container button:hover .buttonIcons {
+  transition: all 150ms ease-out;
+}
+
+.startSortingAlgo {
+  color: var(--green) !important;
+}
+
+.startSortingAlgo:hover {
+  background-color: var(--bg-green) !important;
+  color: var(--green) !important;
+}
+
+.SliderC {
+  transition: all 150ms ease-out;
+  color: var(--purple) !important;
+}
+
+.SliderC:hover {
+  background: var(--bg-purple);
+  color: var(--purple);
+}
+
+.Slider {
+  width: 100%;
+}

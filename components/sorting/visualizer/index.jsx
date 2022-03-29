@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
+import Styles from "./styles.module.css";
+import StatsNav from "./components/StatsNav";
 import SortingAlgoStats from "./components/AlgoStats";
 import HeightLevelMarker from "./components/HeightLevelMarker";
-import AlgoOptionsHeader from "./components/AlgoOptionsHeader";
-import AlgoCodeVisualizer from "./components/AlgoCodeVisualizer";
-import Styles from "./styles.module.css";
 
 const SortingVisualizer = (props) => {
   useEffect(() => {
@@ -16,7 +15,7 @@ const SortingVisualizer = (props) => {
     <div className={Styles.MainC}>
       <HeightLevelMarker Styles={Styles} />
       <div className={Styles.Container} id="sorting-array-c"></div>
-      <AlgoOptionsHeader Styles={Styles} />
+      <StatsNav Styles={Styles} />
       <SortingAlgoStats
         className="algoOptionDivs showOptionDivs"
         Styles={Styles}

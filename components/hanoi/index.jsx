@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TowerOfHanoiController from "./Controller";
-import TowerOfHanoiVisualizer from "./Visualizer";
-import Styles from "../../styles/tower-of-hanoi/TowerOfHanoi.module.css";
+import TowerOfHanoiController from "./controller";
+import TowerOfHanoiVisualizer from "./visualizer";
+import Styles from "./styles.module.css";
 
 const TowerOfHanoi = () => {
   const [discCount, setDiscCount] = useState(4);

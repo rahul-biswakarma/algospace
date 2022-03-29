@@ -1,5 +1,5 @@
 import React from "react";
-import TowerOfHanoi from "../../components/TowerOfHanoi/TowerOfHanoi";
+import TowerOfHanoi from "/components/hanoi";
 
 const TowerOfHanoiIndexJs = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../../styles/tower-of-hanoi/visualizer.module.css";
+import Styles from "./styles.module.css";
 
 const TowerOfHanoiVisualizer = () => {
   return (
