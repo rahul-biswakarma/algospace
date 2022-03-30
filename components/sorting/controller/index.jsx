@@ -38,7 +38,11 @@ const SortingController = (props) => {
         sortingDelay={props.sortingDelay}
         setSortingDelay={props.setSortingDelay}
       />
-      <StartButon Styles={Styles} startAlgo={startAlgo} />
+      <StartButon
+        Styles={Styles}
+        startAlgo={startAlgo}
+        GenerateArray={GenerateArray}
+      />
     </div>
   );
 };
