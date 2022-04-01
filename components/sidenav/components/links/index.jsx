@@ -3,8 +3,8 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import Styles from "./style.module.css";
 import Collapsible from "react-collapsible";
-import algorithms from "/data/Algorithms.json";
-import singleAlgorithms from "/data/SingleAlgorithms.json";
+import algorithms from "../../../../data/Algorithms.json";
+import singleAlgorithms from "../../../../data/SingleAlgorithms.json";
 
 const SideNavLinks = () => {
   return (
