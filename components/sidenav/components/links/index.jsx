@@ -3,12 +3,13 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import Styles from "./style.module.css";
 import Collapsible from "react-collapsible";
+import algorithms from "/data/algorithms.json";
+import singleAlgorithms from "/data/singleAlgorithms.json";
 
-const SideNavLinks = (algos) => {
-  console.log(algos);
+const SideNavLinks = ({ algos, singleAlgos }) => {
   return (
     <div className={Styles.Container}>
-      {/* {algos.map((data) => {
+      {algorithms.map((data) => {
         return (
           <Collapsible
             key={uuidv4()}
@@ -32,24 +33,15 @@ const SideNavLinks = (algos) => {
           </Collapsible>
         );
       })}
-      {singleAlgos.map((algorithm) => {
+      {singleAlgorithms.map((algorithm) => {
         return (
           <Link key={algorithm.id} href={"/" + algorithm.id}>
             <a className={Styles.singleAlgoLinks}>{algorithm.name}</a>
           </Link>
         );
-      })} */}
+      })}
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  const res = await fetch("/api/algorithms");
-  const algos = await res.json();
-
-  const res2 = await fetch("/api/single-algorithms");
-  const singleAlgos = await res2.json();
-  return { props: { algos } };
-}
 
 export default SideNavLinks;
