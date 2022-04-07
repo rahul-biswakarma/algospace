@@ -165,3 +165,18 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--blue);
 }
+
+/* NPROGRESS */
+#nprogress .bar {
+  background: #274f5b !important;
+  border: 1px solid #28cef3 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #28cef3, 0 0 5px #28cef3 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #28cef3 !important;
+  border-left-color: #28cef3 !important;
+}
