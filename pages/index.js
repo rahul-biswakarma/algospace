@@ -1,9 +1,7 @@
 import Head from "next/head";
-import React, { useEffect } from "react";
-import Styles from "../styles/Home.module.css";
+import Styles from "/styles/Home.module.css";
 
 const Home = () => {
-
   return (
     <>
       <Head>
