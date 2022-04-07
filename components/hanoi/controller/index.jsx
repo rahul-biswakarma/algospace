@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import Styles from "./styles.module.css";
 import StartButton from "./component/start";
 import CountSlider from "./component/count";
 import DelaySlider from "./component/delay";
 import GenerateDiscButton from "./component/generate";
-import TowerOfHanoi from "../../../utils/TowerOfHanoi/TowerOfHanoi";
+import TowerOfHanoi from "/utils/TowerOfHanoi/TowerOfHanoi";
+import { GenerateDisc } from "/utils/TowerOfHanoi/TohUtils";
 
 const TowerOfHanoiController = (props) => {
+  useEffect(() => {
+    try {
+      GenerateDisc(props.discCount);
+    } catch {}
+  }, []);
+
   const startToh = () => {
     TowerOfHanoi(props.discCount, props.sortingDelay);
   };
