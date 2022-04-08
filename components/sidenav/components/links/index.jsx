@@ -13,6 +13,7 @@ const SideNavLinks = ({ algos, singleAlgos }) => {
         return (
           <Collapsible
             key={uuidv4()}
+            transitionTime={200}
             instanceId={data.instanceId}
             inputId={data.instanceId}
             trigger={data.name}
@@ -26,7 +27,7 @@ const SideNavLinks = ({ algos, singleAlgos }) => {
                   href={"/" + data.id + "/" + algorithm.id}
                   className={Styles.CollapsibelItems}
                 >
-                  <a>{algorithm.name}</a>
+                  <a className="hover-1">{algorithm.name}</a>
                 </Link>
               );
             })}

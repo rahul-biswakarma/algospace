@@ -90,9 +90,9 @@ body {
 }
 
 .Collapsible__trigger {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--blue);
-  font-size: 20px;
+  font-size: 17px;
   line-height: 27px;
 }
 
@@ -100,11 +100,16 @@ body {
   cursor: pointer;
 }
 
+.Collapsible__contentOuter {
+  margin-top: 5px;
+}
+
 .Collapsible__contentInner a {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 27px;
+  margin-bottom: 5px;
 }
 
 .Collapsible__contentInner a:hover {
@@ -115,7 +120,6 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 0.5rem;
-  gap: 5px;
 }
 
 .MuiSlider-rail {
@@ -146,6 +150,40 @@ body {
   display: none;
 }
 
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  line-height: 24px;
+}
+
+a:before,
+a:after,
+a > span:before,
+a > span:after {
+  content: "";
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+.hover-1 {
+  display: inline-flex;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+
+.hover-1:before {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--blue);
+  transform: translateX(-110%);
+}
+
+.hover-1:hover:before {
+  transform: translateX(0);
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
