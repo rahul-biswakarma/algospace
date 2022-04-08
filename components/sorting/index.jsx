@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import SortingController from "./controller";
 import SortingVisualizer from "./visualizer";
 
@@ -7,7 +8,11 @@ const Sorting = (props) => {
   const [sortingDelay, setSortingDelay] = useState(300);
 
   return (
-    <div>
+    <motion.div
+      initial={{ y: "-10%", opacity: 0 }}
+      animate={{ y: "0%", opacity: 1 }}
+      transition={{ ease: "easeOut" }}
+    >
       <SortingController
         funcName={props.funcName}
         sortingDelay={sortingDelay}
@@ -20,7 +25,7 @@ const Sorting = (props) => {
         htmlContent={props.htmlContent}
         code={props.code}
       />
-    </div>
+    </motion.div>
   );
 };
 
