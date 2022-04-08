@@ -7,7 +7,7 @@ import SideNavButtons from "./components/buttons";
 const SideNav = () => {
   return (
     <motion.div
-      initial={{ x: "-25%", opacity: 0 }}
+      initial={{ x: "-50%", opacity: 0 }}
       animate={{ x: "0%", opacity: 1 }}
       transition={{ ease: "easeOut" }}
       className={Styles.Container}

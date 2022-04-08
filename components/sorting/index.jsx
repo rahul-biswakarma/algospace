@@ -9,7 +9,7 @@ const Sorting = (props) => {
 
   return (
     <motion.div
-      initial={{ y: "-10%", opacity: 0 }}
+      initial={{ y: "-15%", opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       transition={{ ease: "easeOut" }}
     >
