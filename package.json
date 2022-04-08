@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.1",
     "babel-plugin-prismjs": "^2.1.0",
+    "framer-motion": "^6.2.9",
     "next": "12.1.0",
     "npm": "^8.5.4",
     "nprogress": "^0.2.0",
