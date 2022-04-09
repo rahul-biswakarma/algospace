@@ -13,7 +13,9 @@ const DelaySlider = (props) => {
         min={0}
         max={1000}
         valueLabelDisplay="off"
-        onChange={(e, val) => props.setSortingDelay(val)}
+        onChangeCommitted={(e, val) => {
+          props.setSortingDelay(e.target.value);
+        }}
       />
     </div>
   );

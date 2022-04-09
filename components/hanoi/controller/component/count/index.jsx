@@ -13,7 +13,7 @@ const CountSlider = (props) => {
         min={2}
         max={15}
         valueLabelDisplay="off"
-        onChange={(e, val) => props.setDiscCount(val)}
+        onChangeCommitted={(e, val) => props.setDiscCount(val)}
       />
     </div>
   );

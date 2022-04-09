@@ -13,7 +13,7 @@ const CountSlider = (props) => {
         min={0}
         max={35}
         valueLabelDisplay="off"
-        onChange={(e, val) => props.setElementWidth(val)}
+        onChangeCommitted={(e, val) => props.setElementWidth(val)}
       />
     </div>
   );
