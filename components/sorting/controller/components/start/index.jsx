@@ -2,7 +2,7 @@ import { Play, Pause } from "react-feather";
 
 const StartButon = (props) => {
   return (
-    <div class={props.startStopC}>
+    <div className={props.startStopC}>
       <button
         className={props.Styles.startSortingAlgo}
         id={props.id}
@@ -18,7 +18,7 @@ const StartButon = (props) => {
         onClick=""
       >
         <Pause className={props.Styles.stopButtonIcons} />
-        Start
+        Stop
       </button>
     </div>
   );

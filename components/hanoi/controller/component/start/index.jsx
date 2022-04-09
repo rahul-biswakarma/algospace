@@ -17,7 +17,7 @@ const StartButton = (props) => {
         id={props.stopId}
       >
         <Pause className={props.Styles.stopButtonIcons} />
-        Start
+        Stop
       </button>
     </div>
   );
