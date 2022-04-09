@@ -42,7 +42,7 @@
 .Container button:hover {
   background-color: var(--bg-pink);
   color: var(--pink);
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .Container button:nth-child(1) {
@@ -54,12 +54,33 @@
 }
 
 .startSortingAlgo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   color: var(--green) !important;
 }
 
 .startSortingAlgo:hover {
   background-color: var(--bg-green) !important;
   color: var(--green) !important;
+}
+
+.stopSortingAlgo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--red) !important;
+  background-color: var(--bg-red) !important;
+  transform: translateY(-100%);
+}
+
+.stopSortingAlgo:hover {
+  background-color: var(--bg-red-2) !important;
+  color: var(--red) !important;
 }
 
 .SliderC {
@@ -74,4 +95,9 @@
 
 .Slider {
   width: 100%;
+}
+
+.startStopC {
+  position: relative;
+  overflow: hidden;
 }

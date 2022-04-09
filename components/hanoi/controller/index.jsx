@@ -17,9 +17,15 @@ const TowerOfHanoiController = (props) => {
   }, []);
 
   const startToh = async () => {
-    DisableButton(["hanoi-generate", "hanoi-delay", "hanoi-count"]);
+    DisableButton(
+      ["hanoi-generate", "hanoi-delay", "hanoi-count"],
+      ["hanoi-start", "hanoi-stop"]
+    );
     await TowerOfHanoi(props.discCount, props.sortingDelay);
-    EnableButton(["hanoi-generate", "hanoi-delay", "hanoi-count"]);
+    EnableButton(
+      ["hanoi-generate", "hanoi-delay", "hanoi-count"],
+      ["hanoi-start", "hanoi-stop"]
+    );
   };
 
   return (
@@ -41,7 +47,12 @@ const TowerOfHanoiController = (props) => {
         sortingDelay={props.sortingDelay}
         setSortingDelay={props.setSortingDelay}
       />
-      <StartButton id="hanoi-start" Styles={Styles} startToh={startToh} />
+      <StartButton
+        id="hanoi-start"
+        stopId="hanoi-stop"
+        Styles={Styles}
+        startToh={startToh}
+      />
     </div>
   );
 };

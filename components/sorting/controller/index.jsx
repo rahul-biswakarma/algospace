@@ -17,7 +17,10 @@ const SortingController = (props) => {
   }, []);
 
   const startAlgo = async () => {
-    DisableButton(["sorting-generate", "sorting-count", "sorting-delay"]);
+    DisableButton(
+      ["sorting-generate", "sorting-count", "sorting-delay"],
+      ["sorting-start", "sorting-stop"]
+    );
 
     // *** Need to modified when new alogs are added ***
     if (props.funcName == "BubbleSort") {
@@ -28,7 +31,10 @@ const SortingController = (props) => {
       await SortingAlgo.MergeSort(props.sortingDelay);
     }
 
-    EnableButton(["sorting-generate", "sorting-count", "sorting-delay"]);
+    EnableButton(
+      ["sorting-generate", "sorting-count", "sorting-delay"],
+      ["sorting-start", "sorting-stop"]
+    );
   };
 
   return (
@@ -51,6 +57,8 @@ const SortingController = (props) => {
         setSortingDelay={props.setSortingDelay}
       />
       <StartButon
+        id="sorting-start"
+        stopId="sorting-stop"
         Styles={Styles}
         startAlgo={startAlgo}
         GenerateArray={GenerateArray}

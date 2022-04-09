@@ -1,15 +1,26 @@
-import { Play } from "react-feather";
+import { Play, Pause } from "react-feather";
 
 const StartButon = (props) => {
   return (
-    <button
-      className={props.Styles.startSortingAlgo}
-      id="startSortingAlgo"
-      onClick={props.startAlgo}
-    >
-      <Play className={props.Styles.buttonIcons} />
-      Start
-    </button>
+    <div class={props.startStopC}>
+      <button
+        className={props.Styles.startSortingAlgo}
+        id={props.id}
+        onClick={props.startAlgo}
+      >
+        <Play className={props.Styles.buttonIcons} />
+        Start
+      </button>
+
+      <button
+        className={props.Styles.stopSortingAlgo}
+        id={props.stopId}
+        onClick=""
+      >
+        <Pause className={props.Styles.stopButtonIcons} />
+        Start
+      </button>
+    </div>
   );
 };
 
