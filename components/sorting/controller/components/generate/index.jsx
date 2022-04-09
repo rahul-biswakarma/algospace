@@ -5,7 +5,7 @@ import { GenerateArray } from "/utils/Sorting/SortingUtils";
 const GenerateButton = (props) => {
   return (
     <button
-      id="generatArrayButton"
+      id={props.id}
       onClick={() => {
         GenerateArray(props.elementWidth);
       }}

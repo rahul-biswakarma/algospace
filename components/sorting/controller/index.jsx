@@ -3,9 +3,11 @@ import Styles from "./styles.module.css";
 import StartButon from "./components/start";
 import CountSlider from "./components/count";
 import DelaySlider from "./components/delay";
+import EnableButton from "/utils/EnableButtons";
+import DisableButton from "/utils/DisableButtons";
 import GenerateButton from "./components/generate";
-import { GenerateArray } from "../../../utils/Sorting/SortingUtils";
-import * as SortingAlgo from "../../../utils/Sorting/SortingAlgorithms";
+import { GenerateArray } from "/utils/Sorting/SortingUtils";
+import * as SortingAlgo from "/utils/Sorting/SortingAlgorithms";
 
 const SortingController = (props) => {
   useEffect(() => {
@@ -14,26 +16,36 @@ const SortingController = (props) => {
     } catch {}
   }, []);
 
-  const startAlgo = () => {
+  const startAlgo = async () => {
+    DisableButton(["sorting-generate", "sorting-count", "sorting-delay"]);
+
     // *** Need to modified when new alogs are added ***
     if (props.funcName == "BubbleSort") {
-      SortingAlgo.BubbleSort(props.sortingDelay);
+      await SortingAlgo.BubbleSort(props.sortingDelay);
     } else if (props.funcName == "SelectionSort") {
-      SortingAlgo.SelectionSort(props.sortingDelay);
+      await SortingAlgo.SelectionSort(props.sortingDelay);
     } else if (props.funcName == "MergeSort") {
-      SortingAlgo.MergeSort(props.sortingDelay);
+      await SortingAlgo.MergeSort(props.sortingDelay);
     }
+
+    EnableButton(["sorting-generate", "sorting-count", "sorting-delay"]);
   };
 
   return (
     <div className={Styles.Container}>
-      <GenerateButton Styles={Styles} elementWidth={props.elementWidth} />
+      <GenerateButton
+        id="sorting-generate"
+        Styles={Styles}
+        elementWidth={props.elementWidth}
+      />
       <CountSlider
+        id="sorting-count"
         Styles={Styles}
         elementWidth={props.elementWidth}
         setElementWidth={props.setElementWidth}
       />
       <DelaySlider
+        id="sorting-delay"
         Styles={Styles}
         sortingDelay={props.sortingDelay}
         setSortingDelay={props.setSortingDelay}

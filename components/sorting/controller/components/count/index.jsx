@@ -3,7 +3,7 @@ import { Slider } from "@mui/material";
 
 const CountSlider = (props) => {
   return (
-    <div className={props.Styles.SliderC}>
+    <div id={props.id} className={props.Styles.SliderC}>
       Array Count
       <Slider
         className={props.Styles.Slider}
