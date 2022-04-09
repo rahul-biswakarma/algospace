@@ -3,15 +3,17 @@ import { Slider } from "@mui/material";
 
 const CountSlider = (props) => {
   return (
-    <div className={props.Styles.SliderC}>
+    <div id={props.id} className={props.Styles.SliderC}>
       Disc Count
       <Slider
+        id="count-slider"
         className={props.Styles.Slider}
         key={uuidv4()}
         defaultValue={props.discCount}
         aria-label="Array Element Count Slider"
         min={2}
         max={15}
+        disabled={false}
         valueLabelDisplay="off"
         onChangeCommitted={(e, val) => props.setDiscCount(val)}
       />

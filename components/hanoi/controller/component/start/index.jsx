@@ -5,7 +5,7 @@ const StartButton = (props) => {
     <button
       onClick={props.startToh}
       className={props.Styles.startSortingAlgo}
-      id="startSortingAlgo"
+      id={props.id}
     >
       <Play className={props.Styles.buttonIcons} />
       Start

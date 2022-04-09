@@ -4,7 +4,7 @@ import { GenerateDisc } from "/utils/TowerOfHanoi/TohUtils";
 const GenerateDiscButton = (props) => {
   return (
     <button
-      id="generatArrayButton"
+      id={props.id}
       onClick={() => {
         GenerateDisc(props.discCount);
       }}
