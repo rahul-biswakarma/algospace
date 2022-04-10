@@ -6,6 +6,7 @@ import DelaySlider from "./component/delay";
 import EnableButton from "/utils/EnableButtons";
 import DisableButton from "/utils/DisableButtons";
 import GenerateDiscButton from "./component/generate";
+import { UpdateStats } from "/utils/TowerOfHanoi/TohUtils";
 import VisualizerFinisher from "/utils/VisualizerFinisher";
 import TowerOfHanoi from "/utils/TowerOfHanoi/TowerOfHanoi";
 import { GenerateDisc } from "/utils/TowerOfHanoi/TohUtils";
@@ -18,6 +19,10 @@ const TowerOfHanoiController = (props) => {
   }, []);
 
   const startToh = async () => {
+    document.getElementById("totalSwap").innerHTML = "0";
+    document.getElementById("swapValueAB").innerHTML = "0";
+    document.getElementById("swapValueBC").innerHTML = "0";
+    document.getElementById("swapValueAC").innerHTML = "0";
     DisableButton(
       ["hanoi-generate", "hanoi-delay", "hanoi-count"],
       ["hanoi-start", "hanoi-stop"]

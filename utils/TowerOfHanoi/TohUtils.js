@@ -25,8 +25,12 @@ const GenerateDisc = (discCount) => {
   }
 };
 
-const UpdateStats = (id, value) => {
+const UpdateStats = (id) => {
+  console.log(id);
   let element = document.getElementById(id);
+  let value = parseInt(element.innerHTML);
+
+  value += 1;
   element.innerHTML = value;
 };
 
