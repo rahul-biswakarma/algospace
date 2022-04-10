@@ -25,8 +25,13 @@ const GenerateDisc = (discCount) => {
   }
 };
 
+const UpdateStats = (id, value) => {
+  let element = document.getElementById(id);
+  element.innerHTML = value;
+};
+
 const MakeDelay = async (ms) => {
   await new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-export { GenerateDisc, MakeDelay };
+export { GenerateDisc, UpdateStats, MakeDelay };

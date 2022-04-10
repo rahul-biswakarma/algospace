@@ -1,4 +1,9 @@
-import { MakeDelay } from "./TohUtils";
+import { UpdateStats, MakeDelay } from "./TohUtils";
+
+var total = 0,
+  ab = 0,
+  bc = 0,
+  ac = 0;
 
 const transferDisc = async (source, destination) => {
   try {
@@ -11,6 +16,20 @@ const transferDisc = async (source, destination) => {
         dnClone,
         document.getElementById(destination).childNodes[0]
       );
+    total += 1;
+    UpdateStats("totalTransfers", total);
+    if (source == "tohTower1" && destination == "tohTower2") {
+      ab++;
+      UpdateStats("swapValueAB", ab);
+    }
+    if (source == "tohTower1" && destination == "tohTower3") {
+      ac++;
+      UpdateStats("swapValueAC", ac);
+    }
+    if (source == "tohTower2" && destination == "tohTower3") {
+      bc++;
+      UpdateStats("swapValueBC", bc);
+    }
   } catch {}
 };
 
