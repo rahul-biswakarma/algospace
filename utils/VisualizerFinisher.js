@@ -9,6 +9,7 @@ export default async function VisualizerFinisher(containerId, message) {
       elements[i + 1].style.background = "var(--bg-green-3)";
     } catch {}
     elements[i].style.background = "var(--green)";
+    elements[i].style.border = "1px solid var(--green)";
     try {
       elements[i - 1].style.background = "var(--bg-green-3)";
     } catch {}

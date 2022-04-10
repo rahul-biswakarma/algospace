@@ -23,7 +23,7 @@ const TowerOfHanoiController = (props) => {
       ["hanoi-start", "hanoi-stop"]
     );
     await TowerOfHanoi(props.discCount, props.sortingDelay);
-    await VisualizerFinisher("sorting-array-c", "Disc Transfer Completed 👍");
+    await VisualizerFinisher("tohTower3", "Disc Transfer Completed 👍");
     EnableButton(
       ["hanoi-generate", "hanoi-delay", "hanoi-count"],
       ["hanoi-start", "hanoi-stop"]

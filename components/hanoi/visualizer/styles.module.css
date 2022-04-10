@@ -28,25 +28,25 @@
 }
 
 .TowerC:nth-child(1) {
-  border-bottom: var(--tower-base-height) solid var(--bg-purple-2);
+  border-bottom: var(--tower-base-height) solid var(--grey);
 }
 
 .TowerC:nth-child(1)::before {
-  background: var(--bg-purple-2);
+  background: var(--grey);
 }
 
 .TowerC:nth-child(2) {
-  border-bottom: var(--tower-base-height) solid var(--bg-blue-2);
+  border-bottom: var(--tower-base-height) solid var(--grey);
 }
 
 .TowerC:nth-child(2)::before {
-  background: var(--bg-blue-2);
+  background: var(--grey);
 }
 
 .TowerC:nth-child(3) {
-  border-bottom: var(--tower-base-height) solid var(--bg-orange-2);
+  border-bottom: var(--tower-base-height) solid var(--grey);
 }
 
 .TowerC:nth-child(3)::before {
-  background: var(--bg-orange-2);
+  background: var(--grey);
 }
