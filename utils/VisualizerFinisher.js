@@ -14,13 +14,13 @@ export default async function VisualizerFinisher(containerId, message) {
       elements[i - 1].style.background = "var(--bg-green-3)";
     } catch {}
     try {
-      elements[i - 2].style.background = "var(--bg-green)";
+      elements[i - 2].style.background = "var(--bg-green-2)";
     } catch {}
     await MakeDelay(50);
   }
-  elements[elements.length - 1].style.background = "var(--bg-green)";
+  elements[elements.length - 1].style.background = "var(--bg-green-2)";
   await MakeDelay(50);
-  elements[elements.length - 2].style.background = "var(--bg-green)";
+  elements[elements.length - 2].style.background = "var(--bg-green-2)";
 
   toast(message, {
     position: "bottom-right",
