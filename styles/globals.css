@@ -164,7 +164,7 @@ body {
 
 .Toastify__close-button svg {
   stroke: var(--green);
-  fill: var(--bg-green-3) !important;
+  fill: var(--green) !important;
 }
 
 a {
