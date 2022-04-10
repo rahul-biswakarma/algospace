@@ -2,8 +2,10 @@ import "/styles/globals.css";
 import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
+import { motion } from "framer-motion";
 import SideNav from "/components/sidenav";
-import { motion, AnimatePresence } from "framer-motion";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -33,6 +35,17 @@ function MyApp({ Component, pageProps, router }) {
     >
       <SideNav />
       <Component {...pageProps} />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </motion.div>
   );
 }

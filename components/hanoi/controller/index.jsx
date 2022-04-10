@@ -6,6 +6,7 @@ import DelaySlider from "./component/delay";
 import EnableButton from "/utils/EnableButtons";
 import DisableButton from "/utils/DisableButtons";
 import GenerateDiscButton from "./component/generate";
+import VisualizerFinisher from "/utils/VisualizerFinisher";
 import TowerOfHanoi from "/utils/TowerOfHanoi/TowerOfHanoi";
 import { GenerateDisc } from "/utils/TowerOfHanoi/TohUtils";
 
@@ -22,6 +23,7 @@ const TowerOfHanoiController = (props) => {
       ["hanoi-start", "hanoi-stop"]
     );
     await TowerOfHanoi(props.discCount, props.sortingDelay);
+    await VisualizerFinisher("sorting-array-c", "Disc Transfer Completed 👍");
     EnableButton(
       ["hanoi-generate", "hanoi-delay", "hanoi-count"],
       ["hanoi-start", "hanoi-stop"]

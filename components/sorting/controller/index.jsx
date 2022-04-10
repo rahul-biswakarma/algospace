@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import Styles from "./styles.module.css";
-import StartButon from "./components/start";
+import StartButton from "./components/start";
 import CountSlider from "./components/count";
 import DelaySlider from "./components/delay";
 import EnableButton from "/utils/EnableButtons";
 import DisableButton from "/utils/DisableButtons";
 import GenerateButton from "./components/generate";
+import VisualizerFinisher from "/utils/VisualizerFinisher";
 import { GenerateArray } from "/utils/Sorting/SortingUtils";
 import * as SortingAlgo from "/utils/Sorting/SortingAlgorithms";
 
@@ -30,6 +31,8 @@ const SortingController = (props) => {
     } else if (props.funcName == "MergeSort") {
       await SortingAlgo.MergeSort(props.sortingDelay);
     }
+
+    await VisualizerFinisher("sorting-array-c", "Sorting Completed 👌");
 
     EnableButton(
       ["sorting-generate", "sorting-count", "sorting-delay"],
@@ -56,7 +59,7 @@ const SortingController = (props) => {
         sortingDelay={props.sortingDelay}
         setSortingDelay={props.setSortingDelay}
       />
-      <StartButon
+      <StartButton
         id="sorting-start"
         stopId="sorting-stop"
         Styles={Styles}

@@ -11,11 +11,7 @@ const StartButton = (props) => {
         <Play className={props.Styles.buttonIcons} />
         Start
       </button>
-      <button
-        onClick=""
-        className={props.Styles.stopSortingAlgo}
-        id={props.stopId}
-      >
+      <button className={props.Styles.stopSortingAlgo} id={props.stopId}>
         <Pause className={props.Styles.stopButtonIcons} />
         Stop
       </button>

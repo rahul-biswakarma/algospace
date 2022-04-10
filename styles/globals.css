@@ -44,6 +44,8 @@
   --bg-purple-2: #3e214a;
   --bg-red-2: rgba(250, 96, 104, 0.3);
 
+  --bg-green-3: #30744f;
+
   --slider-rail: rgba(204, 108, 245, 0.6);
 
   --bg: #000;
@@ -53,6 +55,10 @@
 
   --text: #ffffff;
   --secndry-text: hsl(205, 8%, 53%);
+
+  --toastify-color-progress-light: var(--green);
+  --toastify-toast-background: var(--bg-green);
+  --toastify-color-light: #fff;
 }
 
 a {
@@ -148,6 +154,17 @@ body {
 
 .hideOptionDivs {
   display: none;
+}
+
+.Toastify__toast {
+  background-color: var(--bg-green) !important;
+  backdrop-filter: blur(10px) !important;
+  color: #fff !important;
+}
+
+.Toastify__close-button svg {
+  stroke: var(--green);
+  fill: var(--bg-green-3) !important;
 }
 
 a {
