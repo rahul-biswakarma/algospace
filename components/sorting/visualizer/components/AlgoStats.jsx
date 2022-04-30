@@ -3,34 +3,49 @@ import React from "react";
 const SortingAlgoStats = (props) => {
   return (
     <>
-      <div className={props.Styles.SortingTerminalC} id="algoStatsDivId">
+      <div
+        className={`${props.Styles.SortingTerminalC} noselect`}
+        id="algoStatsDivId"
+      >
         <div id="sortingTerminal" className={props.Styles.SortingTerminal}>
           <div className={props.Styles.ColorText}>
-            <span className={props.Styles.ColorPurple}>Array</span> ={" "}
-            <span className={props.Styles.ColorOrange}>[</span>{" "}
+            <span className={props.Styles.ColorPurple}>Array</span>
             <span
               id="arrayElementC"
               className={`${props.Styles.ColorBlue} ${props.Styles.FlexWrap}`}
             ></span>
-            <span className={props.Styles.ColorOrange}>]</span>
           </div>
           <div className={props.Styles.ColorText}>
-            <span className={props.Styles.ColorPurple}>Total Elements</span> ={" "}
+            <span className={`${props.Styles.ColorPurple} noselect`}>
+              Total Elements
+            </span>{" "}
+            ={" "}
             <span
               id="totalElementsInArray"
-              className={props.Styles.ColorBlue}
+              className={`${props.Styles.ColorBlue} noselect`}
             ></span>
           </div>
           <div className={props.Styles.ColorText}>
-            <span className={props.Styles.ColorPurple}>Total Comparisons</span>{" "}
+            <span className={`${props.Styles.ColorPurple} noselect`}>
+              Total Comparisons
+            </span>{" "}
             ={" "}
-            <span id="comparisonValueC" className={props.Styles.ColorBlue}>
+            <span
+              id="comparisonValueC"
+              className={`${props.Styles.ColorBlue} noselect`}
+            >
               0
             </span>
           </div>
           <div className={props.Styles.ColorText}>
-            <span className={props.Styles.ColorPurple}>Total Swaps Done</span> ={" "}
-            <span id="swapValueC" className={props.Styles.ColorBlue}>
+            <span className={`${props.Styles.ColorPurple} noselect`}>
+              Total Swaps Done
+            </span>{" "}
+            ={" "}
+            <span
+              id="swapValueC"
+              className={`${props.Styles.ColorBlue} noselect`}
+            >
               0
             </span>
           </div>

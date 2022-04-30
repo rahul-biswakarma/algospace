@@ -168,6 +168,27 @@ body {
   fill: var(--green) !important;
 }
 
+#arrayElementC {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.ArrayElementValueBox {
+  width: 50px;
+  height: 40px;
+  background: var(--bg-blue-2);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ArrayElementValueBox :hover {
+  cursor: pointer;
+}
+
 a {
   position: relative;
   color: inherit;
@@ -235,4 +256,14 @@ a > span:after {
 #nprogress .spinner-icon {
   border-top-color: #28cef3 !important;
   border-left-color: #28cef3 !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none !important; /* iOS Safari */
+  -webkit-user-select: none !important; /* Safari */
+  -khtml-user-select: none !important; /* Konqueror HTML */
+  -moz-user-select: none !important; /* Old versions of Firefox */
+  -ms-user-select: none !important; /* Internet Explorer/Edge */
+  user-select: none !important; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

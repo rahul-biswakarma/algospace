@@ -6,13 +6,12 @@ const ArrayHTMLUpdater = async (arr) => {
   ArraySpan.innerHTML = "";
   await new Promise(() => {
     for (let i = 0; i < arr.length; i++) {
-      if (i == arr.length - 1) {
-        ArraySpan.innerHTML += "<span id='sortingStatsArray" + i + "'>"+
-        arr[i] + "</span><span style='color:var(--text);'> </span>";
-      } else {
-        ArraySpan.innerHTML += "<span id='sortingStatsArray" + i + "'>"+
-        arr[i] + "</span><span style='color:var(--text);'>,</span>";
-      }
+      ArraySpan.innerHTML +=
+        "<span class='noselect ArrayElementValueBox' id='sortingStatsArray" +
+        i +
+        "'>" +
+        arr[i] +
+        "</span>";
     }
 
     document.getElementById("totalElementsInArray").innerHTML = arr.length;
