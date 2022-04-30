@@ -139,6 +139,7 @@ const Merge = async (arr, left, mid, right, delay) => {
     k = left;
 
   while (i < n1 && j < n2) {
+    SwapHTMLUpdater();
     if (LeftArray[i] <= RightArray[j]) {
       arr[k].style.height = LeftArray[i] + "px";
       i++;
@@ -173,6 +174,7 @@ const MergeSortMain = async (arr, left, right, delay) => {
   if (left >= right) {
     return;
   }
+  ComparisonsHTMLUpdater();
   var mid = left + parseInt((right - left) / 2);
   await MergeSortMain(arr, left, mid, delay);
   await MakeDelay(Math.floor(delay / 6));
