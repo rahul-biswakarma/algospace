@@ -46,6 +46,11 @@ function MyApp({ Component, pageProps, router }) {
         draggable
         pauseOnHover
       />
+      <div
+        id="function-status"
+        data-func-status="1"
+        style={{ display: "none", position: "absolute" }}
+      ></div>
     </motion.div>
   );
 }

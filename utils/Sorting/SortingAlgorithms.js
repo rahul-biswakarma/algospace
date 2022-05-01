@@ -26,6 +26,12 @@ const BubbleSort = async (delay) => {
 
   for (i = 0; i < arrLen - 1; i++) {
     for (j = 0; j < arrLen - i - 1; j++) {
+      if (
+        document
+          .getElementById("function-staus")
+          .getAttribute("data-func-staus") === "0"
+      )
+        return;
       ComparisonsHTMLUpdater();
       ChangePairElementColor(
         arr[j],

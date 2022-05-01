@@ -1,6 +1,14 @@
 import { Play, Pause } from "react-feather";
 
 const StartButton = (props) => {
+  const updateFunctionStatus = (statusCode) => {
+    try {
+      document
+        .getElementById("function-status")
+        .setAttribute("data-func-status", statusCode);
+    } catch {}
+  };
+
   return (
     <div className={props.startStopC}>
       <button
@@ -12,7 +20,11 @@ const StartButton = (props) => {
         Start
       </button>
 
-      <button className={props.Styles.stopSortingAlgo} id={props.stopId}>
+      <button
+        onClick={updateFunctionStatus(0)}
+        className={props.Styles.stopSortingAlgo}
+        id={props.stopId}
+      >
         <Pause className={props.Styles.stopButtonIcons} />
         Stop
       </button>
