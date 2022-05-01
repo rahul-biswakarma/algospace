@@ -8,6 +8,7 @@ import DisableButton from "/utils/DisableButtons";
 import GenerateButton from "./components/generate";
 import VisualizerFinisher from "/utils/VisualizerFinisher";
 import { GenerateArray } from "/utils/Sorting/SortingUtils";
+import updateFunctionStatus from "/utils/UpdateFunctionStatus";
 import * as SortingAlgo from "/utils/Sorting/SortingAlgorithms";
 
 const SortingController = (props) => {
@@ -18,6 +19,8 @@ const SortingController = (props) => {
   }, []);
 
   const startAlgo = async () => {
+    updateFunctionStatus(1);
+
     DisableButton(
       ["sorting-generate", "sorting-count", "sorting-delay"],
       ["sorting-start", "sorting-stop"]

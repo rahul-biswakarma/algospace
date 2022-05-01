@@ -26,12 +26,14 @@ const BubbleSort = async (delay) => {
 
   for (i = 0; i < arrLen - 1; i++) {
     for (j = 0; j < arrLen - i - 1; j++) {
+      // Stop Function Helper
       if (
         document
           .getElementById("function-status")
           .getAttribute("data-func-status") === "0"
       )
         return;
+      // Stop Function Helper
       ComparisonsHTMLUpdater();
       ChangePairElementColor(
         arr[j],
@@ -81,6 +83,14 @@ const SelectionSort = async (delay) => {
     minIndex = i;
 
     for (j = i + 1; j < arrLen; j++) {
+      // Stop Function Helper
+      if (
+        document
+          .getElementById("function-status")
+          .getAttribute("data-func-status") === "0"
+      )
+        return;
+      // Stop Function Helper
       ComparisonsHTMLUpdater();
       ChangeSingleElementColor(arr[j], SELECTED_COLOR, SELECTED_COLOR_BORDER);
 
@@ -125,12 +135,28 @@ const Merge = async (arr, left, mid, right, delay) => {
   var RightArray = new Array(n2);
 
   for (var i = 0; i < n1; i++) {
+    // Stop Function Helper
+    if (
+      document
+        .getElementById("function-status")
+        .getAttribute("data-func-status") === "0"
+    )
+      return;
+    // Stop Function Helper
     LeftArray[i] = parseInt(arr[left + i].style.height);
     ChangeSingleElementColor(arr[left + i], SWAP_COLOR, SWAP_COLOR_BORDER);
     await MakeDelay(Math.floor(delay / 3));
   }
 
   for (var j = 0; j < n2; j++) {
+    // Stop Function Helper
+    if (
+      document
+        .getElementById("function-status")
+        .getAttribute("data-func-status") === "0"
+    )
+      return;
+    // Stop Function Helper
     RightArray[j] = parseInt(arr[mid + 1 + j].style.height);
     ChangeSingleElementColor(
       arr[mid + 1 + j],
@@ -145,6 +171,14 @@ const Merge = async (arr, left, mid, right, delay) => {
     k = left;
 
   while (i < n1 && j < n2) {
+    // Stop Function Helper
+    if (
+      document
+        .getElementById("function-status")
+        .getAttribute("data-func-status") === "0"
+    )
+      return;
+    // Stop Function Helper
     SwapHTMLUpdater();
     if (LeftArray[i] <= RightArray[j]) {
       arr[k].style.height = LeftArray[i] + "px";
@@ -177,6 +211,14 @@ const Merge = async (arr, left, mid, right, delay) => {
 };
 
 const MergeSortMain = async (arr, left, right, delay) => {
+  // Stop Function Helper
+  if (
+    document
+      .getElementById("function-status")
+      .getAttribute("data-func-status") === "0"
+  )
+    return;
+  // Stop Function Helper
   if (left >= right) {
     return;
   }

@@ -1,15 +1,7 @@
 import { Play, Pause } from "react-feather";
+import updateFunctionStatus from "/utils/UpdateFunctionStatus";
 
 const StartButton = (props) => {
-  const updateFunctionStatus = (statusCode) => {
-    try {
-      console.log("Sheesh");
-      document
-        .getElementById("function-status")
-        .setAttribute("data-func-status", statusCode);
-    } catch {}
-  };
-
   return (
     <div className={props.startStopC}>
       <button
