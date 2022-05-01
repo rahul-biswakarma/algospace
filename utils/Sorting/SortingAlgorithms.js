@@ -28,8 +28,8 @@ const BubbleSort = async (delay) => {
     for (j = 0; j < arrLen - i - 1; j++) {
       if (
         document
-          .getElementById("function-staus")
-          .getAttribute("data-func-staus") === "0"
+          .getElementById("function-status")
+          .getAttribute("data-func-status") === "0"
       )
         return;
       ComparisonsHTMLUpdater();

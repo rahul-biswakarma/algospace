@@ -3,6 +3,7 @@ import { Play, Pause } from "react-feather";
 const StartButton = (props) => {
   const updateFunctionStatus = (statusCode) => {
     try {
+      console.log("Sheesh");
       document
         .getElementById("function-status")
         .setAttribute("data-func-status", statusCode);
@@ -21,7 +22,9 @@ const StartButton = (props) => {
       </button>
 
       <button
-        onClick={updateFunctionStatus(0)}
+        onClick={() => {
+          updateFunctionStatus(0);
+        }}
         className={props.Styles.stopSortingAlgo}
         id={props.stopId}
       >

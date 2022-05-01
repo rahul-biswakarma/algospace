@@ -5,6 +5,12 @@ export default async function VisualizerFinisher(containerId, message) {
   let elements = container.children;
 
   for (let i = 0; i < elements.length; i++) {
+    if (
+      document
+        .getElementById("function-status")
+        .getAttribute("data-func-status") === "0"
+    )
+      return;
     try {
       elements[i + 1].style.background = "var(--bg-green-3)";
     } catch {}
