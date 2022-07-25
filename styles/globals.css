@@ -1,3 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+@import "tailwindcss/components";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -15,12 +25,32 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.array-bar {
+  background-color: #1b241b;
+  border: 1.5px solid #1efe5b;
+}
+
+.nav-category-links {
+  height: 0px;
+  visibility: hidden;
+  padding-top: 0;
+}
+
+.nav-category-container:hover .nav-category-links {
+  height: 100%;
+  visibility: visible;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  transition: all 150ms ease-in;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #222b23;
+  outline: none;
 }
