@@ -1,12 +1,12 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";
-import { generateNewArray } from "/components/AlgoPage/Sorting/utils/generateArray";
+import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/generateArray";
 
 const GenerateButton = () => {
   const barWidth = useRecoilValue(sortingBarWidthAtom);
 
-  return (
+  return (  
     <div
       onClick={() => {
         generateNewArray(barWidth);

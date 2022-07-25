@@ -8,7 +8,6 @@ import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";
 const VisualizerContainer = () => {
   const heightArray = useRecoilValue(arrayAtom);
   const barWidth = useRecoilValue(sortingBarWidthAtom);
-  console.log(heightArray);
   const ArrayBar = dynamic(
     () => {
       return import("./ArrayBar");

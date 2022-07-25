@@ -6,16 +6,16 @@ import ToProperCase from "/utils/toProperCase";
 import { algoIdAtom } from "/recoil/atoms/algoIdAtom";
 import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
 import VisualizerContainer from "/components/AlgoPage/Sorting/Visulaizer";
-import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/GenerateArray";
+import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/generateArray";
 
 const Sorting = () => {
   const router = useRouter();
   let rawAlgoId = router.query.algoid;
   const [, setAlgoId] = useRecoilState(algoIdAtom);
-  setAlgoId(rawAlgoId);
 
   useEffect(() => {
     generateNewArray(20);
+    setAlgoId(rawAlgoId);
   }, []);
 
   return (

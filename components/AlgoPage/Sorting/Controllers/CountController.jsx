@@ -1,7 +1,7 @@
 import React from "react";
 import { Slider } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { generateNewArray } from "/components/AlgoPage/Sorting/utils/generateArray";
+import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/generateArray";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
