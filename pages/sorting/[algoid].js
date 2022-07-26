@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useRecoilState } from "recoil";
 import React, { useEffect } from "react";
+import { setRecoil } from "recoil-nexus";
 import ToProperCase from "/utils/toProperCase";
 import { algoIdAtom } from "/recoil/atoms/algoIdAtom";
 import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
@@ -10,12 +10,11 @@ import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/generateArr
 
 const Sorting = () => {
   const router = useRouter();
-  let rawAlgoId = router.query.algoid;
-  const [, setAlgoId] = useRecoilState(algoIdAtom);
+  var rawAlgoId = router.query.algoid;
+  setRecoil(algoIdAtom, rawAlgoId);
 
   useEffect(() => {
     generateNewArray(20);
-    setAlgoId(rawAlgoId);
   }, []);
 
   return (

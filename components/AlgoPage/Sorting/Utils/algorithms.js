@@ -1,13 +1,17 @@
 import { MakeDelay } from "/utils";
+import { getRecoil } from "recoil-nexus";
+import { algoSpeedAtom } from "/recoil/atoms/algoSpeedAtom";
 import * as Utils from "/components/AlgoPage/Sorting/Utils/";
 import * as Colors from "/components/AlgoPage/Sorting/Utils/colors.js";
 
-export async function BubbleSort(delay) {
+export async function BubbleSort() {
+  var delay = getRecoil(algoSpeedAtom);
   let arrayBars = document.querySelectorAll(".array-bar");
   let arrLength = arrayBars.length;
 
   for (let i = 0; i < arrLength; i++) {
     for (let j = 0; j < arrLength - i - 1; j++) {
+      delay = getRecoil(algoSpeedAtom);
       Utils.ChangePairElementColor(
         arrayBars[j],
         arrayBars[j + 1],

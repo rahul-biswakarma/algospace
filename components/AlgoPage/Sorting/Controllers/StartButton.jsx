@@ -8,7 +8,7 @@ const StartButton = () => {
 
   const startAlgo = async () => {
     if (algoId === "bubble-sort") {
-      await SortingAlgorithms.BubbleSort(10);
+      await SortingAlgorithms.BubbleSort();
     }
     if (algoId === "selection-sort") {
       await SortingAlgorithms.SelectionSort(10);
