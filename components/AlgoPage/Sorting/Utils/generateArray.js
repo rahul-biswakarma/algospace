@@ -1,15 +1,16 @@
-import { setRecoil } from "recoil-nexus";
+import { getRecoil, setRecoil } from "recoil-nexus";
 import { arrayAtom } from "/recoil/atoms/arrayAtom";
 import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";
 
-export const generateNewArray = (barWidth) => {
+export const generateNewArray = () => {
+  const barWidth = getRecoil(sortingBarWidthAtom);
   const visualizerContainer = document.getElementById("visualizer-container");
 
-  const visualArrayElementGap = 30 - barWidth;
-  const visualArrayElementWidth = 30 - barWidth;
+  const visualArrayElementGap = barWidth;
+  const visualArrayElementWidth = barWidth;
 
   let height = visualizerContainer.clientHeight;
-  let width = visualizerContainer.offsetWidth - 100;
+  let width = visualizerContainer.clientWidth - 100;
 
   visualizerContainer.style.gap = visualArrayElementGap + "px";
 
@@ -25,6 +26,5 @@ export const generateNewArray = (barWidth) => {
     array.push(randomHeight);
   }
 
-  setRecoil(sortingBarWidthAtom, visualArrayElementWidth);
   setRecoil(arrayAtom, array);
 };

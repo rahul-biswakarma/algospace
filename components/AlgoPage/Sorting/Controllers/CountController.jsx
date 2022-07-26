@@ -2,6 +2,8 @@ import React from "react";
 import { Slider } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { generateNewArray } from "/components/AlgoPage/Sorting/Utils/generateArray";
+import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";
+import { setRecoil } from "recoil-nexus";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
@@ -19,7 +21,8 @@ const CountTheme = createTheme({
 
 const CountController = () => {
   const updateBarWidth = (width) => {
-    generateNewArray(width);
+    setRecoil(sortingBarWidthAtom, 30 - width);
+    generateNewArray();
   };
 
   return (
@@ -29,8 +32,8 @@ const CountController = () => {
         <Slider
           className="Slider"
           aria-label="Array Count Slider"
-          defaultValue={20}
-          min={0}
+          defaultValue={15}
+          min={5}
           max={25}
           color="CountPrimary"
           onChangeCommitted={(e, val) => {

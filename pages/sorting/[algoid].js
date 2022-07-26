@@ -14,7 +14,7 @@ const Sorting = () => {
   setRecoil(algoIdAtom, rawAlgoId);
 
   useEffect(() => {
-    generateNewArray(20);
+    generateNewArray();
   }, []);
 
   return (
