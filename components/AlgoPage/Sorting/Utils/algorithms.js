@@ -38,12 +38,8 @@ export async function BubbleSort() {
       );
       await MakeDelay(delay);
     }
-    Utils.ChangeSingleElementColor(
-      arrayBars[arrLength - 1 - i],
-      Colors.FINAL_BG_COLOR,
-      Colors.FINAL_BORDER_COLOR
-    );
   }
+  await Utils.VerifyArray(arrayBars, 2 * delay);
 }
 
 export const SelectionSort = async (delay) => {
@@ -83,13 +79,8 @@ export const SelectionSort = async (delay) => {
       Colors.DEFAULT_BORDER_COLOR
     );
     await MakeDelay(delay);
-    Utils.ChangeSingleElementColor(
-      arrayBars[i],
-      Colors.FINAL_BG_COLOR,
-      Colors.FINAL_BORDER_COLOR
-    );
-    await MakeDelay(delay);
   }
+  await Utils.VerifyArray(arrayBars, 2 * delay);
 };
 
 export const InsertionSort = async (delay) => {
