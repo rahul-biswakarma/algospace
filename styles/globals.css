@@ -29,12 +29,12 @@ a {
   background-color: #1b241b;
   border: 1.5px solid #1efe5b;
 }
-
+/* 
 .nav-category-links {
   height: 0px;
   visibility: hidden;
   padding-top: 0;
-}
+} */
 
 .nav-category-container:hover .nav-category-links {
   height: 100%;

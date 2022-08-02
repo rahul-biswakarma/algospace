@@ -28,16 +28,6 @@
       ]
     },
     {
-      "name": "Special Sorting",
-      "id": "sorting",
-      "algorithms": [
-        { "id": "counting-sort", "name": "Counting Sort" },
-        { "id": "radix-sort", "name": "Radix Sort" },
-        { "id": "bucket-sort", "name": "Bucket Sort" },
-        { "id": "shell-sort", "name": "Shell Sort" }
-      ]
-    },
-    {
       "name": "Searching",
       "id": "searching",
       "algorithms": [

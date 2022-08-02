@@ -32,7 +32,7 @@ const CountController = () => {
         <Slider
           className="Slider"
           aria-label="Array Count Slider"
-          defaultValue={15}
+          defaultValue={8}
           min={5}
           max={25}
           color="CountPrimary"

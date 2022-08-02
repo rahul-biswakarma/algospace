@@ -38,6 +38,11 @@ export async function BubbleSort() {
       );
       await MakeDelay(delay);
     }
+    Utils.ChangeSingleElementColor(
+      arrayBars[arrLength - i - 1],
+      Colors.FINAL_BG_COLOR,
+      Colors.FINAL_BORDER_COLOR
+    );
   }
   await Utils.VerifyArray(arrayBars, 2 * delay);
 }
@@ -56,7 +61,17 @@ export const SelectionSort = async (delay) => {
       );
       await MakeDelay(delay);
       if (Utils.IsHeightGreater(min, arrayBars[j])) {
+        Utils.ChangeSingleElementColor(
+          min,
+          Colors.DEFAULT_BG_COLOR,
+          Colors.DEFAULT_BORDER_COLOR
+        );
         min = arrayBars[j];
+        Utils.ChangeSingleElementColor(
+          min,
+          Colors.SWAPED_BG_COLOR,
+          Colors.SWAPED_BORDER_COLOR
+        );
       }
       Utils.ChangeSingleElementColor(
         arrayBars[j],
@@ -65,22 +80,17 @@ export const SelectionSort = async (delay) => {
       );
       await MakeDelay(delay);
     }
-    Utils.ChangePairElementColor(
-      min,
-      arrayBars[i],
-      Colors.SWAPED_BG_COLOR,
-      Colors.SWAPED_BORDER_COLOR
-    );
+
     await MakeDelay(delay);
     Utils.Swap(min, arrayBars[i]);
     Utils.ChangeSingleElementColor(
-      min,
-      Colors.DEFAULT_BG_COLOR,
-      Colors.DEFAULT_BORDER_COLOR
+      arrayBars[i],
+      Colors.FINAL_BG_COLOR,
+      Colors.FINAL_BORDER_COLOR
     );
     await MakeDelay(delay);
   }
-  await Utils.VerifyArray(arrayBars, 2 * delay);
+  // await Utils.VerifyArray(arrayBars, 2 * delay);
 };
 
 export const InsertionSort = async (delay) => {
@@ -107,6 +117,11 @@ export const InsertionSort = async (delay) => {
       Utils.ChangePairElementColor(
         arrayBars[j],
         arrayBars[j - 1],
+        Colors.FINAL_BG_COLOR,
+        Colors.FINAL_BORDER_COLOR
+      );
+      Utils.ChangeSingleElementColor(
+        arrayBars[j],
         Colors.DEFAULT_BG_COLOR,
         Colors.DEFAULT_BORDER_COLOR
       );

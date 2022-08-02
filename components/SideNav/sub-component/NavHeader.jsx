@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const NavHeader = () => {
   return (
@@ -14,7 +15,11 @@ const NavHeader = () => {
         >
           v1.2.0
         </div>
-        <div className="font-unica text-text-1 text-5xl">AlgoSpace</div>
+        <div className="font-unica text-text-1 text-5xl">
+          <Link href="/">
+            <a>AlgoSpace</a>
+          </Link>
+        </div>
         <div className="text-text-2 font-space text-xs">
           Algorithm Visualizer
         </div>
