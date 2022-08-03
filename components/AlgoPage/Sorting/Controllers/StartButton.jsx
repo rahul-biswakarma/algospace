@@ -19,6 +19,7 @@ const StartButton = () => {
     if (algoId === "merge-sort") {
       await SortingAlgorithms.MergeSort(10);
     }
+    document.getElementById("sorting-status").innerHTML = "Sorted";
   };
 
   return (

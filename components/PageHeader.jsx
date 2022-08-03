@@ -8,7 +8,7 @@ const PageHeader = () => {
   const now = new Date();
   let algoName = toProperCase(useRecoilValue(algoIdAtom));
   return (
-    <div className=" bg-bg-1 relative border-b-[2px] border-border-1 max-h-[70px]">
+    <div className=" bg-bg-1 sticky top-0 border-b-[2px] border-border-1 max-h-[70px] z-10">
       <div className="h-full w-4 bg-bg-1 absolute t-0 l-0 ml-[-2px]"></div>
       <div className="px-[1.5rem] py-[1.1rem] flex items-center relative ">
         <div className="font-space text-sm text-green">

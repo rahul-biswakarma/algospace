@@ -12,7 +12,7 @@ const NavCategory = () => {
             key={data.id + data.algorithms[0].id}
             className="nav-category-container flex-col px-4 py-[18px] w-full bg-bg-2 border-2 border-border-1 cursor-pointer"
           >
-            <h2 className="font-space uppercase text-green text-center text-[1.1rem] cursor-pointer">
+            <h2 className="font-space uppercase text-green text-center text-[1.1rem] cursor-pointer mb-[5px]">
               {data.name}
             </h2>
             <div className="nav-category-links flex flex-col">

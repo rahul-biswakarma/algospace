@@ -36,6 +36,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         layout: "22vw auto",
+        statsLayout: "50% 25% 25%",
       },
       spacing: {
         gap: "0.5rem",

@@ -21,10 +21,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .array-bar {
   background-color: #1b241b;
   border: 1.5px solid #1efe5b;
@@ -43,14 +39,24 @@ a {
 
 *::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   transition: all 150ms ease-in;
 }
 
 *::-webkit-scrollbar-track {
   box-shadow: none;
+  background-color: #000301;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #222b23;
   outline: none;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: #000301;
+}
+
+.array-data {
+  padding-right: 0.6rem;
 }

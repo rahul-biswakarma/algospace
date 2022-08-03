@@ -1,8 +1,10 @@
 import { getRecoil, setRecoil } from "recoil-nexus";
 import { arrayAtom } from "/recoil/atoms/arrayAtom";
 import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";
+import { ArrayDataUpdater } from "/components/AlgoPage/Sorting/Utils";
 
 export const generateNewArray = () => {
+  document.getElementById("sorting-status").innerHTML = "Unsorted";
   const barWidth = getRecoil(sortingBarWidthAtom);
   const visualizerContainer = document.getElementById("visualizer-container");
 
@@ -26,5 +28,6 @@ export const generateNewArray = () => {
     array.push(randomHeight);
   }
 
+  ArrayDataUpdater(array);
   setRecoil(arrayAtom, array);
 };

@@ -55,3 +55,31 @@ export const VerifyArray = async (arrayBars, delay) => {
     await MakeDelay(delay);
   }
 };
+
+export const ArrayDataUpdater = async (arr, comparisons = 0, swaps = 0) => {
+  var ArraySpan = document.getElementById("sorting-array-data");
+  ArraySpan.innerHTML = "";
+  await new Promise(() => {
+    for (let i = 0; i < arr.length; i++) {
+      ArraySpan.innerHTML +=
+        "<span class='noselect array-data' id='sortingStatsArray" +
+        i +
+        "'>" +
+        arr[i] +
+        "</span>";
+    }
+
+    document.getElementById("array-element-count").innerHTML = arr.length;
+    document.getElementById("array-element-count-swap").innerHTML = arr.length;
+    document.getElementById("array-element-count-comp").innerHTML = arr.length;
+    document.getElementById("swaps-count").innerHTML = swaps;
+    document.getElementById("comparisons-count").innerHTML = comparisons;
+
+    document.getElementById("swap-percent").innerHTML = Math.round(
+      (swaps / arr.length) * 100
+    );
+    document.getElementById("comparison-percent").innerHTML = Math.round(
+      (comparisons / arr.length) * 100
+    );
+  });
+};

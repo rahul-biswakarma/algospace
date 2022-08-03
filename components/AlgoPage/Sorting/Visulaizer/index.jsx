@@ -1,6 +1,6 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import TopBar from "./TopBar";
+import dynamic from "next/dynamic";
 import { useRecoilValue } from "recoil";
 import { arrayAtom } from "/recoil/atoms/arrayAtom";
 import { sortingBarWidthAtom } from "/recoil/atoms/sortingBarWidthAtom";

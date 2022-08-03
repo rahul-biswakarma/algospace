@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
       <RecoilNexus />
-      <div className="grid grid-cols-layout w-screen h-screen max-w-[100vw] bg-bg-1">
+      <div className="grid grid-cols-layout min-h-screen bg-bg-1">
         <SideNav />
-        <div>
+        <div id="app-container">
           <PageHeader pageName="Home" />
           <Component {...pageProps} />
         </div>
