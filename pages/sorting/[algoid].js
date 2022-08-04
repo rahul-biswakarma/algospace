@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import Footer from "/components/Footer";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { setRecoil } from "recoil-nexus";
 import ToProperCase from "/utils/toProperCase";
 import { algoIdAtom } from "/recoil/atoms/algoIdAtom";
+import AlgoDataContainer from "/components/AlgoPage/AlgoData";
 import StatsContainer from "/components/AlgoPage/Sorting/Stats";
 import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
 import VisualizerContainer from "/components/AlgoPage/Sorting/Visulaizer";
@@ -31,13 +33,20 @@ const Sorting = () => {
         <SortingControllers />
         <VisualizerContainer />
         <div className="flex justify-between mt-[-12px]">
-          <Image src={VisualizerEdgeLeftIcon} alt="icon" />
-          <Image src={VisualizerEdgeRightIcon} alt="icon" />
+          <Image
+            className="scale-[0.8]"
+            src={VisualizerEdgeLeftIcon}
+            alt="icon"
+          />
+          <Image
+            className="scale-[0.8]"
+            src={VisualizerEdgeRightIcon}
+            alt="icon"
+          />
         </div>
         <StatsContainer />
-        <div className="w-full h-[150px] bg-green-bg mt-gap font-space text-[2rem] text-text-1 flex items-center uppercase justify-center">
-          More About {algoName}
-        </div>
+        <AlgoDataContainer algoName={algoName} />
+        <Footer />
       </div>
     </div>
   );
