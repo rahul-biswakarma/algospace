@@ -1,0 +1,51 @@
+{
+  "algorithms": [
+    {
+      "name": "Simple Sorting",
+      "id": "sorting",
+      "algorithms": [
+        {
+          "id": "bubble-sort",
+          "name": "Bubble Sort"
+        },
+        {
+          "id": "selection-sort",
+          "name": "Selection Sort"
+        },
+        {
+          "id": "insertion-sort",
+          "name": "Insertion Sort"
+        }
+      ]
+    },
+    {
+      "name": "Effective Sorting",
+      "id": "sorting",
+      "algorithms": [
+        { "id": "merge-sort", "name": "Merge Sort" },
+        { "id": "quick-sort", "name": "Quick Sort" },
+        { "id": "heap-sort", "name": "Heap Sort" }
+      ]
+    },
+    {
+      "name": "Searching",
+      "id": "searching",
+      "algorithms": [
+        {
+          "id": "linear-search",
+          "name": "Linear search"
+        },
+        {
+          "id": "binary-search",
+          "name": "Binary Search"
+        }
+      ]
+    }
+  ],
+  "singleAlgorithms": [
+    {
+      "id": "tower-of-hanoi",
+      "name": "Tower of Hanoi"
+    }
+  ]
+}
