@@ -1,58 +1,34 @@
-import { MakeDelay } from "/utils";
 import * as Colors from "/components/AlgoPage/Sorting/SortingUtils/colors.js";
 
-export const IsHeightGreater = (elementOne, elementTwo) => {
-  if (parseInt(elementOne.style.height) > parseInt(elementTwo.style.height)) {
-    return true;
+import { MakeDelay } from "/utils";
+
+export const SwapElementsColors = (i, j) => {
+  let arrayBars = document.querySelectorAll(".array-bar");
+  if (Array.length != 0) {
+    arrayBars[i].style.background = Colors.SWAP_BG_COLOR;
+    arrayBars[i].style.borderColor = Colors.SWAP_BORDER_COLOR;
+    arrayBars[j].style.background = Colors.SWAP_BG_COLOR;
+    arrayBars[j].style.borderColor = Colors.SWAP_BORDER_COLOR;
   }
-  return false;
 };
 
-export const ChangePairElementColor = (
-  elementOne,
-  elementTwo,
-  backgroundColor,
-  borderColor
-) => {
-  elementOne.style.background = backgroundColor;
-  elementTwo.style.background = backgroundColor;
-  elementOne.style.borderColor = borderColor;
-  elementTwo.style.borderColor = borderColor;
-  return Promise.resolve("Success");
+export const DefaultElementsColors = (i, j) => {
+  let arrayBars = document.querySelectorAll(".array-bar");
+  if (arrayBars.length != 0) {
+    arrayBars[i].style.background = Colors.DEFAULT_BG_COLOR;
+    arrayBars[i].style.borderColor = Colors.DEFAULT_BORDER_COLOR;
+    arrayBars[j].style.background = Colors.DEFAULT_BG_COLOR;
+    arrayBars[j].style.borderColor = Colors.DEFAULT_BORDER_COLOR;
+  }
 };
 
-export const ChangeSingleElementColor = (
-  element,
-  backgroundColor,
-  borderColor
-) => {
-  element.style.background = backgroundColor;
-  element.style.borderColor = borderColor;
-  return Promise.resolve("Success");
-};
-
-export const Swap = (elementOne, elementTwo) => {
-  const temp = elementOne.style.height;
-  elementOne.style.height = elementTwo.style.height;
-  elementTwo.style.height = temp;
-};
-
-export const VerifyArray = async (arrayBars, delay) => {
-  let arrLength = arrayBars.length;
-  await MakeDelay(delay);
-  for (let i = 0; i < arrLength; i++) {
-    ChangeSingleElementColor(
-      arrayBars[i],
-      Colors.RED_BG_COLOR,
-      Colors.RED_BORDER_COLOR
-    );
-    await MakeDelay(delay);
-    ChangeSingleElementColor(
-      arrayBars[i],
-      Colors.FINAL_BG_COLOR,
-      Colors.FINAL_BORDER_COLOR
-    );
-    await MakeDelay(delay);
+export const ComparingElementsColors = async (i, j) => {
+  let arrayBars = document.querySelectorAll(".array-bar");
+  if (arrayBars.length != 0) {
+    arrayBars[i].style.background = Colors.SELECTED_BG_COLOR;
+    arrayBars[i].style.borderColor = Colors.SELECTED_BORDER_COLOR;
+    arrayBars[j].style.background = Colors.SELECTED_BG_COLOR;
+    arrayBars[j].style.borderColor = Colors.SELECTED_BORDER_COLOR;
   }
 };
 
@@ -68,18 +44,5 @@ export const ArrayDataUpdater = async (arr) => {
         arr[i] +
         "</span>";
     }
-
-    // document.getElementById("array-element-count").innerHTML = arr.length;
-    // document.getElementById("array-element-count-swap").innerHTML = arr.length;
-    // document.getElementById("array-element-count-comp").innerHTML = arr.length;
-    // document.getElementById("swaps-count").innerHTML = swaps;
-    // document.getElementById("comparisons-count").innerHTML = comparisons;
-
-    // document.getElementById("swap-percent").innerHTML = Math.round(
-    //   (swaps / arr.length) * 100
-    // );
-    // document.getElementById("comparison-percent").innerHTML = Math.round(
-    //   (comparisons / arr.length) * 100
-    // );
   });
 };

@@ -5,7 +5,7 @@ const initialState = {
   arrayCount: 0,
   comparisons: 0,
   swaps: 0,
-  paused: false,
+  running: false,
   status: "UNSORTED",
   barWidth: 20,
   maxBarWidth: 30,
@@ -27,8 +27,8 @@ export const sortingSlice = createSlice({
     incrementSwaps: (state) => {
       state.swaps++;
     },
-    setPause: (state, action) => {
-      state.paused = action.payload;
+    setRunning: (state, action) => {
+      state.running = action.payload;
     },
     setStatus: (state, action) => {
       state.status = action.payload;
@@ -43,6 +43,12 @@ export const sortingSlice = createSlice({
     setSpeed: (state, action) => {
       state.speed = action.payload;
     },
+
+    resetStats: (state) => {
+      state.comparisons = 0;
+      state.swaps = 0;
+      state.status = "unsorted";
+    },
   },
 });
 
@@ -51,10 +57,11 @@ export const {
   setArray,
   incrementComparisons,
   incrementSwaps,
-  setPause,
+  setRunning,
   setStatus,
   setBarWidth,
   setSpeed,
+  resetStats,
 } = sortingSlice.actions;
 
 export default sortingSlice.reducer;

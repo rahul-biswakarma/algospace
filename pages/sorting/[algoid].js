@@ -1,21 +1,21 @@
-import React from "react";
-import Head from "next/head";
-import { batch } from "react-redux";
-import { ToProperCase } from "/utils";
-import Image from "next/image";
-import { useEffect } from "react";
-import Footer from "/components/Footer";
-import { useRouter } from "next/router";
-import { useSelector, useDispatch } from "react-redux";
-import { setArray } from "/redux/reducers/sortingSlice";
-import StatsContainer from "/components/AlgoPage/Sorting/Stats";
-import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
-import { setAlgoName, setAlgoId } from "/redux/reducers/pageSlice";
-import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
-import VisualizerContainer from "/components/AlgoPage/Sorting/Visulaizer";
+import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import { useDispatch, useSelector } from "react-redux";
 
+import Footer from "/components/Footer";
+import Head from "next/head";
+import Image from "next/image";
+import React from "react";
+import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
+import StatsContainer from "/components/AlgoPage/Sorting/Stats";
+import { ToProperCase } from "/utils";
+import VisualizerContainer from "/components/AlgoPage/Sorting/Visulaizer";
 import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
+import { batch } from "react-redux";
+import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
+import { setArray } from "/redux/reducers/sortingSlice";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Sorting = () => {
   const router = useRouter();

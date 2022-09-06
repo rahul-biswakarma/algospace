@@ -2,34 +2,24 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const SwapData = () => {
+  let ac = useSelector((state) => state.sorting.arrayCount);
+  let swaps = useSelector((state) => state.sorting.swaps);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase border-r-[1px] border-r-border-1 justify-between border-b-[10px] border-b-purple-bg">
-      <div className="flex flex-col items-stretch">
+    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg">
+      <div className="flex flex-col ">
         <div className="text-purple">
           Percentage{" "}
-          <span className="text-green" id="swap-percent">
-            {Math.round(
-              (useSelector((state) => state.sorting.swaps) /
-                useSelector((state) => state.sorting.arrayCount)) *
-                100
-            )}
-          </span>
+          <span className="text-green">{Math.round((swaps / ac) * 100)}</span>
         </div>
-        <div className="text-text-1 text-[2.5rem]">
-          <span id="swaps-count">
-            {useSelector((state) => state.sorting.swaps)}
-          </span>
-          /
-          <span id="array-element-count-swap">
-            {useSelector((state) => state.sorting.arrayCount)}
-          </span>
+        <div className="text-text-1 text-[2.4rem]">
+          <span>{swaps}</span>/<span>{ac}</span>
         </div>
       </div>
       <div className="flex justify-between">
         <div className="text-green">Swaps</div>
         <div className="text-green">
           Estimated{" "}
-          <span className="text-blue" id="estimated-swaps">
+          <span className="text-blue" id="estimated-comparisons">
             XXX
           </span>
         </div>
