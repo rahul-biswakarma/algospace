@@ -21,6 +21,7 @@ const SpeedTheme = createTheme({
 const SpeedController = () => {
   const dispatch = useDispatch();
   const maxSpeed = useSelector((state) => state.sorting.maxSpeed);
+  const speed = useSelector((state) => state.sorting.speed);
 
   const updateAlgoSpeed = (speed) => {
     dispatch(setSpeed(maxSpeed - speed));
@@ -33,7 +34,7 @@ const SpeedController = () => {
         <Slider
           className="Slider"
           aria-label="Soritng Speed Slider"
-          defaultValue={150}
+          defaultValue={maxSpeed - speed}
           min={0}
           max={maxSpeed}
           color="SpeedPrimary"

@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ArrayData = () => {
+  let sortingStatus = useSelector(
+    (state) => state.sorting.status
+  ).toLowerCase();
   return (
     <div className="flex flex-col font-space p-gap border-r-[1px] border-r-border-1 justify-between  border-b-[10px] border-b-cyan-bg">
       <div className="flex justify-between gap-[2rem] text-[15px]">
@@ -37,8 +40,15 @@ const ArrayData = () => {
             <span className="text-green uppercase">Random</span>
             <span className="text-cyan uppercase">Gernerated</span>
           </div>
-          <span id="sorting-status" className="text-red uppercase">
-            {useSelector((state) => state.sorting.status)}
+          <span
+            id="sorting-status"
+            className={
+              sortingStatus == "unsorted"
+                ? "text-red uppercase"
+                : "text-blue uppercase"
+            }
+          >
+            {sortingStatus}
           </span>
         </div>
       </div>

@@ -9,8 +9,12 @@ const initialState = {
   status: "UNSORTED",
   barWidth: 20,
   maxBarWidth: 30,
-  speed: 150,
+  speed: 50,
   maxSpeed: 500,
+  compEle1: -1,
+  compEle2: -1,
+  swapEle1: -1,
+  swapEle2: -1,
 };
 
 export const sortingSlice = createSlice({
@@ -35,6 +39,11 @@ export const sortingSlice = createSlice({
       if (action.payload == "unsorted") {
         state.comparisons = 0;
         state.swaps = 0;
+      } else {
+        state.compEle1 = -1;
+        state.compEle2 = -1;
+        state.swapEle1 = -1;
+        state.swapEle2 = -1;
       }
     },
     setBarWidth: (state, action) => {
@@ -43,11 +52,22 @@ export const sortingSlice = createSlice({
     setSpeed: (state, action) => {
       state.speed = action.payload;
     },
-
     resetStats: (state) => {
       state.comparisons = 0;
       state.swaps = 0;
+      state.compEle1 = -1;
+      state.compEle2 = -1;
+      state.swapEle1 = -1;
+      state.swapEle2 = -1;
       state.status = "unsorted";
+    },
+    setCompElements: (state, action) => {
+      state.compEle1 = action.payload[0];
+      state.compEle2 = action.payload[1];
+    },
+    setSwapElements: (state, action) => {
+      state.swapEle1 = action.payload[0];
+      state.swapEle2 = action.payload[1];
     },
   },
 });
@@ -62,6 +82,8 @@ export const {
   setBarWidth,
   setSpeed,
   resetStats,
+  setCompElements,
+  setSwapElements,
 } = sortingSlice.actions;
 
 export default sortingSlice.reducer;

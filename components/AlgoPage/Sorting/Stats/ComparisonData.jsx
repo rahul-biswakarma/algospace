@@ -5,7 +5,7 @@ const ComparisonData = () => {
   let ac = useSelector((state) => state.sorting.arrayCount);
   let comps = useSelector((state) => state.sorting.comparisons);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg">
+    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
       <div className="flex flex-col ">
         <div className="text-purple">
           Percentage{" "}

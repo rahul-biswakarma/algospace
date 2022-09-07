@@ -15,16 +15,8 @@
         {
           "id": "insertion-sort",
           "name": "Insertion Sort"
-        }
-      ]
-    },
-    {
-      "name": "Effective Sorting",
-      "id": "sorting",
-      "algorithms": [
-        { "id": "merge-sort", "name": "Merge Sort" },
-        { "id": "quick-sort", "name": "Quick Sort" },
-        { "id": "heap-sort", "name": "Heap Sort" }
+        },
+        { "id": "merge-sort", "name": "Merge Sort" }
       ]
     },
     {
