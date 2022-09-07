@@ -28,6 +28,7 @@ module.exports = {
       "blue-bg": "#1b2224",
       "green-bg-2": "#111717",
       "green-bg-3": "#00bb00",
+      "green-bg-4": "#017501",
     },
     fontFamily: {
       unica: ["Unica One", "monospace"],
@@ -50,4 +51,3 @@ module.exports = {
   },
   plugins: [],
 };
- 

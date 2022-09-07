@@ -12,6 +12,11 @@ const VisualizerContainer = () => {
   let compEle2 = useSelector((state) => state.sorting.compEle2);
   let swapEle1 = useSelector((state) => state.sorting.swapEle1);
   let swapEle2 = useSelector((state) => state.sorting.swapEle2);
+  let spclEle = useSelector((state) => state.sorting.spclEle);
+  let mergeArr1 = useSelector((state) => state.sorting.mergeArr1);
+  let mergeArr2 = useSelector((state) => state.sorting.mergeArr2);
+
+  let borderColor, bgColor;
 
   const ArrayBar = dynamic(
     () => {
@@ -28,54 +33,41 @@ const VisualizerContainer = () => {
         className="flex justify-center items-end pb-[2rem] flex-row h-full w-full"
       >
         {heightArray.map((height, index) => {
-          if (
+          if (spclEle == index) {
+            borderColor = Colors.RED_BORDER_COLOR;
+            bgColor = Colors.RED_BG_COLOR;
+          } else if (mergeArr1.includes(index)) {
+            borderColor = Colors.RED_BORDER_COLOR;
+            bgColor = Colors.RED_BG_COLOR;
+          } else if (mergeArr2.includes(index)) {
+            borderColor = Colors.SWAPED_BORDER_COLOR;
+            bgColor = Colors.SWAPED_BG_COLOR;
+          } else if (
             (compEle1 == index || compEle2 == index) &&
             (swapEle1 == index || swapEle2 == index)
           ) {
-            return (
-              <ArrayBar
-                key={index}
-                height={height}
-                width={barWidth}
-                borderColor={Colors.SWAPED_BORDER_COLOR}
-                bgColor={Colors.SWAPED_BG_COLOR}
-                id={"array-bar-" + index}
-              />
-            );
+            borderColor = Colors.SWAPED_BORDER_COLOR;
+            bgColor = Colors.SWAPED_BG_COLOR;
           } else if (compEle1 == index || compEle2 == index) {
-            return (
-              <ArrayBar
-                key={index}
-                height={height}
-                width={barWidth}
-                borderColor={Colors.SELECTED_BORDER_COLOR}
-                bgColor={Colors.SELECTED_BG_COLOR}
-                id={"array-bar-" + index}
-              />
-            );
+            borderColor = Colors.SELECTED_BORDER_COLOR;
+            bgColor = Colors.SELECTED_BG_COLOR;
           } else if (swapEle1 == index || swapEle2 == index) {
-            return (
-              <ArrayBar
-                key={index}
-                height={height}
-                width={barWidth}
-                borderColor={Colors.SWAPED_BORDER_COLOR}
-                bgColor={Colors.SWAPED_BG_COLOR}
-                id={"array-bar-" + index}
-              />
-            );
+            borderColor = Colors.SWAPED_BORDER_COLOR;
+            bgColor = Colors.SWAPED_BG_COLOR;
           } else {
-            return (
-              <ArrayBar
-                key={index}
-                height={height}
-                width={barWidth}
-                borderColor={Colors.DEFAULT_BORDER_COLOR}
-                bgColor={Colors.DEFAULT_BG_COLOR}
-                id={"array-bar-" + index}
-              />
-            );
+            borderColor = Colors.DEFAULT_BORDER_COLOR;
+            bgColor = Colors.DEFAULT_BG_COLOR;
           }
+          return (
+            <ArrayBar
+              key={index}
+              height={height}
+              width={barWidth}
+              borderColor={borderColor}
+              bgColor={bgColor}
+              id={"array-bar-" + index}
+            />
+          );
         })}
       </div>
     </div>

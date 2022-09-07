@@ -15,6 +15,9 @@ const initialState = {
   compEle2: -1,
   swapEle1: -1,
   swapEle2: -1,
+  spclEle: -1,
+  mergeArr1: [],
+  mergeArr2: [],
 };
 
 export const sortingSlice = createSlice({
@@ -44,6 +47,7 @@ export const sortingSlice = createSlice({
         state.compEle2 = -1;
         state.swapEle1 = -1;
         state.swapEle2 = -1;
+        state.spclEle = -1;
       }
     },
     setBarWidth: (state, action) => {
@@ -59,6 +63,7 @@ export const sortingSlice = createSlice({
       state.compEle2 = -1;
       state.swapEle1 = -1;
       state.swapEle2 = -1;
+      state.spclEle = -1;
       state.status = "unsorted";
     },
     setCompElements: (state, action) => {
@@ -68,6 +73,19 @@ export const sortingSlice = createSlice({
     setSwapElements: (state, action) => {
       state.swapEle1 = action.payload[0];
       state.swapEle2 = action.payload[1];
+    },
+    setSpecialElement: (state, action) => {
+      state.spclEle = action.payload;
+    },
+    setMergeArr1: (state, action) => {
+      state.mergeArr1 = action.payload;
+    },
+    setMergeArr2: (state, action) => {
+      state.mergeArr2 = action.payload;
+    },
+    resetMergeArrays: (state) => {
+      state.mergeArr1 = [];
+      state.mergeArr2 = [];
     },
   },
 });
@@ -84,6 +102,10 @@ export const {
   resetStats,
   setCompElements,
   setSwapElements,
+  setSpecialElement,
+  setMergeArr1,
+  setMergeArr2,
+  resetMergeArrays,
 } = sortingSlice.actions;
 
 export default sortingSlice.reducer;

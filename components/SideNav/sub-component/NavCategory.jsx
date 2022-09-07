@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Link from "next/link";
 import NavData from "/public/data/Nav.json";
 
 const NavCategory = () => {
   var algorithms = NavData.algorithms;
+  let currAlgoId = useSelector((state) => state.page.algoId);
   return (
     <>
       {algorithms.map((data) => {
@@ -22,9 +24,15 @@ const NavCategory = () => {
                     key={algorithm.id}
                     href={"/" + data.id + "/" + algorithm.id}
                   >
-                    <a className=" w-full border-2 border-bg-2 hover:border-green hover:border-2 hover:bg-green-bg font-space text-text-1 text-center text-[0.95rem]">
-                      {algorithm.name}
-                    </a>
+                    {currAlgoId != algorithm.id ? (
+                      <a className="w-full border-2 border-bg-2 hover:border-green hover:border-2 hover:bg-green-bg font-space text-text-1 text-center text-[0.95rem] ">
+                        {algorithm.name}
+                      </a>
+                    ) : (
+                      <a className="w-full border-2 border-bg-2 bg-green-bg-4 hover:border-green font-space text-text-1 text-center text-[0.95rem] ">
+                        {algorithm.name}
+                      </a>
+                    )}
                   </Link>
                 );
               })}
