@@ -33,6 +33,11 @@ a {
   padding-top: 0;
 } */
 
+#algo-code-container pre {
+  padding: 0rem !important;
+  margin: 2rem 0 !important;
+}
+
 .nav-category-container:hover .nav-category-links {
   height: 100%;
   visibility: visible;

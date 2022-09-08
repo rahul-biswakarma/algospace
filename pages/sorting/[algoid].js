@@ -16,12 +16,11 @@ import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/gene
 import { setArray } from "/redux/reducers/sortingSlice";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import AlgoData from "/components/AlgoPage/Sorting/AlgoData";
 
 const Sorting = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-
-  let barWidth = useSelector((state) => state.sorting.barWidth);
 
   useEffect(() => {
     var rawAlgoId = router.query.algoid;
@@ -57,7 +56,7 @@ const Sorting = () => {
           />
         </div>
         <StatsContainer />
-        {/* <AlgoDataContainer algoName={algoName} /> */}
+        <AlgoData />
         <Footer />
       </div>
     </div>

@@ -1,0 +1,66 @@
+{
+  "BubbleSort": {
+    "title": "Bubble Sort",
+    "description": "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
+    "code": "void bubbleSort(int arr[], int n){\n\tint i, j;\n\tfor (i = 0; i < n - 1; i++)\n\t\tfor (j = 0; j < n - i - 1; j++)\n\t\t\tif (arr[j] > arr[j + 1]) \n\t\t\t\tswap(&arr[j], &arr[j + 1]);\n}",
+    "timeComplexity": {
+      "best": "O(n)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    },
+    "stable": "YES"
+  },
+  "InsertionSort": {
+    "title": "Insertion Sort",
+    "description": "Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.",
+    "code": "void insertionSort(int arr[], int n){\n\tint i, key, j;\n\tfor (i = 1; i < n; i++){\n\t\tkey = arr[i];\n\t\tj = i - 1;\n\t\twhile (j >= 0 && arr[j] > key){\n\t\t\tarr[j + 1] = arr[j];\n\t\t\tj = j - 1;\n\t\t}\n\t\tarr[j + 1] = key;\n\t}\n}",
+    "timeComplexity": {
+      "best": "O(n)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    },
+    "stable": "YES"
+  },
+  "SelectionSort": {
+    "title": "Selection Sort",
+    "description": "Selection sort is an in-place comparison sorting algorithm. It has an O(n2) time complexity, which makes it inefficient on large lists, and generally performs worse than the similar insertion sort.",
+    "code": "void selectionSort(int arr[], int n){\n\tint i, j, min_idx;\n\tfor (i = 0; i < n - 1; i++){\n\t\tmin_idx = i;\n\t\tfor (j = i + 1; j < n; j++)\n\t\t\tif (arr[j] < arr[min_idx]) min_idx = j;\n\t\tswap(&arr[min_idx], &arr[i]);\n\t}\n}",
+    "timeComplexity": {
+      "best": "O(n^2)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    },
+    "stable": "NO"
+  },
+  "MergeSort": {
+    "title": "Merge Sort",
+    "description": "Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves.",
+    "code": "void merge(int arr[], int l, int m, int r){\n\tint i, j, k;\n\tint n1 = m - l + 1;\n\tint n2 = r - m;\n\tint L[n1], R[n2];\n\tfor (i = 0; i < n1; i++) L[i] = arr[l + i];\n\tfor (j = 0; j < n2; j++) R[j] = arr[m + 1 + j];\n\ti = 0;\n\tj = 0;\n\tk = l;\n\twhile (i < n1 && j < n2){\n\t\tif (L[i] <= R[j]){\n\t\t\tarr[k] = L[i];\n\t\t\ti++;\n\t\t}\n\t\telse{\n\t\t\tarr[k] = R[j];\n\t\t\tj++;\n\t\t}\n\t\tk++;\n\t}\n\twhile (i < n1){\n\t\tarr[k] = L[i];\n\t\ti++;\n\t\tk++;\n\t}\n\twhile (j < n2){\n\t\tarr[k] = R[j];\n\t\tj++;\n\t\tk++;\n\t}\n}\nvoid mergeSort(int arr[], int l, int r){\n\tif (l < r){\n\t\tint m = l + (r - l) / 2;\n\t\tmergeSort(arr, l, m);\n\t\tmergeSort(arr, m + 1, r);\n\t\tmerge(arr, l, m, r);\n\t}\n}",
+    "timeComplexity": {
+      "best": "O(n log(n))",
+      "average": "O(n log(n))",
+      "worst": "O(n log(n))"
+    },
+    "spaceComplexity": {
+      "best": "O(n)",
+      "average": "O(n)",
+      "worst": "O(n)"
+    },
+    "stable": "YES"
+  }
+}
