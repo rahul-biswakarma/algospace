@@ -30,6 +30,14 @@
         {
           "id": "binary-search",
           "name": "Binary Search"
+        },
+        {
+          "id": "jump-search",
+          "name": "Jump Search"
+        },
+        {
+          "id": "interpolation-search",
+          "name": "Interpolation Search"
         }
       ]
     }

@@ -15,8 +15,24 @@ const ArrayBar = (props) => {
         }`,
       }}
       id={props.id}
-      className={`array-bar border-2`}
-    ></div>
+      className={`relative array-bar border-2`}
+    >
+      {props.currEle ? (
+        <div
+          style={{
+            margin: "0 0 -2px -2px",
+            width: `${props.width}px`,
+            height: `${props.targetHeight}px`,
+            backgroundColor: `${Colors.TARGET_BG_COLOR}`,
+            borderColor: `${Colors.TARGET_BORDER_COLOR}`,
+          }}
+          id={props.id + "target"}
+          className={`absolute array-bar border-2 opacity-50 bottom-0 left-0`}
+        ></div>
+      ) : (
+        <div></div>
+      )}
+    </div>
   );
 };
 

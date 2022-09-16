@@ -13,16 +13,14 @@ const StartButton = () => {
 
   const startAlgo = async (algoId) => {
     dispatch(resetStats());
-    dispatch(setRunning(true));
+    dispatch(setIsSearching(true));
     if (algoId === "linear-search") {
-      let res = await SearchingAlgorithms.LinearSearch();
+      await SearchingAlgorithms.LinearSearch();
     }
     if (algoId === "binary-search") {
-      let res = await SearchingAlgorithms.BinarySearch();
+      await SearchingAlgorithms.BinarySearch();
     }
     dispatch(setIsSearching(false));
-    if (res != -1) dispatch(setStatus("found"));
-    else dispatch(setStatus("not found"));
   };
 
   return (
@@ -34,7 +32,7 @@ const StartButton = () => {
             startAlgo(algoId);
           }}
         >
-          Sort
+          Search
         </div>
       ) : (
         <div

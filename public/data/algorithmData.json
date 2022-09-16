@@ -62,5 +62,65 @@
       "worst": "O(n)"
     },
     "stable": "YES"
+  },
+  "LinearSearch": {
+    "title": "Linear Search",
+    "description": "Linear search is a very simple search algorithm. In this type of search, a sequential search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.",
+    "code": "int linearSearch(int arr[], int n, int x){\n\tint i;\n\tfor (i = 0; i < n; i++)\n\t\tif (arr[i] == x)\n\t\t\treturn i;\n\treturn -1;\n}",
+    "timeComplexity": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    }
+  },
+  "BinarySearch": {
+    "title": "Binary Search",
+    "description": "Binary search is a search algorithm that finds the position of a target value within a sorted array.",
+    "code": "int binarySearch(int arr[], int l, int r, int x){\n\tif (r >= l){\n\t\tint mid = l + (r - l) / 2;\n\t\tif (arr[mid] == x)\n\t\t\treturn mid;\n\t\tif (arr[mid] > x)\n\t\t\treturn binarySearch(arr, l, mid - 1, x);\n\t\treturn binarySearch(arr, mid + 1, r, x);\n\t}\n\treturn -1;\n}",
+    "timeComplexity": {
+      "best": "O(1)",
+      "average": "O(log(n))",
+      "worst": "O(log(n))"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    }
+  },
+  "JumpSearch": {
+    "title": "Jump Search",
+    "description": "Jump Search is a searching algorithm for sorted arrays. The basic idea is to check fewer elements (than linear search) by jumping ahead by fixed steps or skipping some elements in place of searching all elements.",
+    "code": "int jumpSearch(int arr[], int x, int n){\n\tint step = sqrt(n);\n\tint prev = 0;\n\twhile (arr[min(step, n) - 1] < x){\n\t\tprev = step;\n\t\tstep += sqrt(n);\n\t\tif (prev >= n)\n\t\t\treturn -1;\n\t}\n\twhile (arr[prev] < x){\n\t\tprev++;\n\t\tif (prev == min(step, n))\n\t\t\treturn -1;\n\t}\n\tif (arr[prev] == x)\n\t\treturn prev;\n\treturn -1;\n}",
+    "timeComplexity": {
+      "best": "O(1)",
+      "average": "O(√n)",
+      "worst": "O(√n)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    }
+  },
+  "InterpolationSearch": {
+    "title": "Interpolation Search",
+    "description": "Interpolation search is an improvement over binary search for instances, where the values in a sorted array are uniformly distributed. Binary search always goes to the middle element to check. On the other hand, interpolation search may go to different locations according to the value of the key being searched.",
+    "code": "int interpolationSearch(int arr[], int n, int x){\n\tint lo = 0, hi = (n - 1);\n\twhile (lo <= hi && x >= arr[lo] && x <= arr[hi]){\n\t\tif (lo == hi){\n\t\t\tif (arr[lo] == x) return lo;\n\t\t\treturn -1;\n\t\t}\n\t\tint pos = lo + (((double)(hi - lo) / \n\t\t(arr[hi] - arr[lo])) * (x - arr[lo]));\n\n\t\tif (arr[pos] == x)\n\t\t\treturn pos;\n\t\tif (arr[pos] < x)\n\t\t\tlo = pos + 1;\n\t\telse\n\t\t\thi = pos - 1;\n\t}\n\treturn -1;\n}",
+    "timeComplexity": {
+      "best": "O(1)",
+      "average": "O(log(log(n)))",
+      "worst": "O(n)"
+    },
+    "spaceComplexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)"
+    }
   }
 }

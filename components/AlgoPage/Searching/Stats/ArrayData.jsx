@@ -45,7 +45,7 @@ const ArrayData = () => {
           <span
             id="searching-status"
             className={
-              searchingStatus == "unsorted"
+              searchingStatus != "found"
                 ? "text-red uppercase"
                 : "text-blue uppercase"
             }

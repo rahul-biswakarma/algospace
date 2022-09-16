@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import * as Colors from "/components/AlgoPage/Searching/SearchingUtils/colors.js";
 
 const VisualizerContainer = () => {
-  let heightArray = useSelector((state) => state.searching.array);
+  const heightArray = useSelector((state) => state.searching.array);
   const barWidth = useSelector((state) => state.searching.barWidth);
-
-  let compEle = useSelector((state) => state.searching.compEle);
+  const compEle = useSelector((state) => state.searching.compEle);
+  const targetEle = useSelector((state) => state.searching.target);
+  const foundIndex = useSelector((state) => state.searching.foundIndex);
 
   let borderColor, bgColor;
+  let isCurrEle = false;
 
   const ArrayBar = dynamic(
     () => {
@@ -27,10 +29,16 @@ const VisualizerContainer = () => {
         className="flex justify-center items-end pb-[2rem] flex-row h-full w-full"
       >
         {heightArray.map((height, index) => {
-          if (compEle == index) {
+          if (compEle == index && foundIndex == -1) {
+            isCurrEle = true;
             borderColor = Colors.SELECTED_BORDER_COLOR;
             bgColor = Colors.SELECTED_BG_COLOR;
+          } else if (compEle == index && foundIndex != -1) {
+            isCurrEle = true;
+            borderColor = Colors.TARGET_BORDER_COLOR;
+            bgColor = Colors.TARGET_BG_COLOR;
           } else {
+            isCurrEle = false;
             borderColor = Colors.DEFAULT_BORDER_COLOR;
             bgColor = Colors.DEFAULT_BG_COLOR;
           }
@@ -42,6 +50,8 @@ const VisualizerContainer = () => {
               borderColor={borderColor}
               bgColor={bgColor}
               id={"array-bar-" + index}
+              currEle={isCurrEle}
+              targetHeight={targetEle}
             />
           );
         })}

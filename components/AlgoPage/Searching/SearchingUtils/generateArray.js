@@ -26,6 +26,17 @@ export const generateNewArray = () => {
 
   let randomIndex = Math.floor(Math.random() * (array.length - 1));
 
+  if (store.getState().page.algoId == "binary-search")
+    array.sort((a, b) => {
+      if (a < b) {
+        return -1;
+      }
+      if (a > b) {
+        return 1;
+      }
+      return 0;
+    });
+
   store.dispatch(setArray(array));
   store.dispatch(setTarget(array[randomIndex]));
 };
