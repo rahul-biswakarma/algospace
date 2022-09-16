@@ -1,5 +1,5 @@
 import React from "react";
-import TopBar from "./TopBar";
+import TopBar from "/components/TopBar";
 import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
 import * as Colors from "/components/AlgoPage/Sorting/SortingUtils/colors.js";

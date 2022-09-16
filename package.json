@@ -17,6 +17,7 @@
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-nprogress": "^0.1.6",
     "react-redux": "^8.0.2",
     "react-syntax-highlighter": "^15.5.0"
   },

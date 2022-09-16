@@ -1,4 +1,5 @@
 import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import { setRunning, resetStats } from "/redux/reducers/sortingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import Footer from "/components/Footer";
@@ -13,7 +14,6 @@ import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 import { batch } from "react-redux";
 import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
-import { setArray } from "/redux/reducers/sortingSlice";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import AlgoData from "/components/AlgoPage/Sorting/AlgoData";
@@ -23,6 +23,10 @@ const Sorting = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    batch(() => {
+      dispatch(setRunning(false));
+      dispatch(resetStats());
+    });
     var rawAlgoId = router.query.algoid;
     var algoName = ToProperCase(rawAlgoId);
 

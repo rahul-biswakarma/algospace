@@ -16,7 +16,10 @@ const AlgoData = () => {
             More About {algoName}
           </div>
           <div className="grid grid-cols-algoDataLayout gap-gap my-gap">
-            <div id="algo-code-container" className="w-full h-full font-space border-[1px] border-border-1">
+            <div
+              id="algo-code-container"
+              className="w-full h-full font-space border-[1px] border-border-1 bg-graphPattern"
+            >
               <SyntaxHighlighter
                 language="cpp"
                 wrapLines={true}
