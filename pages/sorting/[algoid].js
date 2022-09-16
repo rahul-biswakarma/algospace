@@ -9,7 +9,7 @@ import React from "react";
 import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
 import StatsContainer from "/components/AlgoPage/Sorting/Stats";
 import { ToProperCase } from "/utils";
-import VisualizerContainer from "/components/AlgoPage/Sorting/Visulaizer";
+import VisualizerContainer from "/components/AlgoPage/Sorting/Visualizer";
 import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 import { batch } from "react-redux";
