@@ -37,7 +37,8 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         homeLayout: "22vw auto",
-        statsLayout: "50% 25% 25%",
+        twoStatsLayout: "65% 35%",
+        threeStatsLayout: "50% 25% 25%",
         algoDataLayout: "60% 40%",
       },
       spacing: {
