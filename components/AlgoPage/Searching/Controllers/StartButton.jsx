@@ -20,6 +20,12 @@ const StartButton = () => {
     if (algoId === "binary-search") {
       await SearchingAlgorithms.BinarySearch();
     }
+    if (algoId === "jump-search") {
+      await SearchingAlgorithms.JumpSearch();
+    }
+    if (algoId === "interpolation-search") {
+      await SearchingAlgorithms.InterpolationSearch();
+    }
     dispatch(setIsSearching(false));
   };
 

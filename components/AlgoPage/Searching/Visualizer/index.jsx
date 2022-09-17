@@ -2,6 +2,7 @@ import React from "react";
 import TopBar from "/components/TopBar";
 import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
+import TargetContainer from "./targetContainer";
 import * as Colors from "/components/AlgoPage/Searching/SearchingUtils/colors.js";
 
 const VisualizerContainer = () => {
@@ -10,6 +11,8 @@ const VisualizerContainer = () => {
   const compEle = useSelector((state) => state.searching.compEle);
   const targetEle = useSelector((state) => state.searching.target);
   const foundIndex = useSelector((state) => state.searching.foundIndex);
+  const low = useSelector((state) => state.searching.rangeLeft);
+  const high = useSelector((state) => state.searching.rangeRight);
 
   let borderColor, bgColor;
   let isCurrEle = false;
@@ -22,8 +25,9 @@ const VisualizerContainer = () => {
   );
 
   return (
-    <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern">
+    <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern overflow-hidden">
       <TopBar />
+      <TargetContainer />
       <div
         id="visualizer-container"
         className="flex justify-center items-end pb-[2rem] flex-row h-full w-full"
@@ -41,6 +45,10 @@ const VisualizerContainer = () => {
             isCurrEle = false;
             borderColor = Colors.DEFAULT_BORDER_COLOR;
             bgColor = Colors.DEFAULT_BG_COLOR;
+          }
+          if (index >= low && index <= high) {
+            borderColor = Colors.SELECTED_BORDER_COLOR;
+            bgColor = Colors.SELECTED_BG_COLOR;
           }
           return (
             <ArrayBar

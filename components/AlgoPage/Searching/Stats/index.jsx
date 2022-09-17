@@ -1,5 +1,6 @@
 import ArrayData from "./ArrayData";
 import ComparisonData from "./ComparisonData";
+import TargetData from "./TargetData";
 
 const StatsContainer = () => {
   return (

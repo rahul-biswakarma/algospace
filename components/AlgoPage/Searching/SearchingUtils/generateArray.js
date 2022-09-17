@@ -26,7 +26,9 @@ export const generateNewArray = () => {
 
   let randomIndex = Math.floor(Math.random() * (array.length - 1));
 
-  if (store.getState().page.algoId == "binary-search")
+  let algoName = store.getState().page.algoId;
+
+  if (algoName == "binary-search" || algoName == "jump-search") {
     array.sort((a, b) => {
       if (a < b) {
         return -1;
@@ -36,7 +38,7 @@ export const generateNewArray = () => {
       }
       return 0;
     });
-
+  }
   store.dispatch(setArray(array));
   store.dispatch(setTarget(array[randomIndex]));
 };

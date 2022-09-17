@@ -6,13 +6,15 @@ const initialState = {
   target: 0,
   barWidth: 20,
   maxBarWidth: 30,
-  speed: 300,
-  maxSpeed: 500,
+  speed: 100,
+  maxSpeed: 400,
   comparisons: 0,
   status: "Not Searching",
   isSearching: false,
   compEle: -1,
   foundIndex: -1,
+  rangeLeft: -1,
+  rangeRight: -1,
 };
 
 const searchingSlice = createSlice({
@@ -54,6 +56,14 @@ const searchingSlice = createSlice({
       state.status = "not searching";
       state.compEle = -1;
       state.foundIndex = -1;
+      state.rangeLeft = -1;
+      state.rangeRight = -1;
+    },
+    setRangeLeft: (state, action) => {
+      state.rangeLeft = action.payload;
+    },
+    setRangeRight: (state, action) => {
+      state.rangeRight = action.payload;
     },
   },
 });
@@ -69,6 +79,8 @@ export const {
   setCompElement,
   setSpeed,
   setBarWidth,
+  setRangeLeft,
+  setRangeRight,
 } = searchingSlice.actions;
 
 export default searchingSlice.reducer;

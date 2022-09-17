@@ -34,10 +34,6 @@
         {
           "id": "jump-search",
           "name": "Jump Search"
-        },
-        {
-          "id": "interpolation-search",
-          "name": "Interpolation Search"
         }
       ]
     }

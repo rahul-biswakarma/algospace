@@ -24,7 +24,7 @@ const SpeedController = () => {
   const speed = useSelector((state) => state.searching.speed);
 
   const updateAlgoSpeed = (speed) => {
-    dispatch(setSpeed(maxSpeed - speed));
+    dispatch(setSpeed(speed));
   };
 
   return (
@@ -34,7 +34,7 @@ const SpeedController = () => {
         <Slider
           className="Slider"
           aria-label="Soritng Speed Slider"
-          defaultValue={maxSpeed - speed}
+          defaultValue={speed}
           min={0}
           max={maxSpeed}
           color="SpeedPrimary"

@@ -7,6 +7,8 @@ import {
   setCompElement,
   setStatus,
   incrementComparisons,
+  setRangeLeft,
+  setRangeRight,
 } from "/redux/reducers/searchingSlice";
 
 export async function LinearSearch() {
@@ -36,6 +38,8 @@ export async function BinarySearch() {
   let high = array.length - 1;
 
   while (low <= high) {
+    store.dispatch(setRangeLeft(low));
+    store.dispatch(setRangeRight(high));
     if (!store.getState().searching.isSearching) return;
     let mid = Math.floor((low + high) / 2);
     store.dispatch(setCompElement(mid));
@@ -62,6 +66,9 @@ export async function JumpSearch() {
   let step = Math.floor(Math.sqrt(array.length));
   let prev = 0;
   while (array[Math.min(step, array.length) - 1] < target) {
+    store.dispatch(setRangeLeft(prev));
+    store.dispatch(setRangeRight(step));
+    await MakeDelay(store.getState().searching.speed);
     if (!store.getState().searching.isSearching) return;
     prev = step;
     step += Math.floor(Math.sqrt(array.length));
@@ -70,7 +77,9 @@ export async function JumpSearch() {
       return -1;
     }
   }
+  store.dispatch(setCompElement(prev));
   while (array[prev] < target) {
+    await MakeDelay(store.getState().searching.speed);
     if (!store.getState().searching.isSearching) return;
     prev++;
     store.dispatch(setCompElement(prev));
@@ -80,6 +89,8 @@ export async function JumpSearch() {
       return -1;
     }
   }
+  await MakeDelay(store.getState().searching.speed);
+  store.dispatch(setCompElement(prev));
   if (array[prev] === target) {
     store.dispatch(setFoundIndex(prev));
     store.dispatch(setStatus("found"));

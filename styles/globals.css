@@ -33,6 +33,18 @@ a {
   padding-top: 0;
 } */
 
+.input-feild {
+  background-color: transparent;
+  position: relative;
+  width: 60px;
+  text-align: center;
+}
+
+.input-feild:focus {
+  outline: none;
+  border-color: red;
+}
+
 #algo-code-container pre {
   padding: 0rem !important;
   margin: 2rem 0 !important;
