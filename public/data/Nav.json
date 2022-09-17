@@ -1,7 +1,7 @@
 {
   "algorithms": [
     {
-      "name": "Simple Sorting",
+      "name": "Sorting",
       "id": "sorting",
       "algorithms": [
         {
