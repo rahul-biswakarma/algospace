@@ -29,8 +29,10 @@ export async function BubbleSort() {
     for (let j = 0; j < array.length - i - 1; j++) {
       if (!store.getState().sorting.running) return;
       await MakeDelay(store.getState().sorting.speed);
-      store.dispatch(setCompElements([j, j + 1]));
-      store.dispatch(incrementComparisons());
+      batch(() => {
+        store.dispatch(setCompElements([j, j + 1]));
+        store.dispatch(incrementComparisons());
+      });
       array = store.getState().sorting.array.slice();
       if (array[j] > array[j + 1]) {
         store.dispatch(setSwapElements([j, j + 1]));
@@ -38,8 +40,12 @@ export async function BubbleSort() {
         array[j] = array[j + 1];
         array[j + 1] = temp;
         store.dispatch(incrementSwaps());
+        await MakeDelay(store.getState().sorting.speed);
       }
-      store.dispatch(setArray(array));
+      batch(() => {
+        store.dispatch(setSwapElements([-1, -1]));
+        store.dispatch(setArray(array));
+      });
     }
   }
 }
@@ -49,16 +55,19 @@ export async function SelectionSort() {
   let array = store.getState().sorting.array.slice();
   for (let i = 0; i < array.length; i++) {
     let min = i;
-    store.dispatch(setSpecialElement(i));
+    store.dispatch(setSpecialElement(min));
     for (let j = i + 1; j < array.length; j++) {
       if (!store.getState().sorting.running) return;
-      await MakeDelay(store.getState().sorting.speed);
-      store.dispatch(incrementComparisons());
-      store.dispatch(setSwapElements([-1, -1]));
       store.dispatch(setCompElements([min, j]));
+      await MakeDelay(store.getState().sorting.speed);
       if (array[j] < array[min]) {
         min = j;
       }
+      batch(() => {
+        store.dispatch(incrementComparisons());
+        store.dispatch(setSwapElements([-1, -1]));
+        store.dispatch(setCompElements([min, j]));
+      });
     }
     array = store.getState().sorting.array.slice();
     store.dispatch(setSwapElements([i, min]));
@@ -67,9 +76,13 @@ export async function SelectionSort() {
       array[i] = array[min];
       array[min] = temp;
       store.dispatch(incrementSwaps());
+      await MakeDelay(store.getState().sorting.speed);
     }
-    store.dispatch(setArray(array));
-    store.dispatch(setSpecialElement(-1));
+    batch(() => {
+      store.dispatch(setSwapElements([-1, -1]));
+      store.dispatch(setArray(array));
+      store.dispatch(setSpecialElement(-1));
+    });
   }
 }
 
@@ -140,8 +153,10 @@ async function Merge(l, mid, h) {
       B[k++] = array[j++];
     }
   }
+  await MakeDelay(store.getState().sorting.speed);
   for (; i <= mid; i++) {
     if (!store.getState().sorting.running) return;
+    await MakeDelay(store.getState().sorting.speed);
     batch(() => {
       store.dispatch(setCompElements([i, i]));
       store.dispatch(incrementComparisons());
@@ -150,12 +165,14 @@ async function Merge(l, mid, h) {
   }
   for (; j <= h; j++) {
     if (!store.getState().sorting.running) return;
+    await MakeDelay(store.getState().sorting.speed);
     batch(() => {
       store.dispatch(setCompElements([j, j]));
       store.dispatch(incrementComparisons());
     });
     B[k++] = array[j];
   }
+  await MakeDelay(store.getState().sorting.speed);
   for (let i = l; i <= h; i++) {
     if (!store.getState().sorting.running) return;
     await MakeDelay(store.getState().sorting.speed);
@@ -167,4 +184,5 @@ async function Merge(l, mid, h) {
       store.dispatch(setArray(array));
     });
   }
+  await MakeDelay(store.getState().sorting.speed);
 }
