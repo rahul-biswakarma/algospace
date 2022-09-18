@@ -1,7 +1,12 @@
 import { store } from "/redux/store";
-import { setArray, setTarget } from "/redux/reducers/searchingSlice";
+import {
+  setArray,
+  setTarget,
+  setCompElement,
+} from "/redux/reducers/searchingSlice";
 
 export const generateNewArray = () => {
+  store.dispatch(setCompElement(-1));
   const visualizerContainer = document.getElementById("visualizer-container");
 
   const visualArrayElementGap = store.getState().searching.barWidth;
