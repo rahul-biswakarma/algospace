@@ -1,7 +1,7 @@
 {
   "algorithms": [
     {
-      "name": "Sorting Algorithms",
+      "name": "Sorting",
       "id": "sorting",
       "algorithms": [
         {
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "name": "Searching Algorithms",
+      "name": "Searching",
       "id": "searching",
       "algorithms": [
         {
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "name": "Recursive Algorithms",
+      "name": "Recursive",
       "id": "recursive-algorithms",
       "algorithms": [
         {
