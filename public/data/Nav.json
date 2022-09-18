@@ -1,7 +1,7 @@
 {
   "algorithms": [
     {
-      "name": "Sorting",
+      "name": "Sorting Algorithms",
       "id": "sorting",
       "algorithms": [
         {
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "name": "Searching",
+      "name": "Searching Algorithms",
       "id": "searching",
       "algorithms": [
         {
@@ -36,12 +36,20 @@
           "name": "Jump Search"
         }
       ]
-    }
-  ],
-  "singleAlgorithms": [
+    },
     {
-      "id": "tower-of-hanoi",
-      "name": "Tower of Hanoi"
+      "name": "Recursive Algorithms",
+      "id": "recursive-algorithms",
+      "algorithms": [
+        {
+          "id": "n-queen",
+          "name": "N Queen"
+        },
+        {
+          "id": "tower-of-hanoi",
+          "name": "Tower of Hanoi"
+        }
+      ]
     }
   ]
 }
