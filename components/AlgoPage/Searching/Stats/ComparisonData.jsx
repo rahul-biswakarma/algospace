@@ -10,11 +10,14 @@ const ComparisonData = () => {
         <div className="text-purple">
           Percentage{" "}
           <span className="text-green">
-            {Math.round((Number(comps) / Number(ac)) * 100)}
+            {Math.round((Number(comps) / Number(ac)) * 100) === NaN
+              ? 0
+              : Math.round((Number(comps) / Number(ac)) * 100)}
           </span>
         </div>
         <div className="text-text-1 text-[2.4rem]">
-          <span>{Number(comps)}</span>/<span>{Number(ac)}</span>
+          <span>{comps === NaN ? 0 : String(comps)}</span>/
+          <span>{ac === NaN ? 0 : String(ac)}</span>
         </div>
       </div>
       <div className="flex justify-between">
