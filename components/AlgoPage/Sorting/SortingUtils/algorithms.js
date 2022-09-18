@@ -126,8 +126,8 @@ async function MergeSortHelper(l, h) {
   await MergeSortHelper(l, mid);
   await MergeSortHelper(mid + 1, h);
   batch(() => {
-    store.dispatch(setMergeArr1(generateArray(l, mid)));
-    store.dispatch(setMergeArr2(generateArray(mid + 1, h)));
+    store.dispatch(setMergeArr1([l, mid]));
+    store.dispatch(setMergeArr2([mid + 1, h]));
   });
   await Merge(l, mid, h);
   store.dispatch(resetMergeArrays());

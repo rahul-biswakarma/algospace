@@ -36,10 +36,10 @@ const VisualizerContainer = () => {
           if (spclEle == index) {
             borderColor = Colors.RED_BORDER_COLOR;
             bgColor = Colors.RED_BG_COLOR;
-          } else if (mergeArr1.includes(index)) {
+          } else if (index >= mergeArr1[0] && index <= mergeArr1[1]) {
             borderColor = Colors.RED_BORDER_COLOR;
             bgColor = Colors.RED_BG_COLOR;
-          } else if (mergeArr2.includes(index)) {
+          } else if (index >= mergeArr2[0] && index <= mergeArr2[1]) {
             borderColor = Colors.SWAPED_BORDER_COLOR;
             bgColor = Colors.SWAPED_BG_COLOR;
           } else if (

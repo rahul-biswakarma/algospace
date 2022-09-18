@@ -16,8 +16,8 @@ const initialState = {
   swapEle1: -1,
   swapEle2: -1,
   spclEle: -1,
-  mergeArr1: [],
-  mergeArr2: [],
+  mergeArr1: [-1, -1],
+  mergeArr2: [-1, -1],
 };
 
 export const sortingSlice = createSlice({
