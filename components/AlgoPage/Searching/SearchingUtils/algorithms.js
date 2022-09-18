@@ -66,8 +66,10 @@ export async function JumpSearch() {
   let step = Math.floor(Math.sqrt(array.length));
   let prev = 0;
   while (array[Math.min(step, array.length) - 1] < target) {
-    store.dispatch(setRangeLeft(prev));
-    store.dispatch(setRangeRight(step));
+    batch(() => {
+      store.dispatch(setRangeLeft(prev));
+      store.dispatch(setRangeRight(step));
+    });
     await MakeDelay(store.getState().searching.speed);
     if (!store.getState().searching.isSearching) return;
     prev = step;
@@ -77,13 +79,23 @@ export async function JumpSearch() {
       return -1;
     }
   }
-  store.dispatch(setCompElement(prev));
+  batch(() => {
+    store.dispatch(setRangeLeft(prev));
+    store.dispatch(setRangeRight(step));
+    store.dispatch(setCompElement(prev));
+  });
+  batch(() => {
+    store.dispatch(setCompElement(prev));
+    store.dispatch(incrementComparisons());
+  });
   while (array[prev] < target) {
     await MakeDelay(store.getState().searching.speed);
     if (!store.getState().searching.isSearching) return;
     prev++;
-    store.dispatch(setCompElement(prev));
-    store.dispatch(incrementComparisons());
+    batch(() => {
+      store.dispatch(setCompElement(prev));
+      store.dispatch(incrementComparisons());
+    });
     if (prev === Math.min(step, array.length)) {
       store.dispatch(setStatus("not found"));
       return -1;
@@ -92,40 +104,11 @@ export async function JumpSearch() {
   await MakeDelay(store.getState().searching.speed);
   store.dispatch(setCompElement(prev));
   if (array[prev] === target) {
-    store.dispatch(setFoundIndex(prev));
-    store.dispatch(setStatus("found"));
-    return prev;
-  }
-  store.dispatch(setStatus("not found"));
-  return -1;
-}
-
-export async function InterpolationSearch() {
-  const array = store.getState().searching.array;
-  const target = store.getState().searching.target;
-
-  let low = 0;
-  let high = array.length - 1;
-
-  while (low <= high && target >= array[low] && target <= array[high]) {
-    if (!store.getState().searching.isSearching) return;
-    let pos =
-      low +
-      Math.floor(
-        ((target - array[low]) * (high - low)) / (array[high] - array[low])
-      );
-    store.dispatch(setCompElement(pos));
-    store.dispatch(incrementComparisons());
-    await MakeDelay(store.getState().searching.speed);
-    if (array[pos] === target) {
-      store.dispatch(setFoundIndex(pos));
+    batch(() => {
+      store.dispatch(setFoundIndex(prev));
       store.dispatch(setStatus("found"));
-      return pos;
-    } else if (array[pos] < target) {
-      low = pos + 1;
-    } else {
-      high = pos - 1;
-    }
+    });
+    return prev;
   }
   store.dispatch(setStatus("not found"));
   return -1;

@@ -24,7 +24,7 @@ const SpeedController = () => {
   const speed = useSelector((state) => state.searching.speed);
 
   const updateAlgoSpeed = (speed) => {
-    dispatch(setSpeed(speed));
+    dispatch(setSpeed(maxSpeed - speed));
   };
 
   return (

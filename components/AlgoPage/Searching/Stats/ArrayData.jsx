@@ -5,6 +5,10 @@ const ArrayData = () => {
   let searchingStatus = useSelector(
     (state) => state.searching.status
   ).toLowerCase();
+  let compEle = useSelector((state) => state.searching.compEle);
+  let target = useSelector((state) => state.searching.target);
+  let leftRange = useSelector((state) => state.searching.rangeLeft);
+  let rightRange = useSelector((state) => state.searching.rangeRight);
   return (
     <div className="flex flex-col font-space p-gap border-r-[1px] border-r-border-1 justify-between  border-b-[10px] border-b-cyan-bg">
       <div className="flex justify-between gap-[2rem] text-[15px]">
@@ -14,7 +18,31 @@ const ArrayData = () => {
         >
           {useSelector((state) => state.searching.array).map(
             (element, index) => {
-              return (
+              return target == element ? (
+                <span
+                  key={index}
+                  className="noselect array-data text-green"
+                  id={`searchingStatsArray${index}`}
+                >
+                  {element}
+                </span>
+              ) : compEle == index ? (
+                <span
+                  key={index}
+                  className="noselect array-data text-red"
+                  id={`searchingStatsArray${index}`}
+                >
+                  {element}
+                </span>
+              ) : index >= leftRange && index <= rightRange ? (
+                <span
+                  key={index}
+                  className="noselect array-data text-blue"
+                  id={`searchingStatsArray${index}`}
+                >
+                  {element}
+                </span>
+              ) : (
                 <span
                   key={index}
                   className="noselect array-data"
