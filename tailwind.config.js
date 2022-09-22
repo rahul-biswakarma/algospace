@@ -29,6 +29,7 @@ module.exports = {
       "green-bg-2": "#111717",
       "green-bg-3": "#00bb00",
       "green-bg-4": "#017501",
+      "blue-bg-4": "#100175",
     },
     fontFamily: {
       unica: ["Unica One", "monospace"],
@@ -39,6 +40,7 @@ module.exports = {
         homeLayout: "22vw auto",
         twoStatsLayout: "65% 35%",
         threeStatsLayout: "50% 25% 25%",
+        threeColsLayout: "33% 33% 33%",
         algoDataLayout: "60% 40%",
       },
       spacing: {
