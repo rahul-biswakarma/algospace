@@ -26,7 +26,11 @@ export async function LinearSearch() {
       return i;
     }
   }
-  store.dispatch(setStatus("not found"));
+  batch(() => {
+    store.dispatch(setStatus("not found"));
+    store.dispatch(setCompElement(-1));
+  });
+  await MakeDelay(store.getState().searching.speed);
   return -1;
 }
 
@@ -55,7 +59,11 @@ export async function BinarySearch() {
       high = mid - 1;
     }
   }
-  store.dispatch(setStatus("not found"));
+  batch(() => {
+    store.dispatch(setStatus("not found"));
+    store.dispatch(setCompElement(-1));
+  });
+  await MakeDelay(store.getState().searching.speed);
   return -1;
 }
 
@@ -110,6 +118,10 @@ export async function JumpSearch() {
     });
     return prev;
   }
-  store.dispatch(setStatus("not found"));
+  batch(() => {
+    store.dispatch(setStatus("not found"));
+    store.dispatch(setCompElement(-1));
+  });
+  await MakeDelay(store.getState().searching.speed);
   return -1;
 }
