@@ -25,7 +25,7 @@ const VisualizerContainer = () => {
   );
 
   return (
-    <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern overflow-hidden">
+    <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern overflow-hidden select-none">
       <TopBar />
       <TargetContainer />
       <div

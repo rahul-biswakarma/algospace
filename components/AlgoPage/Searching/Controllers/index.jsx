@@ -6,7 +6,7 @@ import GenerateButton from "./GenerateButton";
 
 const SearchingControllers = () => {
   return (
-    <div className="flex flex-row gap-gap py-gap w-full h-[70px]">
+    <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
       <GenerateButton />
       <SpeedController />
       <CountController />
