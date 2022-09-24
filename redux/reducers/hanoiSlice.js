@@ -49,6 +49,21 @@ const hanoiSlice = createSlice({
       state.towerC = action.payload;
       state.cCount = action.payload.length;
     },
+    setStartTime: (state, action) => {
+      state.startTime = action.payload;
+    },
+    setEndTime: (state, action) => {
+      state.endTime = action.payload;
+    },
+    incrementABSwap: (state) => {
+      state.abSwap += 1;
+    },
+    incrementBCSwap: (state) => {
+      state.bcSwap += 1;
+    },
+    incrementACSwap: (state) => {
+      state.acSwap += 1;
+    },
     resetStats: (state) => {
       state.isRunning = false;
       state.towerA = [];
@@ -75,6 +90,11 @@ export const {
   setTowerB,
   setTowerC,
   resetStats,
+  setStartTime,
+  setEndTime,
+  incrementABSwap,
+  incrementACSwap,
+  incrementBCSwap,
 } = hanoiSlice.actions;
 
 export default hanoiSlice.reducer;

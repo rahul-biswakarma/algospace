@@ -13,6 +13,7 @@ const VisualizerContainer = () => {
   let towerB = useSelector((state) => state.hanoi.towerB);
   let towerC = useSelector((state) => state.hanoi.towerC);
   const height = useSelector((state) => state.hanoi.height);
+  let temp = [1];
 
   let borderColor, bgColor;
 
@@ -24,7 +25,7 @@ const VisualizerContainer = () => {
   );
 
   return (
-    <div className="relative w-full h-[50vh] grid grid-cols-threeColsLayout gap-gap">
+    <div className="relative w-full h-[50vh] grid grid-cols-threeColsLayout gap-gap select-none">
       <div
         id="visualizer-tower-a"
         className="relative height-full flex flex-col pb-[2rem] h-full w-full border-[1px] border-border-1 bg-bg-1"
@@ -37,22 +38,26 @@ const VisualizerContainer = () => {
           id="towerA"
           className="flex flex-col justify-end items-center h-full w-full gap-gap"
         >
-          {towerA
-            ? towerA.map((width, index) => {
-                borderColor = Colors.GREEN_BORDER_COLOR;
-                bgColor = Colors.GREEN_BG_COLOR;
-                return (
-                  <ArrayBar
-                    key={index}
-                    height={height}
-                    width={width}
-                    borderColor={borderColor}
-                    bgColor={bgColor}
-                    id={"array-bar-" + index}
-                  />
-                );
-              })
-            : ""}
+          {towerA.length != 0 ? (
+            towerA.map((width, index) => {
+              borderColor = Colors.GREEN_BORDER_COLOR;
+              bgColor = Colors.GREEN_BG_COLOR;
+              return (
+                <ArrayBar
+                  key={index}
+                  height={height}
+                  width={width}
+                  borderColor={borderColor}
+                  bgColor={bgColor}
+                  id={"array-bar-" + index}
+                />
+              );
+            })
+          ) : (
+            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+              Empty
+            </div>
+          )}
         </div>
         <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
           <Image
@@ -81,22 +86,26 @@ const VisualizerContainer = () => {
           id="towerB"
           className="flex flex-col justify-end items-center h-full w-full gap-gap"
         >
-          {towerB
-            ? towerB.map((width, index) => {
-                borderColor = Colors.GREEN_BORDER_COLOR;
-                bgColor = Colors.GREEN_BG_COLOR;
-                return (
-                  <ArrayBar
-                    key={index}
-                    height={height}
-                    width={width}
-                    borderColor={borderColor}
-                    bgColor={bgColor}
-                    id={"array-bar-" + index}
-                  />
-                );
-              })
-            : ""}
+          {towerB.length != 0 ? (
+            towerB.map((width, index) => {
+              borderColor = Colors.GREEN_BORDER_COLOR;
+              bgColor = Colors.GREEN_BG_COLOR;
+              return (
+                <ArrayBar
+                  key={index}
+                  height={height}
+                  width={width}
+                  borderColor={borderColor}
+                  bgColor={bgColor}
+                  id={"array-bar-" + index}
+                />
+              );
+            })
+          ) : (
+            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+              Empty
+            </div>
+          )}
         </div>
         <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
           <Image
@@ -125,22 +134,26 @@ const VisualizerContainer = () => {
           id="towerC"
           className="flex flex-col justify-end items-center h-full w-full gap-gap"
         >
-          {towerC
-            ? towerC.map((width, index) => {
-                borderColor = Colors.GREEN_BORDER_COLOR;
-                bgColor = Colors.GREEN_BG_COLOR;
-                return (
-                  <ArrayBar
-                    key={index}
-                    height={height}
-                    width={width}
-                    borderColor={borderColor}
-                    bgColor={bgColor}
-                    id={"array-bar-" + index}
-                  />
-                );
-              })
-            : ""}
+          {towerC.length != 0 ? (
+            towerC.map((width, index) => {
+              borderColor = Colors.GREEN_BORDER_COLOR;
+              bgColor = Colors.GREEN_BG_COLOR;
+              return (
+                <ArrayBar
+                  key={index}
+                  height={height}
+                  width={width}
+                  borderColor={borderColor}
+                  bgColor={bgColor}
+                  id={"array-bar-" + index}
+                />
+              );
+            })
+          ) : (
+            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+              Empty
+            </div>
+          )}
         </div>
         <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
           <Image

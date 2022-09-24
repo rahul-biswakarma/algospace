@@ -6,7 +6,7 @@ import CountController from "./CountController";
 
 const HanoiControllers = () => {
   return (
-    <div className="flex flex-row gap-gap py-gap w-full h-[70px]">
+    <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
       <GenerateButton />
       <CountController />
       <SpeedController />

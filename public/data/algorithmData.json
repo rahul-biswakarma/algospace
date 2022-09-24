@@ -122,5 +122,20 @@
       "average": "O(1)",
       "worst": "O(1)"
     }
+  },
+  "TowerOfHanoi": {
+    "title": "Tower of Hanoi",
+    "description": "Tower of Hanoi is a mathematical puzzle where we have three rods and n disks. The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules: 1) Only one disk can be moved at a time. 2) Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack i.e. a disk can only be moved if it is the uppermost disk on a stack. 3) No disk may be placed on top of a smaller disk.",
+    "code": "void towerOfHanoi(int n, char from_rod, char to_rod,char aux_rod)\n{\n\tif (n == 0) {\n\t\treturn;\n\t}\n\ttowerOfHanoi(n - 1, from_rod, aux_rod, to_rod);\n\tcout << \"Move disk \" << n << \" from rod \" << from_rod << \" to rod \" << to_rod << endl;\n\ttowerOfHanoi(n - 1, aux_rod, to_rod, from_rod);\n}",
+    "timeComplexity": {
+      "best": "O(2^n)",
+      "average": "O(2^n)",
+      "worst": "O(2^n)"
+    },
+    "spaceComplexity": {
+      "best": "O(n)",
+      "average": "O(n)",
+      "worst": "O(n)"
+    }
   }
 }

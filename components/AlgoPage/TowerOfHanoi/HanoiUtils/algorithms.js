@@ -1,9 +1,17 @@
-import { batch } from "react-redux";
 import { MakeDelay } from "/utils";
 import { store } from "/redux/store";
-import { setTowerA, setTowerB, setTowerC } from "/redux/reducers/hanoiSlice";
+import {
+  setTowerA,
+  setTowerB,
+  setTowerC,
+  setEndTime,
+  incrementABSwap,
+  incrementACSwap,
+  incrementBCSwap,
+} from "/redux/reducers/hanoiSlice";
 
 export const TowerOfHanoi = async () => {
+  store.dispatch(setEndTime(Date.now()));
   var towerA = store.getState().hanoi.towerA;
   let n = towerA.length;
   await TowerOfHanoiHelper(n, "towerA", "towerC", "towerB");
@@ -11,17 +19,20 @@ export const TowerOfHanoi = async () => {
 
 const TowerOfHanoiHelper = async (n, from, to, aux) => {
   if (n == 0) return;
-
+  store.dispatch(setEndTime(Date.now()));
   await TowerOfHanoiHelper(n - 1, from, aux, to);
   await transferDisc(from, to);
   await MakeDelay(store.getState().hanoi.speed);
   await TowerOfHanoiHelper(n - 1, aux, to, from);
 };
 
+
 const transferDisc = async (source, destination) => {
   var temp = 0;
   var sourceArr = [];
   var destinationArr = [];
+
+  store.dispatch(setEndTime(Date.now()));
 
   if (source === "towerA") {
     let arr = store.getState().hanoi.towerA;
@@ -52,5 +63,18 @@ const transferDisc = async (source, destination) => {
   } else {
     destinationArr = [temp, ...store.getState().hanoi.towerC];
     store.dispatch(setTowerC(destinationArr));
+  }
+
+  if (source == "towerA") {
+    if (destination == "towerB") store.dispatch(incrementABSwap());
+    else store.dispatch(incrementACSwap());
+  }
+  if (source == "towerB") {
+    if (destination == "towerA") store.dispatch(incrementABSwap());
+    else store.dispatch(incrementBCSwap());
+  }
+  if (source == "towerC") {
+    if (destination == "towerA") store.dispatch(incrementACSwap());
+    else store.dispatch(incrementBCSwap());
   }
 };

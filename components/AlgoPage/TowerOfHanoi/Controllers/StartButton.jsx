@@ -1,7 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { batch, useDispatch, useSelector } from "react-redux";
 
-import { setIsRunning } from "/redux/reducers/hanoiSlice";
+import {
+  setIsRunning,
+  setStartTime,
+  setEndTime,
+} from "/redux/reducers/hanoiSlice";
 import { TowerOfHanoi } from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/algorithms";
 
 const StartButton = () => {
@@ -9,9 +13,15 @@ const StartButton = () => {
   const dispatch = useDispatch();
 
   const startAlgo = async () => {
-    dispatch(setIsRunning(true));
+    batch(() => {
+      dispatch(setIsRunning(true));
+      dispatch(setStartTime(Date.now()));
+    });
     await TowerOfHanoi();
-    dispatch(setIsRunning(false));
+    batch(() => {
+      dispatch(setIsRunning(false));
+      dispatch(setEndTime(Date.now()));
+    });
   };
 
   return (

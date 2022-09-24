@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToProperCase } from "/utils";
 import Footer from "/components/Footer";
 import { setIsRunning } from "/redux/reducers/hanoiSlice";
+import AlgoData from "/components/AlgoPage/TowerOfHanoi/AlgoData";
 import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import StatsContainer from "/components/AlgoPage/TowerOfHanoi/Stats";
 import HanoiControllers from "/components/AlgoPage/TowerOfHanoi/Controllers";
 import VisualizerContainer from "/components/AlgoPage/TowerOfHanoi/Visualizer";
 import { generateDiscs } from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/generateDiscs";
@@ -35,9 +37,8 @@ const TowerOfHanoi = () => {
       <div className="px-gap">
         <HanoiControllers />
         <VisualizerContainer />
-
-        {/* <StatsContainer />
-        <AlgoData /> */}
+        <StatsContainer />
+        <AlgoData />
         <Footer />
       </div>
     </div>
