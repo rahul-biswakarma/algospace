@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import TopBar from "/components/TopBar";
 import { batch, useDispatch } from "react-redux";
-import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import {
+  setAlgoId,
+  setAlgoName,
+  setAlgoCategory,
+} from "/redux/reducers/pageSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -10,6 +14,7 @@ const Home = () => {
     batch(() => {
       dispatch(setAlgoId("home"));
       dispatch(setAlgoName("Home"));
+      dispatch(setAlgoCategory("home"));
     });
   });
   return (

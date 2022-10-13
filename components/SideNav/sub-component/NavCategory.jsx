@@ -6,18 +6,25 @@ import NavData from "/public/data/Nav.json";
 const NavCategory = () => {
   var algorithms = NavData.algorithms;
   let currAlgoId = useSelector((state) => state.page.algoId);
+  let currAlgoCatgeory = useSelector((state) => state.page.algoCategory);
   return (
     <>
       {algorithms.map((data) => {
         return (
           <div
             key={data.id + data.algorithms[0].id}
-            className="nav-category-container flex-col px-4 py-[18px] w-full bg-bg-2 border-2 border-border-1 cursor-pointer"
+            className="nav-category-container flex-col px-4 py-[15px] w-full bg-bg-2 border-2 border-border-1 cursor-pointer"
           >
             <h2 className="font-space uppercase text-green text-center text-[1.1rem] cursor-pointer mb-[5px]">
               {data.name}
             </h2>
-            <div className="nav-category-links flex flex-col">
+            <div
+              className={
+                data.id != currAlgoCatgeory
+                  ? "nav-category-links flex flex-col h-0 invisible hover:h-full"
+                  : "nav-category-links flex flex-col"
+              }
+            >
               {data.algorithms.map((algorithm) => {
                 return (
                   <Link

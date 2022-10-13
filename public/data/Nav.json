@@ -38,8 +38,8 @@
       ]
     },
     {
-      "name": "Recursive",
-      "id": "recursive",
+      "name": "Recursion",
+      "id": "recursion",
       "algorithms": [
         {
           "id": "n-queen",
@@ -48,6 +48,28 @@
         {
           "id": "tower-of-hanoi",
           "name": "Tower of Hanoi"
+        }
+      ]
+    },
+    {
+      "name": "Maze Generation",
+      "id": "maze-generation",
+      "algorithms": [
+        {
+          "id": "dfs-maze",
+          "name": "DFS Maze"
+        },
+        {
+          "id": "bianry-tree",
+          "name": "Bianry Tree"
+        },
+        {
+          "id": "kruskal-maze",
+          "name": "Kruskal’s Maze"
+        },
+        {
+          "id": "recursive-division",
+          "name": "Recursive Division"
         }
       ]
     }

@@ -1,4 +1,8 @@
-import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import {
+  setAlgoId,
+  setAlgoName,
+  setAlgoCategory,
+} from "/redux/reducers/pageSlice";
 import { setIsSearching, resetStats } from "/redux/reducers/searchingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -34,6 +38,7 @@ const Searching = () => {
       batch(() => {
         dispatch(setAlgoId(rawAlgoId));
         dispatch(setAlgoName(algoName));
+        dispatch(setAlgoCategory("searching"));
         generateNewArray();
       });
     }

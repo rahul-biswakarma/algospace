@@ -14,7 +14,6 @@ const NavLinks = () => {
       className="flex flex-col p-gap gap-gap overflow-y-auto h-[100%] transition-all"
     >
       <NavCategory />
-      {/* <NavCategorySingle /> */}
     </div>
   );
 };

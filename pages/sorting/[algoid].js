@@ -1,22 +1,26 @@
-import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
-import { setRunning, resetStats } from "/redux/reducers/sortingSlice";
-import { useDispatch, useSelector } from "react-redux";
-
 import Footer from "/components/Footer";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
-import StatsContainer from "/components/AlgoPage/Sorting/Stats";
-import { ToProperCase } from "/utils";
-import VisualizerContainer from "/components/AlgoPage/Sorting/Visualizer";
-import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
-import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 import { batch } from "react-redux";
-import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+
+import { ToProperCase } from "/utils";
+import {
+  setAlgoId,
+  setAlgoName,
+  setAlgoCategory,
+} from "/redux/reducers/pageSlice";
+import { useDispatch, useSelector } from "react-redux";
 import AlgoData from "/components/AlgoPage/Sorting/AlgoData";
+import StatsContainer from "/components/AlgoPage/Sorting/Stats";
+import { setRunning, resetStats } from "/redux/reducers/sortingSlice";
+import VisualizerContainer from "/components/AlgoPage/Sorting/Visualizer";
+import SortingControllers from "/components/AlgoPage/Sorting/Controllers";
+import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
+import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
+import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
 
 const Sorting = () => {
   const router = useRouter();
@@ -34,6 +38,7 @@ const Sorting = () => {
       batch(() => {
         dispatch(setAlgoId(rawAlgoId));
         dispatch(setAlgoName(algoName));
+        dispatch(setAlgoCategory("sorting"));
         generateNewArray();
       });
     }

@@ -7,7 +7,11 @@ import { ToProperCase } from "/utils";
 import Footer from "/components/Footer";
 import { setIsRunning } from "/redux/reducers/hanoiSlice";
 import AlgoData from "/components/AlgoPage/TowerOfHanoi/AlgoData";
-import { setAlgoId, setAlgoName } from "/redux/reducers/pageSlice";
+import {
+  setAlgoId,
+  setAlgoName,
+  setAlgoCategory,
+} from "/redux/reducers/pageSlice";
 import StatsContainer from "/components/AlgoPage/TowerOfHanoi/Stats";
 import HanoiControllers from "/components/AlgoPage/TowerOfHanoi/Controllers";
 import VisualizerContainer from "/components/AlgoPage/TowerOfHanoi/Visualizer";
@@ -26,6 +30,7 @@ const TowerOfHanoi = () => {
       batch(() => {
         dispatch(setAlgoId(rawAlgoId));
         dispatch(setAlgoName(algoName));
+        dispatch(setAlgoCategory("recursion"));
       });
     }
   });
