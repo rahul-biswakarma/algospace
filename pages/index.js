@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
 import Head from "next/head";
+import React, { useEffect } from "react";
+
 import TopBar from "/components/TopBar";
+import Terrain from "/components/Terrain";
 import { batch, useDispatch } from "react-redux";
 import {
   setAlgoId,
@@ -23,12 +25,14 @@ const Home = () => {
         <title>Home | AlgoSpace</title>
       </Head>
       <div className="p-gap">
-        <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern">
+        <div className="relative w-[100%] h-[70vh] border-[1px] border-border-1 overflow-hidden">
           <TopBar />
           <div
             id="visualizer-container"
-            className="flex justify-center items-end pb-[2rem] flex-row h-full w-full"
-          ></div>
+            className="relative h-full overflow-hidden"
+          >
+            <Terrain />
+          </div>
         </div>
       </div>
     </div>
