@@ -7,6 +7,11 @@ const initialState = {
   cellCount: 10,
   minCellCount: 4,
   maxCellCount: 30,
+  playerPosition: { x: 0, y: 0 },
+  playerWidth: 0,
+  playerHeight: 0,
+  playerWidthOffset: 3,
+  playerHeightOffset: 3,
   currentCell: { x: 0, y: 0 },
   nextCell: { x: -1, y: -1 },
   randomIdNumber: 0,
@@ -14,6 +19,8 @@ const initialState = {
   maxSpeed: 300,
   isGenerating: false,
   isGenerated: false,
+  translateX: 0,
+  translateY: 0,
   status: "generation not started",
 };
 
@@ -29,15 +36,20 @@ const mazeSlice = createSlice({
     },
     setCellWidth: (state, action) => {
       state.cellWidth = action.payload;
+      state.playerWidth = action.payload;
     },
     setCellHeight: (state, action) => {
       state.cellHeight = action.payload;
+      state.playerHeight = action.payload;
     },
     setCellCount: (state, action) => {
       state.cellCount = action.payload;
     },
     setRandomIdNumber: (state, action) => {
       state.randomIdNumber = action.payload;
+    },
+    setPlayerPosotion: (state, action) => {
+      state.playerPosition = action.payload;
     },
     setCurrentCell: (state, action) => {
       state.currentCell = action.payload;
@@ -76,6 +88,12 @@ const mazeSlice = createSlice({
     setStatus: (state, action) => {
       state.status = action.payload;
     },
+    setTranslateX: (state, action) => {
+      state.translateX = action.payload;
+    },
+    setTranslateY: (state, action) => {
+      state.translateY = action.payload;
+    },
   },
 });
 
@@ -85,12 +103,15 @@ export const {
   setCellHeight,
   setIsGenerated,
   setCellCount,
+  setPlayerPosotion,
   setRandomIdNumber,
   setSpeed,
   setCurrentCell,
   setNextCell,
   setIsGenerating,
   setStatus,
+  setTranslateX,
+  setTranslateY,
 } = mazeSlice.actions;
 
 export default mazeSlice.reducer;
