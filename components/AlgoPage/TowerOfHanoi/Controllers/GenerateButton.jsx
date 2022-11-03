@@ -1,7 +1,6 @@
-import React from "react";
 import { generateDiscs } from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/generateDiscs";
 
-const GenerateButton = () => {
+export default function GenerateButton() {
   return (
     <div
       onClick={() => {
@@ -12,6 +11,4 @@ const GenerateButton = () => {
       Generate Towers
     </div>
   );
-};
-
-export default GenerateButton;
+}

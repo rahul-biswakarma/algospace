@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const TimeData = () => {
+export default function TimeData() {
   let startTime = useSelector((state) => state.hanoi.startTime);
   let endTime = useSelector((state) => state.hanoi.endTime);
   const startDate = new Date(startTime * 1000);
@@ -38,6 +37,4 @@ const TimeData = () => {
       </div>
     </div>
   );
-};
-
-export default TimeData;
+}

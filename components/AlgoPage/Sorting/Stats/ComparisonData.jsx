@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const ComparisonData = () => {
+export default function ComparisonData() {
   let ac = useSelector((state) => state.sorting.arrayCount);
   let comps = useSelector((state) => state.sorting.comparisons);
   return (
@@ -28,6 +27,4 @@ const ComparisonData = () => {
       </div>
     </div>
   );
-};
-
-export default ComparisonData;
+}

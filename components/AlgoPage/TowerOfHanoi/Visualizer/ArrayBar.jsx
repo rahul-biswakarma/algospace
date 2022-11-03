@@ -1,5 +1,6 @@
 import * as Colors from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/colors.js";
-const ArrayBar = (props) => {
+
+export default function ArrayBar() {
   return (
     <div
       style={{
@@ -18,6 +19,4 @@ const ArrayBar = (props) => {
       className={`array-bar border-2`}
     ></div>
   );
-};
-
-export default ArrayBar;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
@@ -8,7 +7,7 @@ import * as Colors from "/components/AlgoPage/Sorting/SortingUtils/colors.js";
 import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 
-const VisualizerContainer = () => {
+export default function VisualizerContainer() {
   let towerA = useSelector((state) => state.hanoi.towerA);
   let towerB = useSelector((state) => state.hanoi.towerB);
   let towerC = useSelector((state) => state.hanoi.towerC);
@@ -172,6 +171,4 @@ const VisualizerContainer = () => {
       </div>
     </div>
   );
-};
-
-export default VisualizerContainer;
+}

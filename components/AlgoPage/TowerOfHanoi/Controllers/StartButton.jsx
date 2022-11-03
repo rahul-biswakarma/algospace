@@ -1,4 +1,3 @@
-import React from "react";
 import { batch, useDispatch, useSelector } from "react-redux";
 
 import {
@@ -8,7 +7,7 @@ import {
 } from "/redux/reducers/hanoiSlice";
 import { TowerOfHanoi } from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/algorithms";
 
-const StartButton = () => {
+export default function StartButton() {
   const algoId = useSelector((state) => state.page.algoId);
   const dispatch = useDispatch();
 
@@ -47,6 +46,4 @@ const StartButton = () => {
       )}
     </div>
   );
-};
-
-export default StartButton;
+}

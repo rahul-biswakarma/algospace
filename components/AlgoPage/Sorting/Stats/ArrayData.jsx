@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const ArrayData = () => {
+export default function ArrayData() {
   let sortingStatus = useSelector(
     (state) => state.sorting.status
   ).toLowerCase();
@@ -102,6 +101,4 @@ const ArrayData = () => {
       </div>
     </div>
   );
-};
-
-export default ArrayData;
+}

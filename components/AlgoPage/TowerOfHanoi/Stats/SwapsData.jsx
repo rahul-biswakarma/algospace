@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const SwapsData = () => {
+export default function SwapsData() {
   let abSwap = useSelector((state) => state.hanoi.abSwap);
   let bcSwap = useSelector((state) => state.hanoi.bcSwap);
   let acSwap = useSelector((state) => state.hanoi.acSwap);
@@ -26,6 +25,4 @@ const SwapsData = () => {
       </div>
     </div>
   );
-};
-
-export default SwapsData;
+}

@@ -1,10 +1,9 @@
-import React from "react";
 import PrismTheme from "/utils/PrismTheme";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import Data from "/public/data/algorithmData.json";
 
-const AlgoData = () => {
+export default function AlgoData() {
   let algoName = "Tower Of Hanoi";
   let currAlgo = "TowerOfHanoi";
   let currAlgoData = Data[currAlgo];
@@ -81,6 +80,4 @@ const AlgoData = () => {
       </div>
     );
   }
-};
-
-export default AlgoData;
+}

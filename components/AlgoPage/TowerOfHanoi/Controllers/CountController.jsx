@@ -1,4 +1,3 @@
-import React from "react";
 import { Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -20,7 +19,7 @@ const CountTheme = createTheme({
   },
 });
 
-const CountController = () => {
+export default function CountController() {
   const dispatch = useDispatch();
 
   const disc = useSelector((state) => state.hanoi.disc);
@@ -49,6 +48,4 @@ const CountController = () => {
       </ThemeProvider>
     </div>
   );
-};
-
-export default CountController;
+}

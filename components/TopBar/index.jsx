@@ -1,6 +1,4 @@
-import React from "react";
-
-const TopBar = () => {
+export default function TopBar() {
   return (
     <div className="relative w-full h-[5px] bg-border-1">
       <div className="absolute h-full bg-green-bg-2 w-[0.5rem]"></div>
@@ -10,6 +8,4 @@ const TopBar = () => {
       <div className="absolute h-full bg-green-bg-2 w-[20vw] right-0"></div>
     </div>
   );
-};
-
-export default TopBar;
+}

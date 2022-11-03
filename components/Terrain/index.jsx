@@ -6,7 +6,7 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false,
 });
 
-const Terrain = () => {
+export default function Terrain() {
   var cols, rows;
   var w = 2000,
     h = 1000;
@@ -62,6 +62,4 @@ const Terrain = () => {
   };
 
   return <Sketch setup={setup} draw={draw} />;
-};
-
-export default Terrain;
+}

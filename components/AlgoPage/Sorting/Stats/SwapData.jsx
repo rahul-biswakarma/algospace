@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const SwapData = () => {
+export default function SwapData() {
   let ac = useSelector((state) => state.sorting.arrayCount);
   let swaps = useSelector((state) => state.sorting.swaps);
   return (
@@ -26,6 +25,4 @@ const SwapData = () => {
       </div>
     </div>
   );
-};
-
-export default SwapData;
+}

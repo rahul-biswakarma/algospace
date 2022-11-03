@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "@mui/material/Slider";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -19,7 +18,7 @@ const SpeedTheme = createTheme({
   },
 });
 
-const SpeedController = () => {
+export default function SpeedController() {
   const dispatch = useDispatch();
   const maxSpeed = useSelector((state) => state.hanoi.maxSpeed);
   const speed = useSelector((state) => state.hanoi.speed);
@@ -46,6 +45,4 @@ const SpeedController = () => {
       </ThemeProvider>
     </div>
   );
-};
-
-export default SpeedController;
+}

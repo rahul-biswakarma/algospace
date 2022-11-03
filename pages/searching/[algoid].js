@@ -1,28 +1,29 @@
+import Head from "next/head";
+import Image from "next/image";
+import { useEffect } from "react";
+import { batch } from "react-redux";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+
 import {
   setAlgoId,
   setAlgoName,
   setAlgoCategory,
 } from "/redux/reducers/pageSlice";
-import { setIsSearching, resetStats } from "/redux/reducers/searchingSlice";
-import { useDispatch, useSelector } from "react-redux";
-
-import Footer from "/components/Footer";
-import Head from "next/head";
-import Image from "next/image";
-import React from "react";
-import SearchingControllers from "/components/AlgoPage/Searching/Controllers";
-import StatsContainer from "/components/AlgoPage/Searching/Stats";
 import { ToProperCase } from "/utils";
+import Footer from "/components/Footer";
+import StatsContainer from "/components/AlgoPage/Searching/Stats";
+import { setIsSearching, resetStats } from "/redux/reducers/searchingSlice";
 import VisualizerContainer from "/components/AlgoPage/Searching/Visualizer";
+import SearchingControllers from "/components/AlgoPage/Searching/Controllers";
 import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
-import { batch } from "react-redux";
+
 import { generateNewArray } from "/components/AlgoPage/Searching/SearchingUtils/generateArray";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+
 import AlgoData from "/components/AlgoPage/Searching/AlgoData";
 
-const Searching = () => {
+export default function Searching() {
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -70,6 +71,4 @@ const Searching = () => {
       </div>
     </div>
   );
-};
-
-export default Searching;
+}

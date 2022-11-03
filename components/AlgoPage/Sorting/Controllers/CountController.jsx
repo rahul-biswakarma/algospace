@@ -1,9 +1,9 @@
-import React from "react";
 import { Slider } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
-import { setBarWidth } from "/redux/reducers/sortingSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import { setBarWidth } from "/redux/reducers/sortingSlice";
+import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
@@ -19,7 +19,7 @@ const CountTheme = createTheme({
   },
 });
 
-const CountController = () => {
+export default function CountController() {
   const dispatch = useDispatch();
   const maxBarWidth = useSelector((state) => state.sorting.maxBarWidth);
 
@@ -46,6 +46,4 @@ const CountController = () => {
       </ThemeProvider>
     </div>
   );
-};
-
-export default CountController;
+}

@@ -1,8 +1,8 @@
-import React from "react";
 import Slider from "@mui/material/Slider";
 import { useDispatch, useSelector } from "react-redux";
-import { setSpeed } from "/redux/reducers/searchingSlice";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import { setSpeed } from "/redux/reducers/searchingSlice";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
@@ -18,7 +18,7 @@ const SpeedTheme = createTheme({
   },
 });
 
-const SpeedController = () => {
+export default function SpeedController() {
   const dispatch = useDispatch();
   const maxSpeed = useSelector((state) => state.searching.maxSpeed);
   const speed = useSelector((state) => state.searching.speed);
@@ -45,6 +45,4 @@ const SpeedController = () => {
       </ThemeProvider>
     </div>
   );
-};
-
-export default SpeedController;
+}

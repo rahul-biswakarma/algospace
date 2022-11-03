@@ -1,8 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const NavButtons = () => {
+export default function NavButtons() {
   return (
     <div
       id="nav-button-container"
@@ -23,6 +22,4 @@ const NavButtons = () => {
       </Link>
     </div>
   );
-};
-
-export default NavButtons;
+}

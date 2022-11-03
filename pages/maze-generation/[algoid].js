@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import React from "react";
 import { batch } from "react-redux";
 import { useEffect } from "react";
@@ -19,7 +18,7 @@ import VisualizerContainer from "/components/AlgoPage/MazeGeneration/Visualizer"
 import MazeGenerationControllers from "/components/AlgoPage/MazeGeneration/Controllers";
 import generateCellCount from "/components/AlgoPage/MazeGeneration/MazeUtils/generateCellCount";
 
-const Sorting = () => {
+export default function Sorting() {
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -51,6 +50,4 @@ const Sorting = () => {
       </div>
     </div>
   );
-};
-
-export default Sorting;
+}

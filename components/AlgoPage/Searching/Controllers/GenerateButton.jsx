@@ -1,7 +1,6 @@
-import React from "react";
 import { generateNewArray } from "/components/AlgoPage/Searching/SearchingUtils/generateArray";
 
-const GenerateButton = () => {
+export default function GenerateButton() {
   return (
     <div
       onClick={() => {
@@ -12,6 +11,4 @@ const GenerateButton = () => {
       Generate Array
     </div>
   );
-};
-
-export default GenerateButton;
+}

@@ -1,12 +1,11 @@
-import Footer from "/components/Footer";
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
-import { batch } from "react-redux";
 import { useEffect } from "react";
+import { batch } from "react-redux";
 import { useRouter } from "next/router";
 
 import { ToProperCase } from "/utils";
+import Footer from "/components/Footer";
 import {
   setAlgoId,
   setAlgoName,
@@ -22,7 +21,7 @@ import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 import { generateNewArray } from "/components/AlgoPage/Sorting/SortingUtils/generateArray";
 
-const Sorting = () => {
+export default function Sorting() {
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -70,6 +69,4 @@ const Sorting = () => {
       </div>
     </div>
   );
-};
-
-export default Sorting;
+}

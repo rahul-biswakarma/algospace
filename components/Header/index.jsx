@@ -1,8 +1,7 @@
-import React from "react";
 import dateFormat from "dateformat";
 import { useSelector } from "react-redux";
 
-const Header = () => {
+export default function Header() {
   const now = new Date();
   let algoName = useSelector((state) => state.page.algoName);
   return (
@@ -16,10 +15,7 @@ const Header = () => {
         <div className="text-text-1 font-space uppercase text-[1.3rem] ml-[10px] flex items-center">
           {algoName}
         </div>
-        {/* <div className="bg-green w-2 absolute right-0 h-full"></div> */}
       </div>
     </div>
   );
-};
-
-export default Header;
+}

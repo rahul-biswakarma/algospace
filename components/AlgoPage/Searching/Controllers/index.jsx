@@ -1,10 +1,9 @@
-import React from "react";
 import StartButton from "./StartButton";
 import SpeedController from "./SpeedController";
 import CountController from "./CountController";
 import GenerateButton from "./GenerateButton";
 
-const SearchingControllers = () => {
+export default function SearchingControllers() {
   return (
     <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
       <GenerateButton />
@@ -13,6 +12,4 @@ const SearchingControllers = () => {
       <StartButton />
     </div>
   );
-};
-
-export default SearchingControllers;
+}

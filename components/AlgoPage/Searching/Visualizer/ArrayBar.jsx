@@ -1,5 +1,6 @@
 import * as Colors from "/components/AlgoPage/Searching/SearchingUtils/colors.js";
-const ArrayBar = (props) => {
+
+export default function ArrayBar(props) {
   return (
     <div
       style={{
@@ -34,6 +35,4 @@ const ArrayBar = (props) => {
       )}
     </div>
   );
-};
-
-export default ArrayBar;
+}

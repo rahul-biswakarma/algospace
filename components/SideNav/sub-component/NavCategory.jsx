@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+
 import NavData from "/public/data/Nav.json";
 
-const NavCategory = () => {
+export default function NavCategory() {
   var algorithms = NavData.algorithms;
   let currAlgoId = useSelector((state) => state.page.algoId);
   let currAlgoCatgeory = useSelector((state) => state.page.algoCategory);
@@ -49,6 +50,4 @@ const NavCategory = () => {
       })}
     </>
   );
-};
-
-export default NavCategory;
+}

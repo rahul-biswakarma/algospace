@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React, { useEffect } from "react";
 
 import TopBar from "/components/TopBar";
@@ -10,7 +9,7 @@ import {
   setAlgoCategory,
 } from "/redux/reducers/pageSlice";
 
-const Home = () => {
+export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     batch(() => {
@@ -37,6 +36,4 @@ const Home = () => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}

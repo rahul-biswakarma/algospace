@@ -1,7 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
-const CountData = () => {
+export default function CountData() {
   let aCount = useSelector((state) => state.hanoi.aCount);
   let bCount = useSelector((state) => state.hanoi.bCount);
   let cCount = useSelector((state) => state.hanoi.cCount);
@@ -33,6 +32,4 @@ const CountData = () => {
       </div>
     </div>
   );
-};
-
-export default CountData;
+}

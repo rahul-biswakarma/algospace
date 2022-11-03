@@ -1,10 +1,9 @@
-import React from "react";
 import StartButton from "./StartButton";
+import GenerateButton from "./GenerateButton";
 import SpeedController from "./SpeedController";
 import CountController from "./CountController";
-import GenerateButton from "./GenerateButton";
 
-const SortingControllers = () => {
+export default function SortingControllers() {
   return (
     <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
       <GenerateButton />
@@ -13,6 +12,4 @@ const SortingControllers = () => {
       <StartButton />
     </div>
   );
-};
-
-export default SortingControllers;
+}

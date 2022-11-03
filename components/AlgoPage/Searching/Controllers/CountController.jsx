@@ -1,9 +1,9 @@
-import React from "react";
 import { Slider } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { generateNewArray } from "/components/AlgoPage/Searching/SearchingUtils/generateArray";
-import { setBarWidth } from "/redux/reducers/searchingSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import { setBarWidth } from "/redux/reducers/searchingSlice";
+import { generateNewArray } from "/components/AlgoPage/Searching/SearchingUtils/generateArray";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
@@ -19,7 +19,7 @@ const CountTheme = createTheme({
   },
 });
 
-const CountController = () => {
+export default function CountController() {
   const dispatch = useDispatch();
   const maxBarWidth = useSelector((state) => state.searching.maxBarWidth);
   const barWidth = useSelector((state) => state.searching.barWidth);
@@ -47,6 +47,4 @@ const CountController = () => {
       </ThemeProvider>
     </div>
   );
-};
-
-export default CountController;
+}

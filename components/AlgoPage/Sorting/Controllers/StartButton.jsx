@@ -1,13 +1,13 @@
-import React from "react";
-import * as SortingAlgorithms from "/components/AlgoPage/Sorting/SortingUtils/algorithms";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   setStatus,
   resetStats,
   setRunning,
 } from "/redux/reducers/sortingSlice";
+import * as SortingAlgorithms from "/components/AlgoPage/Sorting/SortingUtils/algorithms";
 
-const StartButton = () => {
+export default function StartButton() {
   const algoId = useSelector((state) => state.page.algoId);
   const dispatch = useDispatch();
 
@@ -53,6 +53,4 @@ const StartButton = () => {
       )}
     </div>
   );
-};
-
-export default StartButton;
+}

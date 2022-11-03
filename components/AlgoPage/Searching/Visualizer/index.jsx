@@ -1,11 +1,11 @@
-import React from "react";
 import TopBar from "/components/TopBar";
 import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
+
 import TargetContainer from "./targetContainer";
 import * as Colors from "/components/AlgoPage/Searching/SearchingUtils/colors.js";
 
-const VisualizerContainer = () => {
+export default function VisualizerContainer() {
   const heightArray = useSelector((state) => state.searching.array);
   const barWidth = useSelector((state) => state.searching.barWidth);
   const compEle = useSelector((state) => state.searching.compEle);
@@ -66,6 +66,4 @@ const VisualizerContainer = () => {
       </div>
     </div>
   );
-};
-
-export default VisualizerContainer;
+}

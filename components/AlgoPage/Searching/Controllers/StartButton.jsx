@@ -1,13 +1,13 @@
-import React from "react";
-import * as SearchingAlgorithms from "/components/AlgoPage/Searching/SearchingUtils/algorithms";
 import { useDispatch, useSelector } from "react-redux";
+
+import * as SearchingAlgorithms from "/components/AlgoPage/Searching/SearchingUtils/algorithms";
 import {
   setStatus,
   resetStats,
   setIsSearching,
 } from "/redux/reducers/searchingSlice";
 
-const StartButton = () => {
+export default function StartButton() {
   const algoId = useSelector((state) => state.page.algoId);
   const dispatch = useDispatch();
 
@@ -53,6 +53,4 @@ const StartButton = () => {
       )}
     </div>
   );
-};
-
-export default StartButton;
+}

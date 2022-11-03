@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Data from "/public/data/algorithmData.json";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import PrismTheme from "/utils/PrismTheme";
 
-const AlgoData = () => {
+import PrismTheme from "/utils/PrismTheme";
+import Data from "/public/data/algorithmData.json";
+
+export default function AlgoData() {
   let algoName = useSelector((state) => state.page.algoName);
   if (algoName) {
     let currAlgo = algoName.replace(" ", "");
@@ -82,6 +83,4 @@ const AlgoData = () => {
       );
     }
   }
-};
-
-export default AlgoData;
+}

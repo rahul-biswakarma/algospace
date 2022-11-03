@@ -17,7 +17,7 @@ import HanoiControllers from "/components/AlgoPage/TowerOfHanoi/Controllers";
 import VisualizerContainer from "/components/AlgoPage/TowerOfHanoi/Visualizer";
 import { generateDiscs } from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/generateDiscs";
 
-const TowerOfHanoi = () => {
+export default function TowerOfHanoi() {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,6 +48,4 @@ const TowerOfHanoi = () => {
       </div>
     </div>
   );
-};
-
-export default TowerOfHanoi;
+}

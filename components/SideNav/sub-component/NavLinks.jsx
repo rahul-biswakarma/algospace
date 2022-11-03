@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+
 import NavCategory from "./NavCategory";
 
-const NavLinks = () => {
+export default function NavLinks() {
   useEffect(() => {
     let navHeaderHeight = document.getElementById("nav-header").offsetHeight;
     document.getElementById(
@@ -16,6 +17,4 @@ const NavLinks = () => {
       <NavCategory />
     </div>
   );
-};
-
-export default NavLinks;
+}
