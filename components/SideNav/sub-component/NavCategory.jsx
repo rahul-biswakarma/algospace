@@ -32,13 +32,13 @@ const NavCategory = () => {
                     href={"/" + data.id + "/" + algorithm.id}
                   >
                     {currAlgoId != algorithm.id ? (
-                      <a className="w-full border-2 border-bg-2 hover:border-green hover:border-2 hover:bg-green-bg font-space text-text-1 text-center text-[0.95rem] ">
+                      <div className="w-full border-2 border-bg-2 hover:border-green hover:border-2 hover:bg-green-bg font-space text-text-1 text-center text-[0.95rem] ">
                         {algorithm.name}
-                      </a>
+                      </div>
                     ) : (
-                      <a className="w-full border-2 border-bg-2 bg-green-bg-4 hover:border-green font-space text-text-1 text-center text-[0.95rem] ">
+                      <div className="w-full border-2 border-bg-2 bg-green-bg-4 hover:border-green font-space text-text-1 text-center text-[0.95rem] ">
                         {algorithm.name}
-                      </a>
+                      </div>
                     )}
                   </Link>
                 );

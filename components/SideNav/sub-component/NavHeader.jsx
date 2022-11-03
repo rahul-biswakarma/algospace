@@ -15,9 +15,9 @@ const NavHeader = () => {
         >
           v3.2.0
         </div>
-        <div className="font-unica text-text-1 text-[3.5rem] leading-[3.5rem]">
+        <div className="font-unicas text-text-1 text-[3.5rem] leading-[3.5rem]">
           <Link href="/">
-            <a>AlgoSpace</a>
+            <span>AlgoSpace</span>
           </Link>
         </div>
         <div className="text-text-2 font-space text-xs">
