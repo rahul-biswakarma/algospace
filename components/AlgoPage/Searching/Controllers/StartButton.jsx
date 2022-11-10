@@ -23,9 +23,6 @@ export default function StartButton() {
     if (algoId === "jump-search") {
       await SearchingAlgorithms.JumpSearch();
     }
-    if (algoId === "interpolation-search") {
-      await SearchingAlgorithms.InterpolationSearch();
-    }
     dispatch(setIsSearching(false));
   };
 
