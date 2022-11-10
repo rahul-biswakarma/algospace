@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
 
 import TopBar from "/components/TopBar";
-import * as Colors from "/components/AlgoPage/Sorting/SortingUtils/colors.js";
+import * as Colors from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/colors.js";
 import VisualizerEdgeLeftIcon from "/public/assets/visualizer-edge-left-icon.svg";
 import VisualizerEdgeRightIcon from "/public/assets/visualizer-edge-right-icon.svg";
 
