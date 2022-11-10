@@ -22,6 +22,7 @@ export default function Header() {
       <div className="relative max-h-[70px] flex items-center right-side px-gap">
         <a
           href="https://github.com/rahul-biswakarma/algospace"
+          rel="noreferrer"
           target="_blank"
           title="Github Logo | Link to Github Repo"
         >

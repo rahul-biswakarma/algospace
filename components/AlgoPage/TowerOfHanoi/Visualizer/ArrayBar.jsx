@@ -1,6 +1,6 @@
 import * as Colors from "/components/AlgoPage/TowerOfHanoi/HanoiUtils/colors.js";
 
-export default function ArrayBar() {
+export default function ArrayBar(props) {
   return (
     <div
       style={{
