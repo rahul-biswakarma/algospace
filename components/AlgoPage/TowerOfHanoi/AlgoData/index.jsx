@@ -7,7 +7,6 @@ export default function AlgoData() {
   let algoName = "Tower Of Hanoi";
   let currAlgo = "TowerOfHanoi";
   let currAlgoData = Data[currAlgo];
-  console.log(currAlgoData);
   if (currAlgoData) {
     return (
       <div>
