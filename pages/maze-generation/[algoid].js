@@ -1,10 +1,10 @@
-import Head from "next/head";
 import React from "react";
 import { batch } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
+import Seo from "/components/Seo";
 import Footer from "/components/Footer";
 import { ToProperCase } from "/utils";
 import {
@@ -38,9 +38,7 @@ export default function Sorting() {
 
   return (
     <div>
-      <Head>
-        <title>{useSelector((state) => state.page.algoName)} | AlgoSpace</title>
-      </Head>
+      <Seo category="maze-generation" id={router.query.algoid} />
       <div className="px-gap">
         <MazeGenerationControllers />
         <VisualizerContainer />

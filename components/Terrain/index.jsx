@@ -33,23 +33,23 @@ export default function Terrain() {
   };
 
   const draw = (p5) => {
-    flying -= 0.1;
+    flying -= 0.08;
     var yoff = flying;
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
-        terrain[x][y] = p5.map(p5.noise(xoff, yoff), 0, 1, -200, 200);
-        xoff += 0.8;
+        terrain[x][y] = p5.map(p5.noise(xoff, yoff), 0, 1, -250, 250);
+        xoff += 0.1;
       }
-      yoff += 0.8;
+      yoff += 0.1;
     }
 
-    p5.background(0);
+    p5.background(0, 0, 0, 0);
     p5.translate(0, 30);
     p5.frameRate(22);
     p5.rotateX(PI / 3);
-    p5.fill(27, 36, 29, 150);
-    p5.stroke(30, 239, 57, 150);
+    p5.stroke(30, 200, 57, 150);
+    p5.fill(30, 180, 57, 200);
     p5.translate(-w / 2, -h / 2);
     for (var y = 0; y < rows - 1; y++) {
       p5.beginShape(p5.TRIANGLE_STRIP);
@@ -61,5 +61,5 @@ export default function Terrain() {
     }
   };
 
-  return <Sketch setup={setup} draw={draw} />;
+  return <Sketch className="z-10" setup={setup} draw={draw} />;
 }

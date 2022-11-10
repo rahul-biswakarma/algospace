@@ -1,9 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
 import { batch } from "react-redux";
 import { useRouter } from "next/router";
 
+import Seo from "/components/Seo";
 import { ToProperCase } from "/utils";
 import Footer from "/components/Footer";
 import {
@@ -45,9 +45,7 @@ export default function Sorting() {
 
   return (
     <div>
-      <Head>
-        <title>{useSelector((state) => state.page.algoName)} | AlgoSpace</title>
-      </Head>
+      <Seo category="sorting" id={router.query.algoid} />
       <div className="px-gap">
         <SortingControllers />
         <VisualizerContainer />

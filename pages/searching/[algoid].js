@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
 import { batch } from "react-redux";
@@ -10,6 +9,7 @@ import {
   setAlgoName,
   setAlgoCategory,
 } from "/redux/reducers/pageSlice";
+import Seo from "/components/Seo";
 import { ToProperCase } from "/utils";
 import Footer from "/components/Footer";
 import StatsContainer from "/components/AlgoPage/Searching/Stats";
@@ -47,9 +47,7 @@ export default function Searching() {
 
   return (
     <div>
-      <Head>
-        <title>{useSelector((state) => state.page.algoName)} | AlgoSpace</title>
-      </Head>
+      <Seo category="searching" id={router.query.algoid} />
       <div className="px-gap">
         <SearchingControllers />
         <VisualizerContainer />

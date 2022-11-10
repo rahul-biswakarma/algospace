@@ -1,6 +1,11 @@
 {
+  "Home": {
+    "metaTitle": "Home | Algospace",
+    "description": "A algorithm visualizer for understanding algorithms"
+  },
   "BubbleSort": {
     "title": "Bubble Sort",
+    "metaTitle": "Bubble Sort | Algospace",
     "description": "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
     "code": "void bubbleSort(int arr[], int n){\n\tint i, j;\n\tfor (i = 0; i < n - 1; i++)\n\t\tfor (j = 0; j < n - i - 1; j++)\n\t\t\tif (arr[j] > arr[j + 1]) \n\t\t\t\tswap(&arr[j], &arr[j + 1]);\n}",
     "timeComplexity": {
@@ -17,6 +22,7 @@
   },
   "InsertionSort": {
     "title": "Insertion Sort",
+    "metaTitle": "Insertion Sort | Algospace",
     "description": "Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.",
     "code": "void insertionSort(int arr[], int n){\n\tint i, key, j;\n\tfor (i = 1; i < n; i++){\n\t\tkey = arr[i];\n\t\tj = i - 1;\n\t\twhile (j >= 0 && arr[j] > key){\n\t\t\tarr[j + 1] = arr[j];\n\t\t\tj = j - 1;\n\t\t}\n\t\tarr[j + 1] = key;\n\t}\n}",
     "timeComplexity": {
@@ -33,6 +39,7 @@
   },
   "SelectionSort": {
     "title": "Selection Sort",
+    "metaTitle": "Selection Sort | Algospace",
     "description": "Selection sort is an in-place comparison sorting algorithm. It has an O(n2) time complexity, which makes it inefficient on large lists, and generally performs worse than the similar insertion sort.",
     "code": "void selectionSort(int arr[], int n){\n\tint i, j, min_idx;\n\tfor (i = 0; i < n - 1; i++){\n\t\tmin_idx = i;\n\t\tfor (j = i + 1; j < n; j++)\n\t\t\tif (arr[j] < arr[min_idx]) min_idx = j;\n\t\tswap(&arr[min_idx], &arr[i]);\n\t}\n}",
     "timeComplexity": {
@@ -49,6 +56,7 @@
   },
   "MergeSort": {
     "title": "Merge Sort",
+    "metaTitle": "Merge Sort | Algospace",
     "description": "Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves.",
     "code": "void merge(int arr[], int l, int m, int r){\n\tint i, j, k;\n\tint n1 = m - l + 1;\n\tint n2 = r - m;\n\tint L[n1], R[n2];\n\tfor (i = 0; i < n1; i++) L[i] = arr[l + i];\n\tfor (j = 0; j < n2; j++) R[j] = arr[m + 1 + j];\n\ti = 0;\n\tj = 0;\n\tk = l;\n\twhile (i < n1 && j < n2){\n\t\tif (L[i] <= R[j]){\n\t\t\tarr[k] = L[i];\n\t\t\ti++;\n\t\t}\n\t\telse{\n\t\t\tarr[k] = R[j];\n\t\t\tj++;\n\t\t}\n\t\tk++;\n\t}\n\twhile (i < n1){\n\t\tarr[k] = L[i];\n\t\ti++;\n\t\tk++;\n\t}\n\twhile (j < n2){\n\t\tarr[k] = R[j];\n\t\tj++;\n\t\tk++;\n\t}\n}\nvoid mergeSort(int arr[], int l, int r){\n\tif (l < r){\n\t\tint m = l + (r - l) / 2;\n\t\tmergeSort(arr, l, m);\n\t\tmergeSort(arr, m + 1, r);\n\t\tmerge(arr, l, m, r);\n\t}\n}",
     "timeComplexity": {
@@ -65,6 +73,7 @@
   },
   "LinearSearch": {
     "title": "Linear Search",
+    "metaTitle": "Linear Search | Algospace",
     "description": "Linear search is a very simple search algorithm. In this type of search, a sequential search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.",
     "code": "int linearSearch(int arr[], int n, int x){\n\tint i;\n\tfor (i = 0; i < n; i++)\n\t\tif (arr[i] == x)\n\t\t\treturn i;\n\treturn -1;\n}",
     "timeComplexity": {
@@ -80,6 +89,7 @@
   },
   "BinarySearch": {
     "title": "Binary Search",
+    "metaTitle": "Binary Search | Algospace",
     "description": "Binary search is a search algorithm that finds the position of a target value within a sorted array.",
     "code": "int binarySearch(int arr[], int l, int r, int x){\n\tif (r >= l){\n\t\tint mid = l + (r - l) / 2;\n\t\tif (arr[mid] == x)\n\t\t\treturn mid;\n\t\tif (arr[mid] > x)\n\t\t\treturn binarySearch(arr, l, mid - 1, x);\n\t\treturn binarySearch(arr, mid + 1, r, x);\n\t}\n\treturn -1;\n}",
     "timeComplexity": {
@@ -95,6 +105,7 @@
   },
   "JumpSearch": {
     "title": "Jump Search",
+    "metaTitle": "Jump Search | Algospace",
     "description": "Jump Search is a searching algorithm for sorted arrays. The basic idea is to check fewer elements (than linear search) by jumping ahead by fixed steps or skipping some elements in place of searching all elements.",
     "code": "int jumpSearch(int arr[], int x, int n){\n\tint step = sqrt(n);\n\tint prev = 0;\n\twhile (arr[min(step, n) - 1] < x){\n\t\tprev = step;\n\t\tstep += sqrt(n);\n\t\tif (prev >= n)\n\t\t\treturn -1;\n\t}\n\twhile (arr[prev] < x){\n\t\tprev++;\n\t\tif (prev == min(step, n))\n\t\t\treturn -1;\n\t}\n\tif (arr[prev] == x)\n\t\treturn prev;\n\treturn -1;\n}",
     "timeComplexity": {
@@ -110,6 +121,7 @@
   },
   "InterpolationSearch": {
     "title": "Interpolation Search",
+    "metaTitle": "Interpolation Search | Algospace",
     "description": "Interpolation search is an improvement over binary search for instances, where the values in a sorted array are uniformly distributed. Binary search always goes to the middle element to check. On the other hand, interpolation search may go to different locations according to the value of the key being searched.",
     "code": "int interpolationSearch(int arr[], int n, int x){\n\tint lo = 0, hi = (n - 1);\n\twhile (lo <= hi && x >= arr[lo] && x <= arr[hi]){\n\t\tif (lo == hi){\n\t\t\tif (arr[lo] == x) return lo;\n\t\t\treturn -1;\n\t\t}\n\t\tint pos = lo + (((double)(hi - lo) / \n\t\t(arr[hi] - arr[lo])) * (x - arr[lo]));\n\n\t\tif (arr[pos] == x)\n\t\t\treturn pos;\n\t\tif (arr[pos] < x)\n\t\t\tlo = pos + 1;\n\t\telse\n\t\t\thi = pos - 1;\n\t}\n\treturn -1;\n}",
     "timeComplexity": {
@@ -125,6 +137,7 @@
   },
   "TowerOfHanoi": {
     "title": "Tower of Hanoi",
+    "metaTitle": "Tower of Hanoi | Algospace",
     "description": "Tower of Hanoi is a mathematical puzzle where we have three rods and n disks. The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules: 1) Only one disk can be moved at a time. 2) Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack i.e. a disk can only be moved if it is the uppermost disk on a stack. 3) No disk may be placed on top of a smaller disk.",
     "code": "void towerOfHanoi(int n, char from_rod, char to_rod,char aux_rod)\n{\n\tif (n == 0) {\n\t\treturn;\n\t}\n\ttowerOfHanoi(n - 1, from_rod, aux_rod, to_rod);\n\tcout << \"Move disk \" << n << \" from rod \" << from_rod << \" to rod \" << to_rod << endl;\n\ttowerOfHanoi(n - 1, aux_rod, to_rod, from_rod);\n}",
     "timeComplexity": {

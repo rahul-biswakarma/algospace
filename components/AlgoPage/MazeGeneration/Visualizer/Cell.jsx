@@ -16,8 +16,11 @@ const Cell = (props) => {
   const currentCell = useSelector((state) => state.maze.currentCell);
   const isGenerating = useSelector((state) => state.maze.isGenerating);
 
-  var className = "maze-cell border-green ";
+  var className = "maze-cell";
   var targetCellId = "";
+
+  if (visited === true) className += " border-green";
+  else className += " border-green-bg-4";
 
   // Generating cell id from where wall will be removed
   if (x - 1 === nextX || y - 1 === nextY)

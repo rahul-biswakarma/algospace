@@ -19,7 +19,7 @@ const VisualizerContainer = () => {
         id="visualizer-container"
         className="realtive flex flex-row flex-wrap h-full w-full border-[3px] border-green"
       >
-        <Player />
+        {/* <Player /> */}
         {grid.map((col) => {
           return col.map((cell) => {
             return (

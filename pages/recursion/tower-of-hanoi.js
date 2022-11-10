@@ -1,8 +1,8 @@
-import Head from "next/head";
 import { batch } from "react-redux";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import Seo from "/components/Seo";
 import { ToProperCase } from "/utils";
 import Footer from "/components/Footer";
 import { setIsRunning } from "/redux/reducers/hanoiSlice";
@@ -36,9 +36,7 @@ export default function TowerOfHanoi() {
   });
   return (
     <div>
-      <Head>
-        <title>{useSelector((state) => state.page.algoName)} | AlgoSpace</title>
-      </Head>
+      <Seo category="recursion" id="tower-of-hanoi" />
       <div className="px-gap">
         <HanoiControllers />
         <VisualizerContainer />
