@@ -1,8 +1,4 @@
 {
-  "Home": {
-    "metaTitle": "Home | Algospace",
-    "description": "A algorithm visualizer for understanding algorithms"
-  },
   "BubbleSort": {
     "title": "Bubble Sort",
     "metaTitle": "Bubble Sort | Algospace",
