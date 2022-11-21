@@ -4,8 +4,10 @@ import { Provider } from "react-redux";
 import SideNav from "/components/SideNav";
 import Router from "next/router";
 import Header from "/components/Header";
-import "/styles/nprogress.css";
 import NProgress from "react-nprogress";
+import { Analytics } from "@vercel/analytics/react";
+
+import "/styles/nprogress.css";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -20,6 +22,7 @@ function MyApp({ Component, pageProps }) {
         <div id="app-container">
           <Header />
           <Component {...pageProps} />
+          <Analytics />
         </div>
       </Provider>
     </div>
