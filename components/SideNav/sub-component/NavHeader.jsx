@@ -10,7 +10,7 @@ export default function NavHeader() {
       <div className="flex flex-col py-7 gap-1">
         <div
           id="algospace-version"
-          className="algospace-version text-text-2 font-space text-xs transition-all ease-in-out"
+          className="algospace-version text-text-2 font-space text-xs transition-all ease-in-out text-center md:text-left"
         >
           v3.2.0
         </div>
@@ -22,7 +22,7 @@ export default function NavHeader() {
             <span>AlgoSpace</span>
           </Link>
         </div>
-        <div className="text-text-2 font-space text-xs">
+        <div className="text-text-2 font-space text-xs text-center md:text-left">
           Algorithm Visualizer
         </div>
       </div>

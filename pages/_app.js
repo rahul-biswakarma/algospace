@@ -16,7 +16,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="grid grid-cols-homeLayout min-h-screen bg-bg-1">
+    <div className="md:grid md:grid-cols-[35vw_auto] lg:grid-cols-[30vw_auto] xl:grid-cols-homeLayout min-h-screen bg-bg-1">
       <Provider store={store}>
         <SideNav />
         <div id="app-container">

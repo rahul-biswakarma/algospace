@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  algoname: "Home",
+  algoName: "Home",
   algoId: "home",
   algoCategory: "home",
+  sideNavOpen: false,
 };
 
 export const pageSlice = createSlice({
@@ -19,10 +20,14 @@ export const pageSlice = createSlice({
     setAlgoCategory: (state, action) => {
       state.algoCategory = action.payload;
     },
+    setSideNavOpen: (state, action) => {
+      state.sideNavOpen = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setAlgoName, setAlgoId, setAlgoCategory } = pageSlice.actions;
+export const { setAlgoName, setAlgoId, setAlgoCategory, setSideNavOpen } =
+  pageSlice.actions;
 
 export default pageSlice.reducer;

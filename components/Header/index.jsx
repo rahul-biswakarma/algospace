@@ -1,35 +1,102 @@
-import { Link } from "next/link";
+import { useEffect } from "react";
 import dateFormat from "dateformat";
-import { useSelector } from "react-redux";
+import { store } from "/redux/store.js";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setSideNavOpen } from "/redux/reducers/pageSlice";
 
 export default function Header() {
   const now = new Date();
+  const dispatch = useDispatch();
   let algoName = useSelector((state) => state.page.algoName);
+
+  useEffect(() => {
+    dispatch(setSideNavOpen(false));
+    document.getElementById("side-nav").style.left = "-100%";
+  }, []);
+
+  function toggleSideNav() {
+    if (store.getState().page.sideNavOpen) {
+      document.getElementById("side-nav").style.left = "-100%";
+      store.dispatch(setSideNavOpen(false));
+    } else {
+      document.getElementById("side-nav").style.left = "0";
+      store.dispatch(setSideNavOpen(true));
+    }
+  }
+
   return (
-    <div className="bg-bg-1 sticky top-0 border-b-[2px] border-border-1 max-h-[70px] z-10 flex justify-between">
+    <div className="bg-bg-1 sticky top-0 border-b-[2px] border-border-1 max-h-[70px] z-10 flex justify-between ease-in duration-100">
       <div className="left-side relative">
         <div className="h-full w-4 bg-bg-1 absolute t-0 l-0 ml-[-2px]"></div>
         <div className="px-[1.5rem] py-[1.1rem] flex items-center relative ">
           <div className="font-space text-sm text-green">
             {dateFormat(now, "mm/dd")}
           </div>
-          <div className="w-[16px] h-[32px] bg-cyan ml-[1.5rem]"></div>
-          <div className="text-text-1 font-space uppercase text-[1.3rem] ml-[10px] flex items-center">
+          <div className="w-[16px] h-[38px] bg-cyan ml-[1.5rem]"></div>
+          <div className="text-text-1 font-space uppercase ml-[10px] flex items-center leading-[105%] text-[1.3rem]">
             {algoName}
           </div>
         </div>
       </div>
-      <div className="relative max-h-[70px] flex items-center right-side px-gap">
+      <div className="relative max-h-[70px] flex items-center right-side px-gap gap-[1rem]">
         <a
           href="https://github.com/rahul-biswakarma/algospace"
           rel="noreferrer"
           target="_blank"
           title="Github Logo | Link to Github Repo"
+          className="w-[28px] h-[28px]"
         >
-          <svg width="24" height="24" fill="#fff" viewBox="3 3 18 18">
-            <path d="M12 3c-4.973 0-9 4.13-9 9.228 0 4.083 2.576 7.532 6.154 8.754.45.081.618-.196.618-.438 0-.22-.01-.946-.01-1.719-2.262.427-2.847-.565-3.027-1.084-.101-.265-.54-1.084-.923-1.303-.315-.173-.764-.6-.01-.612.708-.011 1.214.67 1.383.946.81 1.396 2.104 1.004 2.621.762.079-.6.315-1.004.574-1.235-2.003-.23-4.095-1.026-4.095-4.556 0-1.003.349-1.834.922-2.48-.09-.23-.404-1.176.09-2.445 0 0 .754-.242 2.475.946a8.159 8.159 0 0 1 2.25-.312c.765 0 1.53.104 2.25.312 1.722-1.2 2.475-.946 2.475-.946.495 1.269.18 2.215.09 2.445.574.646.923 1.465.923 2.48 0 3.541-2.104 4.326-4.106 4.556.326.289.607.842.607 1.707 0 1.235-.011 2.227-.011 2.538 0 .242.169.53.619.438a9.036 9.036 0 0 0 4.439-3.366A9.402 9.402 0 0 0 21 12.228C21 7.129 16.973 3 12 3Z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 38 38"
+          >
+            <g clip-path="url(#a)">
+              <path
+                fill="#aaa"
+                d="M25.713 34.833a1.583 1.583 0 0 1-1.583-1.583v-4.117a3.404 3.404 0 0 0-.855-2.628 1.583 1.583 0 0 1 .966-2.644c3.863-.46 7.426-1.694 7.426-8.392a6.334 6.334 0 0 0-1.061-3.515 4.354 4.354 0 0 1-.65-3.261 5.875 5.875 0 0 0 0-2.233c-1.185.4-2.301.983-3.308 1.726a1.584 1.584 0 0 1-1.33.237 16.07 16.07 0 0 0-8.74 0 1.583 1.583 0 0 1-1.33-.237 11.717 11.717 0 0 0-3.341-1.726 5.576 5.576 0 0 0 0 2.233 4.496 4.496 0 0 1-.681 3.293 6.444 6.444 0 0 0-1.061 3.53c0 6.16 2.977 7.807 7.442 8.376a1.584 1.584 0 0 1 1.298 1.046 1.584 1.584 0 0 1-.332 1.583 3.26 3.26 0 0 0-.871 2.47v4.259a1.583 1.583 0 1 1-3.167 0v-.903a9.499 9.499 0 0 1-8.344-3.309 6.175 6.175 0 0 0-1.837-1.393 1.585 1.585 0 1 1 .792-3.072 7.805 7.805 0 0 1 3.166 2.154c1.584 1.583 3.167 2.976 6.176 2.406a6.16 6.16 0 0 1 .364-2.501c-3.262-.824-7.917-3.167-7.917-11.084a9.5 9.5 0 0 1 1.583-5.272c.193-.289.267-.64.206-.982a9.01 9.01 0 0 1 .523-5.082 1.583 1.583 0 0 1 .997-.903c.539-.158 2.47-.475 6.128 1.9a19.253 19.253 0 0 1 9.009 0c3.657-2.375 5.589-2.074 6.111-1.9a1.583 1.583 0 0 1 .998.903 9.041 9.041 0 0 1 .523 5.098 1.188 1.188 0 0 0 .174.902 9.5 9.5 0 0 1 1.583 5.289c0 8.027-4.623 10.355-7.917 11.083.29.85.409 1.749.349 2.644v4.022a1.583 1.583 0 0 1-1.489 1.583Z"
+              />
+            </g>
+            <defs>
+              <clipPath id="a">
+                <path fill="#fff" d="M0 0h38v38H0z" />
+              </clipPath>
+            </defs>
           </svg>
         </a>
+        <span
+          className="w-[28px] md:hidden hover:cursor-pointer"
+          onClick={toggleSideNav}
+        >
+          {!useSelector((state) => state.page.sideNavOpen) ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 38 24"
+            >
+              <path
+                fill="#aaa"
+                d="M37.333 10.333H.667v3.334h36.666v-3.334ZM37.333.333H.667v3.334h36.666V.333ZM37.333 20.333H.667v3.334h36.666v-3.334Z"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 30 30"
+            >
+              <path
+                fill="#aaa"
+                d="M26.785.858.858 26.785l2.357 2.357L29.142 3.215 26.785.858Z"
+              />
+              <path
+                fill="#aaa"
+                d="M29.476 26.452 3.548.525 1.191 2.882 27.12 28.809l2.357-2.357Z"
+              />
+            </svg>
+          )}
+        </span>
       </div>
     </div>
   );

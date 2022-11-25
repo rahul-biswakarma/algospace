@@ -11,7 +11,7 @@ import {
   setAlgoName,
   setAlgoCategory,
 } from "/redux/reducers/pageSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import AlgoData from "/components/AlgoPage/Sorting/AlgoData";
 import StatsContainer from "/components/AlgoPage/Sorting/Stats";
 import { setRunning, resetStats } from "/redux/reducers/sortingSlice";

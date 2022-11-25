@@ -4,7 +4,7 @@ export default function ComparisonData() {
   let ac = useSelector((state) => state.sorting.arrayCount);
   let comps = useSelector((state) => state.sorting.comparisons);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
+    <div className="hidden lg:flex flex-col h-[100%] font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1">
       <div className="flex flex-col ">
         <div className="text-purple">
           Percentage{" "}
@@ -18,7 +18,7 @@ export default function ComparisonData() {
       </div>
       <div className="flex justify-between">
         <div className="text-green">Comparisons</div>
-        <div className="text-green">
+        <div className="text-green hidden xl:flex">
           Estimated{" "}
           <span className="text-blue" id="estimated-comparisons">
             XXX

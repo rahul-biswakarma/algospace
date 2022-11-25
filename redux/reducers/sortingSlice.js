@@ -7,7 +7,7 @@ const initialState = {
   swaps: 0,
   running: false,
   status: "UNSORTED",
-  barWidth: 20,
+  barWidth: 15,
   maxBarWidth: 30,
   speed: 50,
   maxSpeed: 500,
