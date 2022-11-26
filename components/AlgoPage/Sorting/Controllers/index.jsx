@@ -5,7 +5,7 @@ import CountController from "./CountController";
 
 export default function SortingControllers() {
   return (
-    <div className="relative flex flex-row flex-wrap lg:grid lg:grid-cols-threeStatsLayout border-[1px] border-border-1 mt-gap select-none">
+    <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
       <GenerateButton />
       <SpeedController />
       <CountController />
