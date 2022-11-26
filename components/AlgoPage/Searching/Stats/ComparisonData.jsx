@@ -4,7 +4,7 @@ export default function ComparisonData() {
   let ac = useSelector((state) => state.searching.arrayCount);
   let comps = useSelector((state) => state.searching.comparisons);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
+    <div className="hidden lg:flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
       <div className="flex flex-col ">
         <div className="text-purple">
           Percentage{" "}

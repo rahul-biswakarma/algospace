@@ -9,7 +9,7 @@ export default function ArrayData() {
   let leftRange = useSelector((state) => state.searching.rangeLeft);
   let rightRange = useSelector((state) => state.searching.rangeRight);
   return (
-    <div className="flex flex-col font-space p-gap border-r-[1px] border-r-border-1 justify-between  border-b-[10px] border-b-cyan-bg">
+    <div className="flex flex-col font-space p-gap border-r-[1px] border-r-border-1 justify-between border-b-[10px] border-b-cyan-bg">
       <div className="flex justify-between gap-[2rem] text-[15px]">
         <div
           className="flex gap-[0.2rem] text-text-1 flex-wrap text-[1.3rem]"

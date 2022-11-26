@@ -13,13 +13,13 @@ export default function AlgoData() {
     if (currAlgoData) {
       return (
         <div>
-          <div className="w-full h-[150px] bg-green-bg mt-gap font-space text-[2rem] text-text-1 flex items-center uppercase justify-center">
+          <div className="w-full h-[150px] bg-green-bg mt-gap font-space text-[1.5rem] lg:text-[2rem] text-text-1 flex items-center uppercase justify-center text-center">
             More About {algoName}
           </div>
-          <div className="grid grid-cols-algoDataLayout gap-gap my-gap">
+          <div className="flex flex-col lg:grid lg:grid-cols-algoDataLayout gap-gap my-gap">
             <div
               id="algo-code-container"
-              className="w-full h-full font-space border-[1px] border-border-1 bg-graphPattern"
+              className="w-full h-full font-space border-[1px] border-border-1 bg-graphPattern text-[14px]"
             >
               <SyntaxHighlighter
                 language="cpp"

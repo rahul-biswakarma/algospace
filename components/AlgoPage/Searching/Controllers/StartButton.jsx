@@ -30,7 +30,7 @@ export default function StartButton() {
     <div className="w-full h-full max-w-[250px]">
       {useSelector((state) => state.searching.isSearching) === false ? (
         <div
-          className="w-full h-full max-w-[250px] bg-green-bg flex justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-green text-lg hover:cursor-pointer hover:bg-green hover:text-bg-1 select-none"
+          className="w-full h-full bg-green-bg flex justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-green text-[1rem] md:text-lg hover:cursor-pointer hover:bg-green hover:text-bg-1 select-none leading-[105%]"
           onClick={() => {
             startAlgo(algoId);
           }}
@@ -39,7 +39,7 @@ export default function StartButton() {
         </div>
       ) : (
         <div
-          className="w-full h-full max-w-[250px] bg-red-bg flex justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-red text-lg hover:cursor-pointer hover:bg-red hover:text-bg-1 select-none"
+          className="w-full h-full bg-red-bg flex justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-red text-lg hover:cursor-pointer hover:bg-red hover:text-bg-1 select-none"
           onClick={() => {
             dispatch(setIsSearching(false));
             dispatch(setStatus("not searching"));
