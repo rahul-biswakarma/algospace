@@ -10,7 +10,7 @@ export default function AlgoData() {
   if (currAlgoData) {
     return (
       <div>
-        <div className="w-full h-[150px] bg-green-bg mt-gap font-space text-[2rem] text-text-1 flex items-center uppercase justify-center">
+        <div className="w-full h-[150px] bg-green-bg mt-gap font-space text-[1.5rem] lg:text-[2rem] text-text-1 flex items-center uppercase justify-center text-center p-[10px]">
           More About {algoName}
         </div>
         <div className="flex flex-col-reverse gap-gap my-gap">
@@ -27,7 +27,7 @@ export default function AlgoData() {
               {currAlgoData.code}
             </SyntaxHighlighter>
           </div>
-          <div className="grid grid-cols-2 w-full h-full font-space text-green gap-gap">
+          <div className="flex flex-col md:grid md:grid-cols-2 w-full h-full font-space text-green gap-gap">
             <div className="border-[1px] border-border-1 px-[2rem] py-[1.5rem] flex flex-col gap-[2rem]">
               <div className="uppercase text-center">Time Complexity</div>
               <div className="text-text-1 flex flex-col gap-[1rem]">

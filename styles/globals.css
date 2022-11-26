@@ -78,3 +78,8 @@ a {
 .array-data {
   padding-right: 0.6rem;
 }
+
+#algo-code-container pre,
+#algo-code-container pre code {
+  overflow-y: hidden;
+}

@@ -6,7 +6,7 @@ export default function TimeData() {
   const startDate = new Date(startTime * 1000);
   const endDate = new Date(endTime * 1000);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
+    <div className="hidden lg:flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
       <div className="flex flex-col min-h-[150px]">
         <div className="text-green flex flex-row justify-between gap-gap">
           <div className="text-purple">Time Taken</div>

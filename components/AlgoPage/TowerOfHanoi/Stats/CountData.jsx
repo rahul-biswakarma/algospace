@@ -6,9 +6,9 @@ export default function CountData() {
   let cCount = useSelector((state) => state.hanoi.cCount);
   let isRunning = useSelector((state) => state.hanoi.isRunning);
   return (
-    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 ">
+    <div className="flex flex-col h-full font-space p-gap uppercase justify-between  border-b-[10px] border-b-green-bg border-r-[1px] border-r-border-1 text-[16px] md:text-[18px]">
       <div className="flex flex-col">
-        <div className="text-text-1 text-[1.3rem]">
+        <div className="text-text-1 text-[1rem] md:text-[1.3rem]">
           <div className="text-text-1">
             A <span className="text-cyan">{` ${aCount}`}</span>
           </div>
@@ -20,9 +20,9 @@ export default function CountData() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between pt-[10px]">
         <div className="text-purple">Disc Count</div>
-        <div className="text-cyan">
+        <div className="text-cyan text-right">
           {isRunning ? (
             <span>Running</span>
           ) : (

@@ -15,7 +15,7 @@ const ResetGrid = () => {
   };
   return (
     <div
-      className="w-full h-full max-w-[250px] bg-red-bg flex justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-red text-lg hover:cursor-pointer hover:bg-red hover:text-bg-1 select-none"
+      className="relative w-full h-full lg:max-w-[250px] bg-red-bg flex justify-center items-center text-text-1 font-space uppercase select-none border-l-[10px] border-red text-[1rem] md:text-lg hover:cursor-pointer hover:bg-red hover:text-bg-1 leading-[105%]"
       onClick={() => {
         resetGrid();
       }}

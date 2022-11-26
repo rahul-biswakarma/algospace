@@ -29,7 +29,7 @@ const SpeedController = () => {
   };
 
   return (
-    <div className="w-full h-full px-[2rem] bg-purple-bg flex gap-[1.5rem] justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-purple text-lg hover:cursor-pointer select-none">
+    <div className="hidden w-[100%] h-full px-[2rem] bg-purple-bg lg:flex gap-[1.5rem] justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-purple text-lg hover:cursor-pointer select-none">
       Speed
       <ThemeProvider theme={SpeedTheme}>
         <Slider

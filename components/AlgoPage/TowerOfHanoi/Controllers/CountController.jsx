@@ -31,7 +31,7 @@ export default function CountController() {
   };
 
   return (
-    <div className="w-full h-full px-[2rem] bg-cyan-bg flex gap-[1.5rem] justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-cyan text-lg hover:cursor-pointer select-none">
+    <div className="hidden w-[100%] h-full px-[2rem] bg-cyan-bg lg:flex gap-[1.5rem] justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-cyan text-lg hover:cursor-pointer select-none">
       Count
       <ThemeProvider theme={CountTheme}>
         <Slider

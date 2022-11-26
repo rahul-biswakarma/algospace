@@ -5,7 +5,7 @@ import CountController from "./CountController";
 
 export default function HanoiControllers() {
   return (
-    <div className="flex flex-row gap-gap py-gap w-full h-[70px] select-none">
+    <div className="flex flex-row gap-gap p-gap w-full h-[70px] select-none">
       <GenerateButton />
       <CountController />
       <SpeedController />

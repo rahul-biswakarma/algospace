@@ -24,10 +24,10 @@ export default function VisualizerContainer() {
   );
 
   return (
-    <div className="relative w-full h-[50vh] grid grid-cols-threeColsLayout gap-gap select-none">
+    <div className="relative w-[100%] h-[60vh] md:h-[50vh] grid grid-cols-2 md:grid-cols-threeColsLayout gap-gap select-none px-gap">
       <div
         id="visualizer-tower-a"
-        className="relative height-full flex flex-col pb-[2rem] h-full w-full border-[1px] border-border-1 bg-bg-1"
+        className="relative height-full flex flex-col pb-[2rem] h-full w-[100%] border-[1px] border-border-1 bg-bg-1"
       >
         <TopBar />
         <div className="absolute font-unica uppercase text-green-bg-4 p-gap">
@@ -35,7 +35,7 @@ export default function VisualizerContainer() {
         </div>
         <div
           id="towerA"
-          className="flex flex-col justify-end items-center h-full w-full gap-gap"
+          className="flex flex-col justify-end items-center h-full w-[100%] gap-gap"
         >
           {towerA.length != 0 ? (
             towerA.map((width, index) => {
@@ -53,19 +53,19 @@ export default function VisualizerContainer() {
               );
             })
           ) : (
-            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+            <div className="w-[100%] h-full flex justify-center items-center text-bg-3 text-[2rem] lg:text-[5rem] font-unica uppercase">
               Empty
             </div>
           )}
         </div>
-        <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
+        <div className="absolute bottom-0 left-0 mb-[-3px] ml-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeLeftIcon}
             alt="icon"
           />
         </div>
-        <div className="absolute bottom-0 right-0 mb-[-9px] mr-[-3px]">
+        <div className="absolute bottom-0 right-0 mb-[-3px] mr-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeRightIcon}
@@ -75,7 +75,7 @@ export default function VisualizerContainer() {
       </div>
       <div
         id="visualizer-tower-b"
-        className="relative height-full flex flex-col pb-[2rem] h-full w-full border-[1px] border-border-1 bg-bg-1 hue-rotate-60"
+        className="relative height-full flex flex-col pb-[2rem] h-full w-[100%] border-[1px] border-border-1 bg-bg-1 hue-rotate-60"
       >
         <TopBar />
         <div className="absolute font-unica uppercase text-green-bg-4 p-gap">
@@ -83,7 +83,7 @@ export default function VisualizerContainer() {
         </div>
         <div
           id="towerB"
-          className="flex flex-col justify-end items-center h-full w-full gap-gap"
+          className="flex flex-col justify-end items-center h-full w-[100%] gap-gap"
         >
           {towerB.length != 0 ? (
             towerB.map((width, index) => {
@@ -101,19 +101,19 @@ export default function VisualizerContainer() {
               );
             })
           ) : (
-            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+            <div className="w-[100%] h-full flex justify-center items-center text-bg-3 text-[2rem] lg:text-[5rem] font-unica uppercase">
               Empty
             </div>
           )}
         </div>
-        <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
+        <div className="absolute bottom-0 left-0 mb-[-3px] ml-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeLeftIcon}
             alt="icon"
           />
         </div>
-        <div className="absolute bottom-0 right-0 mb-[-9px] mr-[-3px]">
+        <div className="absolute bottom-0 right-0 mb-[-3px] mr-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeRightIcon}
@@ -123,7 +123,7 @@ export default function VisualizerContainer() {
       </div>
       <div
         id="visualizer-tower-c"
-        className="relative height-full flex flex-col pb-[2rem] h-full w-full border-[1px] border-border-1 bg-bg-1 hue-rotate-180"
+        className="relative height-full flex flex-col pb-[2rem] h-full w-[100%] border-[1px] border-border-1 bg-bg-1 hue-rotate-180"
       >
         <TopBar />
         <div className="absolute font-unica uppercase text-green-bg-4 p-gap">
@@ -131,7 +131,7 @@ export default function VisualizerContainer() {
         </div>
         <div
           id="towerC"
-          className="flex flex-col justify-end items-center h-full w-full gap-gap"
+          className="flex flex-col justify-end items-center h-full w-[100%] gap-gap"
         >
           {towerC.length != 0 ? (
             towerC.map((width, index) => {
@@ -149,19 +149,19 @@ export default function VisualizerContainer() {
               );
             })
           ) : (
-            <div className="w-full h-full flex justify-center items-center text-bg-3 text-[5rem] font-unica uppercase">
+            <div className="w-[100%] h-full flex justify-center items-center text-bg-3 text-[2rem] lg:text-[5rem] font-unica uppercase">
               Empty
             </div>
           )}
         </div>
-        <div className="absolute bottom-0 left-0 mb-[-9px] ml-[-3px]">
+        <div className="absolute bottom-0 left-0 mb-[-3px] ml-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeLeftIcon}
             alt="icon"
           />
         </div>
-        <div className="absolute bottom-0 right-0 mb-[-9px] mr-[-3px]">
+        <div className="absolute bottom-0 right-0 mb-[-3px] mr-[-3px]">
           <Image
             className="scale-[0.8] opacity-60"
             src={VisualizerEdgeRightIcon}

@@ -37,7 +37,7 @@ export default function TowerOfHanoi() {
   return (
     <div>
       <Seo category="recursion" id="tower-of-hanoi" />
-      <div className="px-gap">
+      <div className="px-gapm">
         <HanoiControllers />
         <VisualizerContainer />
         <StatsContainer />
