@@ -15,10 +15,7 @@ export default function NavHeader() {
           v3.2.0
         </div>
         <div className="font-unica text-text-1 text-[3.5rem] leading-[3.5rem]">
-          <Link
-            href="https://github.com/rahul-biswakarma/algospace"
-            target={"blank"}
-          >
+          <Link href="/" target={"blank"}>
             <span>AlgoSpace</span>
           </Link>
         </div>
