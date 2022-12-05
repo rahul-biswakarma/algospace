@@ -25,7 +25,7 @@ export default function VisualizerContainer() {
   );
 
   return (
-    <div className="relative w-full h-[70vh] border-[1px] border-border-1 bg-graphPattern overflow-hidden select-none">
+    <div className="relative w-full h-[50vh] md:h-[70vh] border-[1px] border-border-1 bg-graphPattern overflow-hidden select-none">
       <TopBar />
       <TargetContainer />
       <div
