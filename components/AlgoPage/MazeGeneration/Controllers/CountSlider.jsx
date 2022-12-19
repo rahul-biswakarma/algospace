@@ -3,47 +3,47 @@ import { Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { setCellCount } from "/redux/reducers/mazeSlice";
-import generateCellCount from "../MazeUtils/generateCellCount";
+import { setCellSize } from "/redux/reducers/mazeSlice";
+import generateCellSize from "../MazeUtils/generateCellCount";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
 
-const CountTheme = createTheme({
+const SizeTheme = createTheme({
   palette: {
-    CountPrimary: {
+    SizePrimary: {
       main: tailwindColors["cyan"],
     },
-    CountSecondary: {
+    SizeSecondary: {
       main: tailwindColors["cyan-bg"],
     },
   },
 });
 
-const CountController = () => {
+const SizeController = () => {
   const dispatch = useDispatch();
-  const maxCellCount = useSelector((state) => state.maze.maxCellCount);
-  const minCellCount = useSelector((state) => state.maze.minCellCount);
-  const cellCount = useSelector((state) => state.maze.cellCount);
+  const maxCellSize = useSelector((state) => state.maze.maxCellSize);
+  const minCellSize = useSelector((state) => state.maze.minCellSize);
+  const cellSize = useSelector((state) => state.maze.cellSize);
 
-  const updateCellCount = (count) => {
-    dispatch(setCellCount(count));
-    generateCellCount();
+  const updateCellSize = (Size) => {
+    dispatch(setCellSize(Size));
+    generateCellSize();
   };
 
   return (
     <div className="hidden w-[100%] h-full px-[2rem] bg-cyan-bg lg:flex gap-[1.5rem] justify-center items-center text-text-1 font-space uppercase border-l-[10px] border-cyan text-lg hover:cursor-pointer select-none">
-      Count
-      <ThemeProvider theme={CountTheme}>
+      Size
+      <ThemeProvider theme={SizeTheme}>
         <Slider
           className="Slider"
-          aria-label="Array Count Slider"
-          defaultValue={cellCount}
-          min={minCellCount}
-          max={maxCellCount}
-          color="CountPrimary"
+          aria-label="Array Size Slider"
+          defaultValue={cellSize}
+          min={minCellSize}
+          max={maxCellSize}
+          color="SizePrimary"
           onChangeCommitted={(e, val) => {
-            updateCellCount(val);
+            updateCellSize(val);
           }}
         />
       </ThemeProvider>
@@ -51,4 +51,4 @@ const CountController = () => {
   );
 };
 
-export default CountController;
+export default SizeController;

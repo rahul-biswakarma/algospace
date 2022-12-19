@@ -35,7 +35,7 @@ const SpeedController = () => {
         <Slider
           className="Slider"
           aria-label="Soritng Speed Slider"
-          defaultValue={speed || 300}
+          defaultValue={speed}
           min={0}
           max={maxSpeed}
           color="SpeedPrimary"

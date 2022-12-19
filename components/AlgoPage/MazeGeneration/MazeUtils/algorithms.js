@@ -10,7 +10,8 @@ import {
 
 export async function DFSMazeGeneration() {
   const stack = new Stack();
-  const cellCount = store.getState().maze.cellCount;
+  const rowCount = store.getState().maze.rowCount;
+  const colCount = store.getState().maze.colCount;
   const initialCell = store.getState().maze.currentCell;
 
   stack.push(initialCell);
@@ -31,8 +32,8 @@ export async function DFSMazeGeneration() {
       currentCell.x,
       currentCell.y,
       grid,
-      cellCount,
-      cellCount
+      colCount,
+      rowCount
     );
 
     if (neighbours.length > 0) {
@@ -50,7 +51,6 @@ export async function DFSMazeGeneration() {
         })
       );
 
-      await MakeDelay(speed);
       randomNeighbour.visited = true;
       stack.push(randomNeighbour);
     }

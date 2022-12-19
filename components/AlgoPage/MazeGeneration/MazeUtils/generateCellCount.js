@@ -1,31 +1,40 @@
 import { store } from "/redux/store";
 import {
   setGrid,
+  setRowCount,
+  setColCount,
   setCellWidth,
   setCellHeight,
-  setRandomIdNumber,
 } from "/redux/reducers/mazeSlice";
 import { batch } from "react-redux";
 
 export default function generateCellCount() {
-  let randomIdNumber = Math.floor(Math.random() * 50);
-  let count = store.getState().maze.cellCount;
+  let size = store.getState().maze.cellSize;
   let conWidth = document.getElementById("visualizer-container").clientWidth;
   let conHeight = document.getElementById("visualizer-container").clientHeight;
-  let width = conWidth / count;
-  let height = conHeight / count;
+
+  let noOfRows = Math.floor(conWidth / size);
+  let noOfCols = Math.floor(conHeight / size);
+  let rowArea = noOfRows * size;
+  let colArea = noOfCols * size;
+  let extraRowArea = conWidth - rowArea;
+  let extraColArea = conHeight - colArea;
+  let width = size + extraRowArea / noOfRows;
+  let height = size + extraColArea / noOfCols;
+
   var grid = [];
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < noOfCols; i++) {
     var col = [];
-    for (let j = 0; j < count; j++) {
+    for (let j = 0; j < noOfRows; j++) {
       col.push({ x: i, y: j, visited: false, nextCell: { x: -1, y: -1 } });
     }
     grid.push(col);
   }
   batch(() => {
     store.dispatch(setCellWidth(width));
-    store.dispatch(setRandomIdNumber(randomIdNumber));
     store.dispatch(setCellHeight(height));
     store.dispatch(setGrid(grid));
+    store.dispatch(setRowCount(noOfRows));
+    store.dispatch(setColCount(noOfCols));
   });
 }

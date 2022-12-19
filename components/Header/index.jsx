@@ -98,6 +98,7 @@ export default function Header() {
           )}
         </span>
       </div>
+      <div className="w-[10px] h-full absolute left-[-5px] top-[1.1px] bg-bg-1 border-b-[2px] border-bg-1"></div>
     </div>
   );
 }

@@ -2,11 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   grid: [],
+  rowCount: 0,
+  colCount: 0,
   cellWidth: 0,
   cellHeight: 0,
-  cellCount: 10,
-  minCellCount: 4,
-  maxCellCount: 30,
+  cellSize: 40,
+  minCellSize: 25,
+  maxCellSize: 100,
   playerPosition: { x: 0, y: 0 },
   playerWidth: 0,
   playerHeight: 0,
@@ -34,6 +36,12 @@ const mazeSlice = createSlice({
     setIsGenerated: (state, action) => {
       state.isGenerated = action.payload;
     },
+    setRowCount: (state, action) => {
+      state.rowCount = action.payload;
+    },
+    setColCount: (state, action) => {
+      state.colCount = action.payload;
+    },
     setCellWidth: (state, action) => {
       state.cellWidth = action.payload;
       state.playerWidth = action.payload;
@@ -42,11 +50,8 @@ const mazeSlice = createSlice({
       state.cellHeight = action.payload;
       state.playerHeight = action.payload;
     },
-    setCellCount: (state, action) => {
-      state.cellCount = action.payload;
-    },
-    setRandomIdNumber: (state, action) => {
-      state.randomIdNumber = action.payload;
+    setCellSize: (state, action) => {
+      state.cellSize = action.payload;
     },
     setPlayerPosotion: (state, action) => {
       state.playerPosition = action.payload;
@@ -99,12 +104,13 @@ const mazeSlice = createSlice({
 
 export const {
   setGrid,
+  setRowCount,
+  setColCount,
   setCellWidth,
   setCellHeight,
   setIsGenerated,
-  setCellCount,
+  setCellSize,
   setPlayerPosotion,
-  setRandomIdNumber,
   setSpeed,
   setCurrentCell,
   setNextCell,
