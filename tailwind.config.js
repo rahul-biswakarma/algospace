@@ -30,6 +30,8 @@ module.exports = {
       "green-bg-3": "#00bb00",
       "green-bg-4": "#017501",
       "blue-bg-4": "#100175",
+      "red-bg-4": "#75012c",
+      "purple-bg-4": "#600382",
     },
     fontFamily: {
       unica: ["Unica One", "monospace"],

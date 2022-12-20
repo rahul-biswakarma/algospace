@@ -9,6 +9,7 @@ import {
   setMergeArr2,
   resetMergeArrays,
 } from "/redux/reducers/sortingSlice";
+import * as COLORS from "./colors";
 
 import { MakeDelay } from "/utils";
 import { batch } from "react-redux";
@@ -142,7 +143,7 @@ async function Merge(l, mid, h) {
   let B = [];
   while (i <= mid && j <= h) {
     if (!store.getState().sorting.running) return;
-    await MakeDelay(store.getState().sorting.speed);
+    // await MakeDelay(store.getState().sorting.speed);
     batch(() => {
       store.dispatch(setCompElements([i, i]));
       store.dispatch(incrementComparisons());
@@ -153,7 +154,6 @@ async function Merge(l, mid, h) {
       B[k++] = array[j++];
     }
   }
-  await MakeDelay(store.getState().sorting.speed);
   for (; i <= mid; i++) {
     if (!store.getState().sorting.running) return;
     await MakeDelay(store.getState().sorting.speed);
@@ -172,7 +172,6 @@ async function Merge(l, mid, h) {
     });
     B[k++] = array[j];
   }
-  await MakeDelay(store.getState().sorting.speed);
   for (let i = l; i <= h; i++) {
     if (!store.getState().sorting.running) return;
     await MakeDelay(store.getState().sorting.speed);
@@ -184,5 +183,4 @@ async function Merge(l, mid, h) {
       store.dispatch(setArray(array));
     });
   }
-  await MakeDelay(store.getState().sorting.speed);
 }

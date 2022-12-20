@@ -15,6 +15,7 @@ const VisualizerContainer = () => {
   let spclEle = useSelector((state) => state.sorting.spclEle);
   let mergeArr1 = useSelector((state) => state.sorting.mergeArr1);
   let mergeArr2 = useSelector((state) => state.sorting.mergeArr2);
+  let currentAlgo = useSelector((state) => state.page.algoId);
 
   let borderColor, bgColor;
 
@@ -30,7 +31,7 @@ const VisualizerContainer = () => {
       <TopBar />
       <div
         id="visualizer-container"
-        className="flex justify-center items-end pb-[2rem] flex-row h-full w-full"
+        className="flex justify-center items-end pb-[2rem] flex-row h-full w-full transition-all ease-linear duration-100"
       >
         {heightArray.map((height, index) => {
           if (spclEle == index) {
@@ -58,6 +59,7 @@ const VisualizerContainer = () => {
             borderColor = Colors.DEFAULT_BORDER_COLOR;
             bgColor = Colors.DEFAULT_BG_COLOR;
           }
+
           return (
             <ArrayBar
               key={index}
