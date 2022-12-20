@@ -4,9 +4,10 @@ const initialState = {
   grid: [],
   rowCount: 0,
   colCount: 0,
+  cellCount: 0,
   cellWidth: 0,
   cellHeight: 0,
-  cellSize: 40,
+  cellSize: 30,
   minCellSize: 25,
   maxCellSize: 100,
   playerPosition: { x: 0, y: 0 },
@@ -17,7 +18,7 @@ const initialState = {
   currentCell: { x: 0, y: 0 },
   nextCell: { x: -1, y: -1 },
   randomIdNumber: 0,
-  speed: 300,
+  speed: 0,
   maxSpeed: 300,
   isGenerating: false,
   isGenerated: false,
@@ -35,6 +36,9 @@ const mazeSlice = createSlice({
     },
     setIsGenerated: (state, action) => {
       state.isGenerated = action.payload;
+    },
+    setCellCount: (state, action) => {
+      state.cellCount = action.payload;
     },
     setRowCount: (state, action) => {
       state.rowCount = action.payload;
@@ -104,6 +108,7 @@ const mazeSlice = createSlice({
 
 export const {
   setGrid,
+  setCellCount,
   setRowCount,
   setColCount,
   setCellWidth,

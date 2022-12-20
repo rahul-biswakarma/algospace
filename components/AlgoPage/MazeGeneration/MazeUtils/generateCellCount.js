@@ -4,6 +4,7 @@ import {
   setRowCount,
   setColCount,
   setCellWidth,
+  setCellCount,
   setCellHeight,
 } from "/redux/reducers/mazeSlice";
 import { batch } from "react-redux";
@@ -21,6 +22,7 @@ export default function generateCellCount() {
   let extraColArea = conHeight - colArea;
   let width = size + extraRowArea / noOfRows;
   let height = size + extraColArea / noOfCols;
+  let cellCount = noOfRows * noOfCols;
 
   var grid = [];
   for (let i = 0; i < noOfCols; i++) {
@@ -33,8 +35,9 @@ export default function generateCellCount() {
   batch(() => {
     store.dispatch(setCellWidth(width));
     store.dispatch(setCellHeight(height));
-    store.dispatch(setGrid(grid));
     store.dispatch(setRowCount(noOfRows));
     store.dispatch(setColCount(noOfCols));
+    store.dispatch(setCellCount(cellCount));
+    store.dispatch(setGrid(grid));
   });
 }

@@ -16,7 +16,7 @@ export default function ArrayBar(props) {
         }`,
       }}
       id={props.id}
-      className={`relative array-bar border-2`}
+      className={`relative array-bar border-2 transition-all ease-linear`}
     >
       {props.currEle ? (
         <div
@@ -28,7 +28,7 @@ export default function ArrayBar(props) {
             borderColor: `${Colors.TARGET_BORDER_COLOR}`,
           }}
           id={props.id + "target"}
-          className={`absolute array-bar border-2 opacity-50 bottom-0 left-0`}
+          className={`absolute array-bar border-2 opacity-50 bottom-0 left-0 transition-all ease-linear`}
         ></div>
       ) : (
         <div></div>

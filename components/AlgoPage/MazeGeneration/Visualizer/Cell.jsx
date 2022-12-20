@@ -6,8 +6,12 @@ const Cell = (props) => {
   const currentCell = useSelector((state) => state.maze.currentCell);
   const isGenerating = useSelector((state) => state.maze.isGenerating);
 
-  var className = "maze-cell table-cell";
+  var className =
+    "maze-cell table-cell ease-linear duration-300 border-r-[3px] border-b-[3px]";
   var targetCellId = "";
+
+  if (x == currentCell.x && y == currentCell.y) className += " transition-none";
+  else className += " transition-all";
 
   // This code highlights visited cells
   if (visited === true) className += " border-green";
@@ -15,15 +19,16 @@ const Cell = (props) => {
 
   // *********************************************
   // Enable this code to see possoble next cells
-  // if (
-  //   !visited &&
-  //   ((x == currentCell.x - 1 && y == currentCell.y) ||
-  //     (x == currentCell.x + 1 && y == currentCell.y) ||
-  //     (x == currentCell.x && y == currentCell.y - 1) ||
-  //     (x == currentCell.x && y == currentCell.y + 1))
-  // )
-  //   className += " bg-red";
-  // else className += " bg-transparent";
+  if (
+    !visited &&
+    isGenerating &&
+    ((x == currentCell.x - 1 && y == currentCell.y) ||
+      (x == currentCell.x + 1 && y == currentCell.y) ||
+      (x == currentCell.x && y == currentCell.y - 1) ||
+      (x == currentCell.x && y == currentCell.y + 1))
+  )
+    className += " bg-red absolute border-red ease-linear duration-100";
+  else className += " bg-transparent relative";
   // **********************************************
 
   // Generating cell id from where wall will be removed
@@ -31,16 +36,16 @@ const Cell = (props) => {
     targetCellId = `cell-x${nextX}-y${nextY}`;
   else targetCellId = `cell-x${x}-y${y}`;
 
-  // Deciding where to place wall to generate grid
-  if (y === cellCount - 1 && x === cellCount - 1) className += "";
-  else if (x === cellCount - 1) className += " border-r-[3px]";
-  else if (y === cellCount - 1) className += " border-b-[3px]";
-  else className += " border-r-[3px] border-b-[3px]";
+  // // Deciding where to place wall to generate grid
+  // if (y === cellCount - 1 && x === cellCount - 1) className += "";
+  // else if (x === cellCount - 1) className += " border-r-[3px]";
+  // else if (y === cellCount - 1) className += " border-b-[3px]";
+  // else className += " border-r-[3px] border-b-[3px]";
 
   // Deciding where to remove wall based on targetCellId variable
-  if (y === nextY && targetCellId === `x${x}y${y}`)
+  if (y === nextY && targetCellId === `cell-x${x}-y${y}`)
     className += " border-b-[0px]";
-  if (x === nextX && targetCellId === `x${x}y${y}`)
+  if (x === nextX && targetCellId === `cell-x${x}-y${y}`)
     className += " border-l-[0px]";
 
   // Checking for current cell and neighbour cell

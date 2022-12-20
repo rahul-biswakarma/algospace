@@ -16,7 +16,7 @@ export default function ArrayBar(props) {
         }`,
       }}
       id={props.id}
-      className={`array-bar border-2`}
+      className={`array-bar border-2 transition-all ease-linear`}
     ></div>
   );
 }
