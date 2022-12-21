@@ -9,7 +9,18 @@ import {
 } from "/redux/reducers/mazeSlice";
 import { batch } from "react-redux";
 
-export default function generateCellCount() {
+import {
+  setIsGenerating,
+  setIsGenerated,
+  setCurrentCell,
+} from "/redux/reducers/mazeSlice";
+import resetBorder from "./resetBorder";
+
+export default function generateGrid() {
+  batch(() => {
+    store.dispatch(setIsGenerating(false));
+    store.dispatch(setIsGenerated(false));
+  });
   let size = store.getState().maze.cellSize;
   let conWidth = document.getElementById("visualizer-container").clientWidth;
   let conHeight = document.getElementById("visualizer-container").clientHeight;
@@ -40,4 +51,6 @@ export default function generateCellCount() {
     store.dispatch(setCellCount(cellCount));
     store.dispatch(setGrid(grid));
   });
+  resetBorder();
+  store.dispatch(setCurrentCell({ x: 0, y: 0 }));
 }

@@ -32,6 +32,7 @@ const mazeSlice = createSlice({
   initialState,
   reducers: {
     setGrid: (state, action) => {
+      state.grid = [];
       state.grid = action.payload;
     },
     setIsGenerated: (state, action) => {

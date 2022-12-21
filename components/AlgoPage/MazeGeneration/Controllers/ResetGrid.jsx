@@ -1,19 +1,10 @@
 import React from "react";
-import { batch, useDispatch } from "react-redux";
-import { setIsGenerating, setIsGenerated } from "/redux/reducers/mazeSlice";
 
-import generateCellCount from "/components/AlgoPage/MazeGeneration/MazeUtils/generateCellCount";
-import { setCurrentCell } from "/redux/reducers/mazeSlice";
+import generateGrid from "/components/AlgoPage/MazeGeneration/MazeUtils/generateGrid";
 
 const ResetGrid = () => {
-  const dispatch = useDispatch();
   const resetGrid = () => {
-    batch(() => {
-      dispatch(setIsGenerating(false));
-      dispatch(setIsGenerated(false));
-      dispatch(setCurrentCell({ x: 0, y: 0 }));
-    });
-    generateCellCount();
+    generateGrid();
   };
   return (
     <div

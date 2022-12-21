@@ -15,8 +15,8 @@ import {
 import AlgoData from "/components/AlgoPage/MazeGeneration/AlgoData";
 import StatsContainer from "/components/AlgoPage/MazeGeneration/Stats";
 import VisualizerContainer from "/components/AlgoPage/MazeGeneration/Visualizer";
+import generateGrid from "/components/AlgoPage/MazeGeneration/MazeUtils/generateGrid";
 import MazeGenerationControllers from "/components/AlgoPage/MazeGeneration/Controllers";
-import generateCellCount from "/components/AlgoPage/MazeGeneration/MazeUtils/generateCellCount";
 
 export default function Sorting() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function Sorting() {
         dispatch(setAlgoCategory("maze-generation"));
       });
     }
-    generateCellCount();
+    generateGrid();
   });
 
   return (

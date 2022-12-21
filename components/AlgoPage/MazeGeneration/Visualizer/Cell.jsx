@@ -7,7 +7,7 @@ const Cell = (props) => {
   const isGenerating = useSelector((state) => state.maze.isGenerating);
 
   var className =
-    "maze-cell table-cell ease-linear duration-300 border-r-[3px] border-b-[3px]";
+    "maze-cell table-cell ease-linear duration-300 border-r-[2px] border-b-[2px]";
   var targetCellId = "";
 
   if (x == currentCell.x && y == currentCell.y) className += " transition-none";
@@ -36,7 +36,7 @@ const Cell = (props) => {
     targetCellId = `cell-x${nextX}-y${nextY}`;
   else targetCellId = `cell-x${x}-y${y}`;
 
-  // // Deciding where to place wall to generate grid
+  // Deciding where to place wall to generate grid
   // if (y === cellCount - 1 && x === cellCount - 1) className += "";
   // else if (x === cellCount - 1) className += " border-r-[3px]";
   // else if (y === cellCount - 1) className += " border-b-[3px]";

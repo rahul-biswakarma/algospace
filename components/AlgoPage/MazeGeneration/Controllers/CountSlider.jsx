@@ -3,8 +3,8 @@ import { Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import generateGrid from "../MazeUtils/generateGrid";
 import { setCellSize } from "/redux/reducers/mazeSlice";
-import generateCellSize from "../MazeUtils/generateCellCount";
 
 let tailwindConfiger = require("/tailwind.config.js");
 let tailwindColors = tailwindConfiger.theme.colors;
@@ -28,7 +28,7 @@ const SizeController = () => {
 
   const updateCellSize = (Size) => {
     dispatch(setCellSize(Size));
-    generateCellSize();
+    generateGrid();
   };
 
   return (

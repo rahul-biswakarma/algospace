@@ -11,7 +11,12 @@ const StartButton = () => {
 
   const startAlgo = async (algoId) => {
     dispatch(setIsGenerating(true));
-    await Algorithms.DFSMazeGeneration();
+    if (algoId === "dfs-maze") await Algorithms.DFSMazeGeneration();
+    else if (algoId === "binary-tree-maze")
+      await Algorithms.BFSMazeGeneration();
+    else if (algoId === "recursive-division")
+      await Algorithms.RecursiveDivisionMazeGeneration();
+    else await Algorithms.KruskalMazeGeneration();
     dispatch(setIsGenerating(false));
   };
 
