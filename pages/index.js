@@ -58,9 +58,9 @@ export default function Home() {
           <TopBar />
           <div
             id="visualizer-container"
-            className="relative h-full overflow-hidden"
+            className="relative h-full overflow-hidden bg-hero bg-cover bg-center bg-no-repeat"
           >
-            <Terrain className="z-10" />
+            {/* <Terrain className="z-10" /> */}
           </div>
         </div>
       </div>

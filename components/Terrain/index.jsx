@@ -8,8 +8,8 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
 
 export default function Terrain() {
   var cols, rows;
-  var w = 2000,
-    h = 1000;
+  var w = 1500,
+    h = 800;
   var scl = 30;
   var flying = 0;
   var terrain = [];
@@ -45,8 +45,8 @@ export default function Terrain() {
     }
 
     p5.background(0, 0, 0, 0);
-    p5.translate(0, 30);
-    p5.frameRate(22);
+    p5.translate(0, 250);
+    p5.frameRate(30);
     p5.rotateX(PI / 3);
     p5.stroke(30, 200, 57, 150);
     p5.fill(30, 180, 57, 200);

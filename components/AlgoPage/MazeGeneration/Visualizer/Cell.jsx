@@ -15,7 +15,7 @@ const Cell = (props) => {
 
   // This code highlights visited cells
   if (visited === true) className += " border-green";
-  else className += " border-green-bg-4";
+  else className += " border-green-bg";
 
   // *********************************************
   // Enable this code to see possoble next cells

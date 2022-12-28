@@ -51,6 +51,7 @@ module.exports = {
       },
       backgroundImage: {
         graphPattern: "url('/assets/graph-pattern.svg')",
+        hero: "url('/images/hero.png')",
       },
     },
   },
