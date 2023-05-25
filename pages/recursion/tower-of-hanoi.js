@@ -23,7 +23,7 @@ export default function TowerOfHanoi() {
   useEffect(() => {
     dispatch(setIsRunning(false));
     var rawAlgoId = "tower-of-hanoi";
-    var algoName = ToProperCase(rawAlgoId);
+    
     generateDiscs();
 
     if (algoName != undefined) {
@@ -33,6 +33,7 @@ export default function TowerOfHanoi() {
         dispatch(setAlgoCategory("recursion"));
       });
     }
+    var algoName = ToProperCase(rawAlgoId);
   });
   return (
     <div>
